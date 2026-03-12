@@ -7,11 +7,11 @@
 <link href="favicon.png" rel="icon" type="image/png"/>
 <link href="favicon.png" rel="apple-touch-icon"/>
 <link href="favicon.png" rel="shortcut icon"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="GR Production – epoksīda grīdas, grīdu slīpēšana, LVT, SPC un lamināta grīdu ieklāšana visā Latvijā." name="description"/>
 <!-- Fonts & Icons -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- LocalBusiness JSON-LD (Google rich data) -->
 <script type="application/ld+json">
   {
@@ -55,47 +55,6 @@
     "priceRange": "€€"
   }
   </script>
-<!-- FAQ JSON-LD (Google rich data) -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Cik ilgi kalpo epoksīda grīda?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Pie pareizas pamatnes sagatavošanas un ekspluatācijas epoksīda grīda var kalpot 10 un vairāk gadus, nezaudējot funkcionalitāti un vizuālo izskatu."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Vai strādājat visā Latvijā?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Jā, izbraucam uz objektiem visā Latvijā – gan jaunbūvēm, gan renovācijas objektiem."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Vai varat palīdzēt izvēlēties piemērotāko grīdas risinājumu?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Jā, pēc telpas tipa, slodzes un budžeta palīdzam izvēlēties tehniski pareizāko risinājumu un sagatavojam tāmi."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Vai dodiet garantiju paveiktajiem darbiem?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Jā, strādājam ar pārbaudītām materiālu sistēmām un sniedzam garantiju atbilstoši konkrētajam risinājumam un līguma nosacījumiem."
-        }
-      }
-    ]
-  }
-  </script>
 <style>
     :root {
       --green:       #7BB62F;
@@ -127,6 +86,8 @@
       max-width: 1400px;
       margin: 0 auto;
       min-height: 100vh;
+      min-height: 100svh;
+      min-height: 100dvh;
       background: var(--white);
       box-shadow: 0 0 35px rgba(0,0,0,0.08);
       overflow: hidden;
@@ -156,7 +117,6 @@
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-light);
 }
-
 
     .nav {
       height: 74px;
@@ -243,6 +203,7 @@
     }
 
     .lang-btn {
+      
       display:flex;
       align-items:center;
       gap:4px;
@@ -265,6 +226,32 @@
       color:#222;
     }
 
+.lang-btn{
+  width:36px;
+  height:36px;
+  padding:0;
+  border-radius:50%;
+  border:1px solid transparent;
+  background:transparent;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.lang-btn img{
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  display:block;
+  object-fit:cover;
+}
+
+.lang-btn.active{
+  border-color:var(--green);
+  background:rgba(123,182,47,0.12);
+}
+
     .nav-cta {
       padding:8px 16px;
       border-radius:999px;
@@ -272,7 +259,7 @@
       color:var(--white);
       border:none;
       font-size:13px;
-      font-weight:600;
+      font-weight:500;
       box-shadow:0 7px 16px rgba(123,182,47,0.35);
       cursor:pointer;
     }
@@ -408,7 +395,7 @@
       max-width:520px;
     }
 
-    .reveal { opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+    .reveal { opacity:1; transform:none; }
     .reveal.visible { opacity:1; transform:translateY(0); }
 
     /* HERO */
@@ -484,13 +471,40 @@
 }
 .hero-meta-phone a{
   color:#fff;
-  font-weight:600;
+  font-weight:500;
 }
 
 .hero-actions{
   display:flex;
+  flex-wrap:wrap;
   gap:14px;
   margin-bottom: 10px;
+}
+
+.hero-call-highlight{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 22px;
+  border-radius:8px;
+  background:#ffffff;
+  color:#1f1f1f;
+  font-weight:700;
+  font-size:15px;
+  text-decoration:none;
+  box-shadow:0 14px 30px rgba(0,0,0,.18);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.hero-call-highlight:hover{
+  background:#f4f4f4;
+  transform: translateY(-1px);
+  box-shadow:0 18px 40px rgba(0,0,0,.22);
+}
+.hero-call-highlight .icon{
+  width:16px;
+  height:16px;
+  color: var(--hero-green);
+  flex:0 0 auto;
 }
 
 .btn-primary{
@@ -500,7 +514,7 @@
   border:none;
   background: var(--green);
   color:#fff;
-  font-weight:600;
+  font-weight:500;
   font-size:14px;
   cursor:pointer;
   box-shadow:0 14px 30px rgba(123,182,47,.5);
@@ -603,7 +617,7 @@
 /* Telefons */
 .hero-meta-phone a{
   color:#ffffff;
-  font-weight:600;
+  font-weight:500;
 }
 
 /* CTA pogas */
@@ -708,7 +722,7 @@
 .hero-tag i{ color: var(--green); }
 
 /* Reveal (ja tev jau ir – vari šo neielikt) */
-.reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+.reveal { opacity:1; transform:none; }
 .reveal.visible{ opacity:1; transform:translateY(0); }
 
 /* Responsive */
@@ -749,7 +763,7 @@
 
 .service-wizard-title{
   font-size:13px;
-  font-weight:600;
+  font-weight:500;
   color:#2a2a2a;
 }
 
@@ -860,6 +874,21 @@
   line-height:1.5;
 }
 
+/* ===== SERVICE CARD CTA (Uzzināt vairāk) ===== */
+.service-cta{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:10px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.02em;
+  text-decoration:underline;
+  text-underline-offset:3px;
+  opacity:.85;
+}
+.service-card:hover .service-cta{ opacity:1; }
+
 .service-card:hover{
   background:var(--green);
   color:#fff;
@@ -961,7 +990,7 @@
   gap:8px;
   padding:10px 16px;
   font-size:13px;
-  font-weight:600;
+  font-weight:500;
   border-radius:8px;
   border:1px solid var(--green);
   background:var(--green);
@@ -1002,12 +1031,11 @@
   .service-image img{ max-height:230px; }
 }
 
-
     /* ===== ABOUT & WHY US ===== */
     .about-wrap {
-      background:var(--dark-soft);
-      color:var(--white);
-    }
+      background:#5f5f5f;
+      color: var(--white);
+}
 
     .about-inner {
       display:grid;
@@ -1056,7 +1084,7 @@
     }
 
     .why-card-title {
-      font-weight:600;
+      font-weight:500;
       font-size:14px;
     }
 
@@ -1114,7 +1142,7 @@
       flex-shrink:0;
     }
     .guarantee-title {
-      font-weight:600;
+      font-weight:500;
       margin-bottom:2px;
     }
     .guarantee-text {
@@ -1192,7 +1220,7 @@
   align-items:center;
   justify-content:space-between;
   gap:10px;
-  font-weight:600;
+  font-weight:500;
   font-size:13px;
   color:#2b2b2b;
 }
@@ -1263,7 +1291,7 @@
 
     .process-step h3 {
       font-size:15px;
-      font-weight:600;
+      font-weight:500;
     }
 
     .process-step p {
@@ -1314,7 +1342,7 @@
 
     .pricing-card h3 {
       font-size:16px;
-      font-weight:600;
+      font-weight:500;
       margin-bottom:6px;
     }
 
@@ -1391,7 +1419,7 @@
     }
 
     .price-calculator-title {
-      font-weight:600;
+      font-weight:500;
       font-size:14px;
     }
 
@@ -1458,7 +1486,7 @@
     }
 
     .calc-result strong {
-      font-weight:600;
+      font-weight:500;
     }
 
     /* ===== FAQ (BUJ) ===== */
@@ -1606,7 +1634,7 @@
   border:1px solid #e3e3e3;
   background:#fff;
   font-size:12px;
-  font-weight:600;
+  font-weight:500;
   transition:.15s;
 }
 .google-reviews-btn:hover{
@@ -1662,7 +1690,7 @@
 }
 
 .testimonial-name {
-  font-weight:600;
+  font-weight:500;
   color:#222;
 }
 
@@ -1701,7 +1729,7 @@
 
     .gallery-section-title {
       font-size: 18px;
-      font-weight: 600;
+      font-weight:500;
       margin-bottom: 10px;
     }
 
@@ -1816,64 +1844,327 @@
   100% { transform: translateX(-50%); }
 }
 
-
     /* ===== CONTACT ===== */
-    #contacts { background:#fdfdfd; }
+    #contacts {
+      background:linear-gradient(180deg,#f4f9ea 0%, #eaf3d6 100%);
+    }
 
     .contact-grid {
       display:grid;
-      grid-template-columns:1.2fr 1fr;
+      grid-template-columns:minmax(0, 1.08fr) minmax(320px, 0.92fr);
       gap:30px;
-      align-items:flex-start;
+      align-items:stretch;
+    }
+
+    .contact-info,
+    .contact-form-wrap {
+      background:#fff;
+      border:1px solid rgba(17,17,17,0.08);
+      border-radius:28px;
+      box-shadow:0 18px 45px rgba(15,23,42,0.08);
+      padding:28px;
     }
 
     .contact-info p {
       font-size:14px;
-      margin-bottom:6px;
+      margin-bottom:0;
     }
 
-    .contact-info strong { font-weight:600; }
+    .contact-topline {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:12px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(123,182,47,0.12);
+      color:#2f4a10;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    .contact-title-wrap .section-title {
+      margin-bottom:10px;
+    }
+
+    .contact-title-wrap .section-subtitle {
+      max-width:58ch;
+      margin-bottom:22px;
+    }
+
+    .contact-callout {
+      margin:0 0 20px;
+      padding:20px;
+      border-radius:22px;
+      background:linear-gradient(135deg, rgba(123,182,47,0.18), rgba(123,182,47,0.06));
+      border:1px solid rgba(123,182,47,0.26);
+      box-shadow:0 14px 34px rgba(0,0,0,0.06);
+    }
+
+    .contact-callout-text {
+      margin:0 0 12px;
+      font-size:14px;
+      color:#1f1f1f;
+      font-weight:600;
+    }
+
+    .contact-phone-highlight {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:15px 20px;
+      border-radius:999px;
+      background:#111;
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      font-size:20px;
+      line-height:1;
+      box-shadow:0 12px 24px rgba(0,0,0,0.18);
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .contact-phone-highlight:hover {
+      transform:translateY(-1px);
+      box-shadow:0 16px 28px rgba(0,0,0,0.22);
+      background:#1a1a1a;
+    }
+
+    .contact-phone-highlight .icon {
+      width:18px;
+      height:18px;
+      flex:0 0 18px;
+    }
+
+    .contact-layout {
+      display:grid;
+      grid-template-columns:minmax(260px, 0.95fr) minmax(260px, 1.05fr);
+      gap:18px;
+      align-items:start;
+    }
+
+    .company-card {
+      background:#f5f5f5;
+      border:1px solid rgba(17,17,17,0.07);
+      border-radius:24px;
+      padding:24px;
+    }
+
+    .company-card-title {
+      margin:0 0 16px;
+      font-size:28px;
+      line-height:1.1;
+      letter-spacing:-0.02em;
+    }
+
+    .company-card-subtitle {
+      margin:-6px 0 18px;
+      color:#555;
+      font-size:14px;
+    }
+
+    .company-details-list {
+      display:grid;
+      gap:12px;
+    }
+
+    .company-row {
+      display:grid;
+      gap:4px;
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(17,17,17,0.08);
+    }
+
+    .company-row:last-child {
+      border-bottom:none;
+      padding-bottom:0;
+    }
+
+    .company-label {
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      color:#666;
+    }
+
+    .company-value,
+    .company-value a {
+      color:#111;
+      text-decoration:none;
+      font-size:17px;
+      line-height:1.45;
+      word-break:break-word;
+    }
+
+    .company-value a:hover {
+      text-decoration:underline;
+    }
+
+    .company-phone-link {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-weight:700;
+    }
+
+    .contact-side-stack {
+      display:grid;
+      gap:18px;
+    }
+
+    .contact-mini-card {
+      background:#fafafa;
+      border:1px solid rgba(17,17,17,0.07);
+      border-radius:24px;
+      padding:22px;
+    }
+
+    .contact-mini-title {
+      margin:0 0 14px;
+      font-size:18px;
+    }
+
+    .contact-points {
+      display:grid;
+      gap:12px;
+    }
+
+    .contact-point {
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+
+    .contact-point .icon-wrap {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      background:rgba(123,182,47,0.14);
+      color:#3d5f12;
+      flex:0 0 38px;
+    }
+
+    .contact-point .icon {
+      width:18px;
+      height:18px;
+    }
+
+    .contact-point-label {
+      display:block;
+      margin-bottom:3px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      color:#666;
+    }
+
+    .contact-point-value,
+    .contact-point-value a {
+      color:#111;
+      text-decoration:none;
+      font-size:16px;
+      line-height:1.45;
+    }
+
+    .contact-point-value a:hover {
+      text-decoration:underline;
+    }
 
     .business-hours-contact {
-      margin-top:6px;
-      font-size:13px;
+      margin:0;
+      font-size:15px;
+      color:#111;
+    }
+
+    .contact-map-wrap {
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid rgba(17,17,17,0.08);
+      box-shadow:0 12px 30px rgba(15,23,42,0.08);
+      background:#fff;
+    }
+
+    .contact-map-wrap iframe {
+      display:block;
+      width:100%;
+      min-height:300px;
+      border:0;
+    }
+
+    .contact-map-wrap{
+  margin-top:32px;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(15,23,42,0.08);
+}
+
+    .social-bar {
+      margin-top:4px;
+    }
+
+    .contact-form-wrap {
+      display:grid;
+      gap:16px;
+      align-content:start;
+    }
+
+    .contact-form-intro h3 {
+      margin:0 0 8px;
+      font-size:26px;
+    }
+
+    .contact-form-intro p {
+      margin:0;
       color:#555;
+      font-size:14px;
+      line-height:1.55;
     }
 
     .contact-form {
       display:grid;
-      gap:10px;
+      gap:12px;
       font-size:14px;
     }
 
     .contact-form input,
     .contact-form textarea {
-      padding:9px 11px;
-      border-radius:6px;
-      border:1px solid #ccc;
+      padding:11px 13px;
+      border-radius:12px;
+      border:1px solid #d7d7d7;
+      background:#fff;
       font-family:inherit;
-      font-size:13px;
+      font-size:14px;
       outline:none;
+      transition:border-color .2s ease, box-shadow .2s ease, transform .2s ease;
     }
 
     .contact-form input:focus,
     .contact-form textarea:focus {
       border-color:var(--green);
-      box-shadow:0 0 0 1px rgba(123,182,47,0.3);
+      box-shadow:0 0 0 4px rgba(123,182,47,0.16);
+      transform:translateY(-1px);
     }
 
     .contact-form button {
-      width:max-content;
+      width:100%;
+      justify-content:center;
       cursor:pointer;
+      min-height:52px;
     }
 
     .contact-form .form-group {
       display:flex;
       flex-direction:column;
-      gap:6px;
-      margin-top:4px;
+      gap:8px;
+      margin-top:2px;
     }
-
     .service-choice {
       display:flex;
       flex-wrap:wrap;
@@ -1967,7 +2258,7 @@
 }
 
 .whatsapp-popup-inner strong {
-  font-weight: 600;
+  font-weight:500;
 }
 
 .whatsapp-popup-btn {
@@ -1979,7 +2270,7 @@
   background: #ffffff;
   color: #25D366;
   font-size: 13px;
-  font-weight: 600;
+  font-weight:500;
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   transition: transform .1s ease, box-shadow .1s ease, background .15s ease, color .15s ease;
@@ -2001,7 +2292,7 @@
   right: 10px;
   font-size: 16px;
   cursor: pointer;
-  font-weight: 600;
+  font-weight:500;
   opacity: .8;
 }
 
@@ -2050,7 +2341,7 @@
       font-size:16px;
     }
     .call-popup-title {
-      font-weight:600;
+      font-weight:500;
       margin-bottom:4px;
     }
     .call-popup-text {
@@ -2186,7 +2477,6 @@
 #lightbox-prev{ left:16px; }
 #lightbox-next{ right:16px; }
 
-
     /* ===== CALLBACK POPUP ===== */
     .callback-popup {
       position: fixed;
@@ -2229,7 +2519,7 @@
 
     .callback-title {
       font-size:14px;
-      font-weight:600;
+      font-weight:500;
       margin-right:24px;
     }
 
@@ -2293,6 +2583,12 @@
       .hero-inner{grid-template-columns:1fr;}
       .about-inner{grid-template-columns:1fr;}
       .contact-grid{grid-template-columns:1fr;}
+      .contact-layout{grid-template-columns:1fr;}
+      .contact-info,.contact-form-wrap{padding:22px;}
+      .company-card-title{font-size:24px;}
+      .contact-form-intro h3{font-size:22px;}
+      .contact-phone-highlight{font-size:18px;}
+      .contact-map-wrap iframe{min-height:240px;}
       .service-detail{grid-template-columns:1fr;}
       .service-detail:nth-child(even){grid-template-columns:1fr;}
       .pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
@@ -2370,6 +2666,23 @@
 .cookie-desc{ font-size:12px; color:#555; line-height:1.45; max-width:720px; }
 .cookie-actions{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
 .cookie-btn{ padding:10px 14px; font-size:12px; border-radius:999px; }
+.cookie-decline{
+  border:none;
+  background:#111;
+  color:#fff;
+  cursor:pointer;
+  transition:background .2s ease, transform .1s ease;
+}
+.cookie-decline:hover{ background:#000; }
+.cookie-decline:active{ transform:translateY(1px); }
+.cookie-actions .btn-primary{ cursor:pointer; }
+@media(max-width:768px){
+  .footer-inner{ flex-direction:column; align-items:flex-start; }
+  .footer-links{ flex-wrap:wrap; gap:8px; }
+  .cookie-actions{ width:100%; }
+  .cookie-actions .cookie-btn{ flex:1 1 100%; }
+}
+
 @media(max-width:768px){
   .cookie-inner{ flex-direction:column; align-items:stretch; }
   .cookie-actions{ justify-content:stretch; }
@@ -2399,27 +2712,717 @@
 .footer-link{ color:#e8e8e8; opacity:.9; }
 .footer-link:hover{ opacity:1; text-decoration:underline; }
 
+    /* About text readability on grey */
+    .about-wrap p { color: rgba(255,255,255,0.92); }
+    .about-wrap .section-subtitle { color: rgba(255,255,255,0.78); }
+
+
+
+@media (max-width:768px){
+  /* nav-center is hidden in your layout, so dropdown isn't needed */
+  .nav-dropdown-menu{ display:none !important; }
+}
+
+.nav-dropdown.open .nav-dropdown-btn::after{
+  content:"";
+  width:0;height:0;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:6px solid #555;
+  opacity:.85;
+  transform: translateY(1px);
+  transition: transform .2s ease;
+  margin-left:6px;
+}
+.nav-dropdown-btn:hover::after{
+  width:100%;
+}
+
+
+/* =========================
+   NAV: Pakalpojumi dropdown (like screenshot)
+   ========================= */
+.nav-dropdown{ position: relative; display:inline-flex; align-items:center; }
+
+/* pill button */
+.nav-dropdown-btn{
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:0;                 /* like other nav links */
+  border-radius:0;
+  color:#444;
+  font: inherit;
+  font-weight:500;
+  line-height:1;
+  position:relative;
+}
+
+/* chevron (CSS triangle) */
+.nav-dropdown-btn::after{
+  content:"";
+  width:0;height:0;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:6px solid #555;
+  opacity:.85;
+  transform: translateY(1px);
+  transition: transform .2s ease;
+  margin-left:6px;
+}
+.nav-dropdown.open .nav-dropdown-btn::after{
+  content:"";
+  width:0;height:0;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:6px solid #555;
+  opacity:.85;
+  transform: translateY(1px);
+  transition: transform .2s ease;
+  margin-left:6px;
+}
+
+/* dropdown card */
+.nav-dropdown-menu{
+  position:absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  width: 320px;
+  max-width: min(86vw, 360px);
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+  padding: 10px;
+  display:none;
+  z-index:100000;
+}
+.nav-dropdown.open .nav-dropdown-menu{ display:block; }
+
+.dd-item{
+  display:block;
+  padding: 12px 12px;
+  border-radius: 14px;
+  transition: background .15s ease, transform .1s ease;
+}
+.dd-item:hover{
+  background: rgba(0,0,0,0.04);
+  transform: translateY(-1px);
+}
+.dd-title{
+  font-size: 15px;
+  font-weight: 700;
+  color:#1f1f1f;
+  margin-bottom: 3px;
+}
+.dd-sub{
+  font-size: 13px;
+  color:#6b6b6b;
+  line-height: 1.25;
+}
+
+.dd-divider{
+  height:1px;
+  background: rgba(0,0,0,0.10);
+  margin: 10px 8px;
+}
+
+.dd-all{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 15px;
+  color:#1f1f1f;
+  transition: background .15s ease;
+}
+.dd-all:hover{ background: rgba(0,0,0,0.04); }
+
+/* small stacked-layers icon */
+.dd-all-icon{
+  width: 18px;
+  height: 18px;
+  position: relative;
+  display:inline-block;
+}
+.dd-all-icon::before,
+.dd-all-icon::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  margin:auto;
+  width: 18px;
+  height: 10px;
+  border-radius: 4px;
+  background: var(--green);
+  transform: skewX(-12deg);
+}
+.dd-all-icon::before{ top: 6px; opacity:.85; }
+.dd-all-icon::after{ top: 0px; opacity:1; }
+
+@media (max-width: 768px){
+  /* desktop nav-center is hidden; no dropdown there */
+  .nav-dropdown{ display:none; }
+}
+
+
+/* ===== MOBILE NAV (hamburger + drawer) ===== */
+.hamburger{
+  display:none;
+  width:42px;height:42px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,0.10);
+  background:#fff;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 10px 24px rgba(0,0,0,0.06);
+}
+.hamburger span{
+  width:18px;height:2px;background:#222;display:block;position:relative;
+}
+.hamburger span::before,
+.hamburger span::after{
+  content:"";
+  position:absolute;left:0;
+  width:18px;height:2px;background:#222;
+}
+.hamburger span::before{ top:-6px; }
+.hamburger span::after{ top:6px; }
+
+.mobile-drawer{
+  position:fixed; inset:0;
+  z-index:100001;
+  display:none;
+}
+.mobile-drawer.show{ display:block; }
+.mobile-drawer-backdrop{
+  position:absolute; inset:0;
+  background:rgba(0,0,0,0.55);
+  backdrop-filter: blur(2px);
+}
+.mobile-drawer-panel{
+  position:absolute; top:0; right:0; height:100%;
+  width:min(92vw, 360px);
+  background:#fff;
+  padding:14px;
+  box-shadow:-20px 0 50px rgba(0,0,0,0.25);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.mobile-drawer-top{
+  display:flex; align-items:center; justify-content:space-between;
+}
+.mobile-drawer-title{
+  font-weight:700; font-size:14px;
+}
+.mobile-drawer-close{
+  width:42px;height:42px;border-radius:12px;
+  border:1px solid rgba(0,0,0,0.10);
+  background:#fff; cursor:pointer;
+  font-size:20px; line-height:1;
+}
+.mobile-nav-list{
+  display:flex; flex-direction:column; gap:8px;
+}
+.mobile-nav-link{
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,0.08);
+  background:#fbfbfb;
+  font-weight:600;
+  color:#222;
+}
+.mobile-nav-link:active{ transform:scale(.99); }
+.mobile-services{
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,0.08);
+  overflow:hidden;
+  background:#fff;
+}
+.mobile-services summary{
+  list-style:none;
+  cursor:pointer;
+  padding:12px 12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-weight:700;
+}
+.mobile-services summary::-webkit-details-marker{ display:none; }
+.mobile-services summary .chev{
+  width:0;height:0;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:6px solid #555;
+  transition: transform .2s ease;
+}
+.mobile-services[open] summary .chev{ transform: rotate(180deg); }
+.mobile-services a{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:12px 12px;
+  border-top:1px solid rgba(0,0,0,0.06);
+  color:#222;
+}
+.mobile-services a:active{ transform:scale(.99); }
+.mobile-services .micon{
+  width:28px;
+  height:28px;
+  border-radius:10px;
+  background:#f2f2f2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  margin-top:2px;
+}
+.mobile-services .micon i{ font-size:14px; color:#222; }
+.mobile-services small{ display:block; color:#6b6b6b; font-weight:500; margin-top:2px; }
+.mobile-drawer-cta{
+  margin-top:auto;
+  display:flex;
+  gap:10px;
+}
+.mobile-drawer-cta a{
+  flex:1;
+  text-align:center;
+  padding:12px 14px;
+  border-radius:999px;
+  font-weight:700;
+}
+.mobile-cta-primary{
+  background:var(--green);
+  color:#fff;
+}
+.mobile-cta-secondary{
+  border:1px solid rgba(0,0,0,0.12);
+  background:#fff;
+  color:#222;
+}
+
+@media (max-width:768px){
+  .hamburger{ display:flex; }
+  .nav-right .lang-switch{ display:none; } /* keep header clean; languages go into drawer */
+}
+
+
+/* ===== Mobile readability & header layout fixes ===== */
+@media (max-width:1024px){
+  .hamburger{ display:flex; }          /* always available on tablets too */
+  .nav-center{ display:none; }
+}
+
+@media (max-width:520px){
+  .nav-cta{ display:none; }            /* reduce clutter; CTA is in drawer */
+  .nav-right{ gap:10px; }
+  .hero-left{ padding: 56px 18px 46px; }
+  .hero-title{ font-size: 30px; }
+  .hero-sub{ font-size: 14px; }
+}
+
+/* Ensure icons and text remain visible on dark hero */
+.hero, .hero * { text-rendering: optimizeLegibility; }
+.hero-title, .hero-sub, .hero-kicker { text-shadow: 0 1px 10px rgba(0,0,0,0.25); }
+
+
+/* =========================
+   MOBILE LAYOUT (shop-like)
+   ========================= */
+.mobile-header{
+  display:none;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  height:64px;
+}
+.mobile-brand{ display:flex; align-items:center; justify-content:center; flex:1; }
+.mobile-logo{ height:34px; width:auto; display:block; }
+
+.mobile-actions{ display:flex; align-items:center; gap:10px; }
+.mobile-icon-btn{
+  width:42px; height:42px;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,0.10);
+  background:#fff;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 10px 24px rgba(0,0,0,0.06);
+}
+.mobile-icon-btn i{ font-size:16px; color:#222; }
+.mobile-icon-btn[href*="wa.me"] i{ color:#25D366; }
+
+.mobile-bottom-bar{
+  position:fixed;
+  left:0; right:0; bottom:0;
+  z-index:100000;
+  background:#ffffff;
+  border-top:1px solid rgba(0,0,0,0.10);
+  padding:8px 10px calc(8px + env(safe-area-inset-bottom));
+  display:none;
+  gap:8px;
+}
+.mobile-bottom-bar .mb-item{
+  flex:1;
+  border:0;
+  background:transparent;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  padding:8px 6px;
+  border-radius:14px;
+  color:#222;
+  font-size:11px;
+  font-weight:600;
+  cursor:pointer;
+}
+.mobile-bottom-bar .mb-item i{ font-size:16px; }
+.mobile-bottom-bar .mb-item:active{ transform: scale(.99); }
+.mobile-bottom-bar .mb-cta{
+  background: rgba(123,182,47,0.14);
+  border:1px solid rgba(123,182,47,0.25);
+}
+
+@media (max-width:768px){
+  /* Make header solid + clean */
+  header{ background:#fff; backdrop-filter:none; }
+  .nav{ height:auto; padding:10px 0; }
+  .mobile-header{ display:flex; }
+  .nav-center{ display:none !important; }
+  .nav-right{ display:none !important; } /* keep it clean; actions go in mobile header/drawer */
+  .logo-wrap{ display:none; }            /* logo is in mobile header */
+  .page{ padding-top: 74px; }            /* keep spacing under fixed header */
+  .mobile-bottom-bar{ display:flex; }
+  .back-to-top{ bottom: 90px; }          /* above bottom bar */
+  .whatsapp-float{ display:none !important; }
+}
+
+/* Avoid content hiding behind bottom bar */
+@media (max-width:768px){
+  body{ padding-bottom: 84px; }
+}
+
+
+/* Inline SVG icon system (offline-safe, iOS/Android friendly) */
+.icon{
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: -0.125em;
+  fill: currentColor;
+}
+
+
+/* Icon sizing overrides for inline SVGs (replaces old <i> font rules) */
+.sticky-cta .icon{ width:14px; height:14px; }
+.btn-secondary .icon{ width:14px; height:14px; }
+.btn-price .icon{ width:13px; height:13px; }
+
+.hero-trust-item .icon{ width:20px; height:20px; color: var(--green); }
+.hero-tag .icon{ width:16px; height:16px; margin-right:8px; color: var(--green); }
+
+.warranty-accordion summary .icon{ width:16px; height:16px; transition: transform .2s ease; }
+.warranty-accordion details[open] summary .icon{ transform: rotate(180deg); }
+
+.gallery-toggle .icon{ width:18px; height:18px; }
+.social-link .icon{ width:15px; height:15px; }
+
+.whatsapp-popup-btn .icon,
+.call-popup-btn .icon,
+.mobile-quick-bar .icon{ width:18px; height:18px; }
+
+.side-nav a .icon{ width:18px; height:18px; }
+
+.mobile-icon-btn .icon{ width:18px; height:18px; color:#222; }
+.mobile-icon-btn[href*="wa.me"] .icon{ color:#25D366; }
+
+/* Safe-area padding for iPhone notch when there is a fixed bottom bar */
+@supports (padding: env(safe-area-inset-bottom)){
+  .mobile-quick-bar{ padding-bottom: env(safe-area-inset-bottom); }
+}
+
+
+    /* ===== CONTACT tidy redesign ===== */
+    #contacts {
+      background:#f2f8e7;
+    }
+    #contacts .contact-grid {
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);
+      gap:24px;
+      align-items:start;
+    }
+    #contacts .contact-info,
+    #contacts .contact-form-wrap {
+      background:#fff;
+      border:1px solid rgba(17,17,17,.08);
+      border-radius:28px;
+      box-shadow:0 18px 45px rgba(15,23,42,.07);
+      padding:28px;
+    }
+    #contacts .contact-topline {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-bottom:12px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(123,182,47,.12);
+      color:#2f4a10;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    #contacts .section-subtitle { max-width:62ch; }
+    #contacts .contact-callout {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      margin:0 0 18px;
+      padding:18px 20px;
+      border-radius:22px;
+      background:linear-gradient(135deg, rgba(123,182,47,.16), rgba(123,182,47,.05));
+      border:1px solid rgba(123,182,47,.24);
+    }
+    #contacts .contact-callout-text {
+      margin:0;
+      font-size:15px;
+      line-height:1.45;
+      color:#1f1f1f;
+      font-weight:600;
+    }
+    #contacts .contact-phone-highlight {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 18px;
+      border-radius:999px;
+      background:#111;
+      color:#fff;
+      text-decoration:none;
+      font-weight:700;
+      white-space:nowrap;
+      box-shadow:0 12px 24px rgba(0,0,0,.14);
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    #contacts .contact-phone-highlight:hover {
+      transform:translateY(-1px);
+      background:#1b1b1b;
+      box-shadow:0 16px 30px rgba(0,0,0,.18);
+    }
+    #contacts .contact-phone-highlight .icon,
+    #contacts .company-phone-link .icon { width:18px; height:18px; flex:0 0 18px; }
+    #contacts .contact-layout {
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(250px,.8fr);
+      gap:18px;
+      margin-bottom:18px;
+    }
+    #contacts .company-card,
+    #contacts .contact-mini-card {
+      background:#fafafa;
+      border:1px solid rgba(17,17,17,.07);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:none;
+    }
+    #contacts .company-card-title,
+    #contacts .contact-mini-title,
+    #contacts .contact-form-intro h3 {
+      margin:0 0 8px;
+      font-size:26px;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+    #contacts .company-card-subtitle,
+    #contacts .contact-form-intro p {
+      margin:0 0 18px;
+      color:#555;
+      font-size:14px;
+      line-height:1.55;
+    }
+    #contacts .company-details-list,
+    #contacts .contact-points {
+      display:grid;
+      gap:12px;
+    }
+    #contacts .company-row,
+    #contacts .contact-point {
+      display:grid;
+      gap:4px;
+      padding-bottom:12px;
+      border-bottom:1px solid rgba(17,17,17,.08);
+    }
+    #contacts .company-row:last-child,
+    #contacts .contact-point:last-child { border-bottom:none; padding-bottom:0; }
+    #contacts .company-label,
+    #contacts .contact-point-label {
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+      color:#666;
+    }
+    #contacts .company-value,
+    #contacts .company-value a,
+    #contacts .contact-point-value,
+    #contacts .contact-point-value a,
+    #contacts .business-hours-contact {
+      margin:0;
+      color:#111;
+      text-decoration:none;
+      font-size:16px;
+      line-height:1.45;
+      word-break:break-word;
+    }
+    #contacts .company-value a:hover,
+    #contacts .contact-point-value a:hover { text-decoration:underline; }
+    #contacts .contact-side-stack { display:grid; gap:18px; }
+    #contacts .social-bar {
+      display:grid;
+      gap:10px;
+      margin-top:14px;
+    }
+    #contacts .social-link {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      background:#fff;
+      border:1px solid rgba(17,17,17,.08);
+      border-radius:16px;
+      text-decoration:none;
+      color:#111;
+      transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    #contacts .social-link:hover {
+      transform:translateY(-1px);
+      border-color:rgba(123,182,47,.35);
+      box-shadow:0 10px 22px rgba(0,0,0,.06);
+    }
+    #contacts .contact-map-wrap {
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid rgba(17,17,17,.08);
+      background:#fff;
+    }
+    #contacts .contact-map-wrap iframe {
+      display:block;
+      width:100%;
+      min-height:300px;
+      border:0;
+    }
+    #contacts .contact-form-wrap { position:sticky; top:96px; }
+    #contacts .contact-form { display:grid; gap:12px; }
+    #contacts .contact-form input,
+    #contacts .contact-form textarea,
+    #contacts .contact-form select {
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid #d7d7d7;
+      background:#fff;
+      font-family:inherit;
+      font-size:14px;
+      outline:none;
+      transition:border-color .2s ease, box-shadow .2s ease;
+    }
+    #contacts .contact-form input:focus,
+    #contacts .contact-form textarea:focus,
+    #contacts .contact-form select:focus {
+      border-color:var(--green);
+      box-shadow:0 0 0 4px rgba(123,182,47,.14);
+    }
+    #contacts .form-group { display:grid; gap:10px; }
+    #contacts .form-group > label {
+      font-size:13px;
+      font-weight:700;
+      color:#3a3a3a;
+      margin:0;
+    }
+    #contacts .service-choice {
+      display:grid;
+      gap:10px;
+    }
+    #contacts .service-choice label {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:0;
+      padding:12px 14px;
+      border:1px solid rgba(17,17,17,.08);
+      border-radius:14px;
+      background:#fff;
+      cursor:pointer;
+      transition:border-color .2s ease, background .2s ease, transform .2s ease;
+    }
+    #contacts .service-choice label:hover {
+      border-color:rgba(123,182,47,.35);
+      background:#fbfdf8;
+      transform:translateY(-1px);
+    }
+    #contacts .service-choice input[type="checkbox"] {
+      width:18px;
+      height:18px;
+      margin:0;
+      accent-color:var(--green);
+      flex:0 0 18px;
+    }
+    #contacts .contact-form .btn-primary {
+      width:100%;
+      justify-content:center;
+      padding:14px 18px;
+      border-radius:16px;
+      margin-top:4px;
+    }
+    @media (max-width: 980px) {
+      #contacts .contact-grid,
+      #contacts .contact-layout { grid-template-columns:1fr; }
+      #contacts .contact-form-wrap { position:static; }
+      #contacts .contact-callout { flex-direction:column; align-items:flex-start; }
+      #contacts .contact-phone-highlight { width:100%; }
+    }
+    @media (max-width: 640px) {
+      #contacts .contact-info,
+      #contacts .contact-form-wrap,
+      #contacts .company-card,
+      #contacts .contact-mini-card { padding:20px; border-radius:22px; }
+      #contacts .company-card-title,
+      #contacts .contact-mini-title,
+      #contacts .contact-form-intro h3 { font-size:22px; }
+      #contacts .contact-phone-highlight { font-size:18px; }
+    }
+
 </style>
-</link></link></head>
-<body>
+</head>
+<body><svg style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><defs><symbol id="icon-house" viewbox="0 0 24 24"><path d="M3 11.5L12 3l9 8.5V21a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1v-9.5z"></path></symbol><symbol id="icon-layer-group" viewbox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5zm-9 9l9 5 9-5v3l-9 5-9-5v-3z"></path></symbol><symbol id="icon-euro-sign" viewbox="0 0 24 24"><path d="M16.5 5.5a6 6 0 0 0-5-2.5c-2.5 0-4.6 1.4-5.7 3.5H4v2h1.2c-.1.3-.2.7-.2 1s.1.7.2 1H4v2h1.8c1.1 2.1 3.2 3.5 5.7 3.5a6 6 0 0 0 5-2.5l-1.7-1.2a4 4 0 0 1-3.3 1.7c-1.4 0-2.7-.7-3.5-1.5H14v-2H7.3c-.1-.3-.1-.7-.1-1s0-.7.1-1H14v-2H8.9c.8-.8 2.1-1.5 3.5-1.5a4 4 0 0 1 3.3 1.7l1.8-1.2z"></path></symbol><symbol id="icon-comment-dots" viewbox="0 0 24 24"><path d="M21 12a7 7 0 0 1-7 7H9l-4 2v-4.5A7 7 0 0 1 3 12a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7zM8 12h2v2H8v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"></path></symbol><symbol id="icon-images" viewbox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm2 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-1 9l4-4 3 3 4-4 4 5H5z"></path></symbol><symbol id="icon-phone" viewbox="0 0 24 24"><path d="M6.6 3.9l2.4-.6 2 4.7-2.1 1.2a12.5 12.5 0 0 0 5.9 5.9l1.2-2.1 4.7 2-.6 2.4c-.2.8-.9 1.4-1.7 1.4C10.1 20.2 3.8 13.9 3.8 5.6c0-.8.6-1.5 1.4-1.7z"></path></symbol><symbol id="icon-arrow-up" viewbox="0 0 24 24"><path d="M12 5l7 7-1.4 1.4L13 8.8V21h-2V8.8L6.4 13.4 5 12l7-7z"></path></symbol><symbol id="icon-whatsapp" viewbox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.9-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.6-6.1c-.2-.1-1.2-.6-1.4-.7s-.3-.1-.5.1-.6.7-.7.9-.2.2-.4.1a6.6 6.6 0 0 1-1.9-1.2 7.3 7.3 0 0 1-1.3-1.6c-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.2.2-.4s0-.3 0-.4-.5-1.3-.7-1.7c-.2-.4-.3-.4-.5-.4h-.4c-.1 0-.4.1-.6.3s-.8.8-.8 2 .8 2.3.9 2.5 1.6 2.5 3.9 3.5c.6.3 1.1.4 1.5.5.6.2 1.1.1 1.5.1s1.2-.5 1.4-1 .2-1 .2-1.1-.1-.2-.3-.3z"></path></symbol><symbol id="icon-location-dot" viewbox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"></path></symbol><symbol id="icon-shield-halved" viewbox="0 0 24 24"><path d="M12 2l8 4v6c0 5.2-3.3 9.9-8 10-4.7-.1-8-4.8-8-10V6l8-4zm1 3.2v14.5c3.4-.8 6-4.3 6-7.7V7.2L13 5.2z"></path></symbol><symbol id="icon-shield-heart" viewbox="0 0 24 24"><path d="M12 2l8 4v6c0 5.2-3.3 9.9-8 10-4.7-.1-8-4.8-8-10V6l8-4zm0 6c1.3-1.3 3.5-.6 3.5 1.2 0 1.7-1.8 3.2-3.5 4.8-1.7-1.6-3.5-3.1-3.5-4.8C8.5 7.4 10.7 6.7 12 8z"></path></symbol><symbol id="icon-circle-check" viewbox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 14l-4-4 1.4-1.4L11 13.2l5.6-5.6L18 9l-7 7z"></path></symbol><symbol id="icon-check" viewbox="0 0 24 24"><path d="M9.2 16.2 4.8 11.8 6.2 10.4 9.2 13.4 17.8 4.8 19.2 6.2z"></path></symbol><symbol id="icon-envelope" viewbox="0 0 24 24"><path d="M3 6h18a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm9 6L4 8v9h16V8l-8 4z"></path></symbol><symbol id="icon-phone-volume" viewbox="0 0 24 24"><path d="M6.6 3.9l2.4-.6 2 4.7-2.1 1.2a12.5 12.5 0 0 0 5.9 5.9l1.2-2.1 4.7 2-.6 2.4c-.2.8-.9 1.4-1.7 1.4C10.1 20.2 3.8 13.9 3.8 5.6c0-.8.6-1.5 1.4-1.7zM16 7c1.7 1.2 2.7 3 2.7 5s-1 3.8-2.7 5l-1.2-1.6c1.2-.9 1.9-2.1 1.9-3.4s-.7-2.5-1.9-3.4L16 7z"></path></symbol><symbol id="icon-border-all" viewbox="0 0 24 24"><path d="M4 4h16v16H4V4zm2 2v4h4V6H6zm6 0v4h4V6h-4zM6 12v4h4v-4H6zm6 0v4h4v-4h-4z"></path></symbol><symbol id="icon-fill-drip" viewbox="0 0 24 24"><path d="M12 2l6 6c0 2.5-1.5 4.7-3.7 5.6l2.7 2.7-1.4 1.4-2.6-2.6H10.3l-2.6 2.6-1.4-1.4 2.7-2.7C6.8 12.7 5.3 10.5 5.3 8L12 2zm0 3.2L7.3 9.9c.2 2 1.9 3.6 4 3.6h1.4c2.1 0 3.8-1.6 4-3.6L12 5.2z"></path></symbol><symbol id="icon-helmet-safety" viewbox="0 0 24 24"><path d="M12 3a8 8 0 0 0-8 8v6h16v-6a8 8 0 0 0-8-8zm-6 8a6 6 0 0 1 12 0v1H6v-1zm0 3h12v3H6v-3z"></path></symbol><symbol id="icon-file-contract" viewbox="0 0 24 24"><path d="M6 2h8l4 4v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1v4h4M7 10h10v2H7v-2zm0 4h10v2H7v-2zm0 4h6v2H7v-2z"></path></symbol><symbol id="icon-pen-ruler" viewbox="0 0 24 24"><path d="M4 3h10v4H4V3zm0 6h10v12H4V9zm12 2l3-3 2 2-3 3-2-2zm-2 2l2 2-6 6H8v-2l6-6z"></path></symbol><symbol id="icon-ruler-combined" viewbox="0 0 24 24"><path d="M4 4h16v6H4V4zm0 8h16v8H4v-8zm3-6h2v2H7V6zm4 0h2v2h-2V6zm4 0h2v2h-2V6z"></path></symbol><symbol id="icon-facebook" viewbox="0 0 24 24"><path d="M13 22v-8h3l.5-3H13V9.5c0-.9.3-1.5 1.6-1.5H17V5.2c-.4-.1-1.6-.2-3-.2-2.9 0-5 1.8-5 5v2.9H6v3h3v8h4z"></path></symbol><symbol id="icon-google" viewbox="0 0 24 24"><path d="M21 12.2c0 5-3.4 8.8-8.5 8.8A9 9 0 1 1 12 3a8.4 8.4 0 0 1 5.9 2.3l-2.4 2.3A5.2 5.2 0 1 0 12 17.9c2.7 0 4.2-1.5 4.6-3.6H12v-3.1h9c.1.5.1 1 .1 1z"></path></symbol><symbol id="icon-instagram" viewbox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm7-1.6a1.1 1.1 0 1 1-1.1-1.1A1.1 1.1 0 0 1 19 5.9z"></path></symbol><symbol id="icon-tiktok" viewbox="0 0 24 24"><path d="M14 3c.4 2.3 1.8 4 4 4.4V10c-1.6-.1-2.9-.6-4-1.5v6.2a5.2 5.2 0 1 1-5.2-5.2c.4 0 .8 0 1.2.1V12a2.5 2.5 0 1 0 2.5 2.5V3h1.5z"></path></symbol><symbol id="icon-chevron-down" viewbox="0 0 24 24"><path d="M6 9l6 6 6-6-1.4-1.4L12 12.2 7.4 7.6 6 9z"></path></symbol><symbol id="icon-chevron-up" viewbox="0 0 24 24"><path d="M6 15l6-6 6 6-1.4 1.4L12 11.8 7.4 16.4 6 15z"></path></symbol><symbol id="icon-clock" viewbox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 5v4.6l3.2 1.9-.8 1.4L11 12.3V7h2z"></path></symbol></defs></svg>
 <div class="page">
 <!-- SIDE NAV LABAJĀ PUSĒ -->
 <div class="side-nav">
-<a onclick="scrollToSection('hero');" title="Sākums"><i class="fa-solid fa-house"></i></a>
-<a onclick="scrollToSection('services');" title="Pakalpojumi"><i class="fa-solid fa-layer-group"></i></a>
-<a onclick="scrollToSection('pricing');" title="Cenas"><i class="fa-solid fa-euro-sign"></i></a>
-<a onclick="scrollToSection('faq');" title="BUJ"><i class="fa-solid fa-circle-question"></i></a>
-<a onclick="scrollToSection('testimonials');" title="Atsauksmes"><i class="fa-solid fa-comment-dots"></i></a>
-<a onclick="scrollToSection('gallery');" title="Galerija"><i class="fa-solid fa-images"></i></a>
-<a onclick="scrollToSection('contacts');" title="Kontakti"><i class="fa-solid fa-phone"></i></a>
+<a onclick="scrollToSection('hero');" title="Sākums"><svg aria-hidden="true" class="icon"><use href="#icon-house"></use></svg></a>
+<a onclick="scrollToSection('services');" title="Pakalpojumi"><svg aria-hidden="true" class="icon"><use href="#icon-layer-group"></use></svg></a>
+<a onclick="scrollToSection('pricing');" title="Cenas"><svg aria-hidden="true" class="icon"><use href="#icon-euro-sign"></use></svg></a>
+<a onclick="scrollToSection('testimonials');" title="Atsauksmes"><svg aria-hidden="true" class="icon"><use href="#icon-comment-dots"></use></svg></a>
+<a onclick="scrollToSection('gallery');" title="Galerija"><svg aria-hidden="true" class="icon"><use href="#icon-images"></use></svg></a>
+<a onclick="scrollToSection('contacts');" title="Kontakti"><svg aria-hidden="true" class="icon"><use href="#icon-phone"></use></svg></a>
 </div>
 <!-- BULTA UZ AUGŠU -->
 <button aria-label="Uz augšu" class="back-to-top" onclick="scrollToTop()">
-<i class="fa-solid fa-arrow-up"></i>
+<svg aria-hidden="true" class="icon"><use href="#icon-arrow-up"></use></svg>
 </button>
 <!-- WhatsApp poga -->
-<a aria-label="WhatsApp" class="whatsapp-float" href="https://wa.me/37125607986?text=Labdien!%20V%C4%93los%20sazin%C4%81ties%20par%20gr%C4%ABdu%20risin%C4%81jumu." rel="noopener" target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
+<a aria-label="WhatsApp" class="whatsapp-float" href="https://wa.me/37125607986?text=Labdien!%20V%C4%93los%20sazin%C4%81ties%20par%20gr%C4%ABdu%20risin%C4%81jumu.">
+<svg aria-hidden="true" class="icon"><use href="#icon-whatsapp"></use></svg>
 </a>
 <!-- CALLBACK POPUP -->
 <div aria-hidden="true" class="callback-popup" id="callback-popup">
@@ -2433,34 +3436,73 @@
 <!-- HEADER -->
 <header>
 <div class="container nav">
+<!-- MOBILE HEADER (like modern shops) -->
+<div aria-label="Mobilā galvene" class="mobile-header">
+<button aria-label="Atvērt izvēlni" class="hamburger" id="hamburgerBtn" type="button"><span></span></button>
+<a aria-label="Uz sākumu" class="mobile-brand" href="#hero">
+<img alt="GR Production" class="mobile-logo" src="manslogo.png"/>
+</a>
+<div aria-label="Ātrās darbības" class="mobile-actions">
+<a aria-label="Zvanīt" class="mobile-icon-btn" href="tel:+37125607986">
+<svg aria-hidden="true" class="icon"><use href="#icon-phone"></use></svg>
+</a>
+<a aria-label="WhatsApp" class="mobile-icon-btn" href="https://wa.me/37125607986?text=Labdien!%20V%C4%93los%20sazin%C4%81ties%20par%20gr%C4%ABdu%20risin%C4%81jumu.">
+<svg aria-hidden="true" class="icon"><use href="#icon-whatsapp"></use></svg>
+</a>
+</div>
+</div>
 <div class="logo-wrap">
-<a href="#">
-<img decoding="async" alt="GR Production" class="logo" src="manslogo.png"/>
+<a href="#hero">
+<img alt="GR Production" class="logo" decoding="async" src="manslogo.png"/>
 </a>
 </div>
 <div class="nav-center">
 <nav class="nav-links">
 <a class="nav-link active" data-i18n="navHome" href="#hero">Sākums</a>
-<a class="nav-link" data-i18n="navServices" href="#services">Pakalpojumi</a>
-<a class="nav-link" data-i18n="navAbout" href="#about">Par mums</a>
-<a class="nav-link" data-i18n="navPricing" href="#pricing">Cenas</a>
-<a class="nav-link" data-i18n="navFaq" href="#faq">Jautājumi</a>
-<a class="nav-link" data-i18n="navTestimonials" href="#testimonials">Atsauksmes</a>
-<a class="nav-link" data-i18n="navGallery" href="#gallery">Galerija</a>
-<a class="nav-link" data-i18n="navContact" href="#contacts">Kontakti</a>
+<div class="nav-dropdown" id="servicesDropdown">
+<button aria-expanded="false" aria-haspopup="true" class="nav-link nav-dropdown-btn" data-i18n="navServices" type="button">
+    Pakalpojumi
+  </button>
+<div aria-label="Pakalpojumi" class="nav-dropdown-menu" role="menu">
+<a class="dd-item" href="epoxy.html" role="menuitem">
+<div class="dd-title" data-i18n="menuEpoxy">Epoksīda grīdas</div>
+<div class="dd-sub" data-i18n="menuEpoxySub">Rūpniecībai un privātmājām</div>
+</a>
+<a class="dd-item" href="slipesana.html" role="menuitem">
+<div class="dd-title" data-i18n="menuGrinding">Dēļu un parketa grīdu slīpēšana</div>
+<div class="dd-sub" data-i18n="menuGrindingSub">Slīpēšana, lakotšana un atjaunošana</div>
+</a>
+<a class="dd-item" href="standarts.html" role="menuitem">
+<div class="dd-title" data-i18n="menuStandard">Standarta grīdu ieklāšana</div>
+<div class="dd-sub" data-i18n="menuStandardSub">Lamināts, vinils, parkets</div>
+</a>
+<div class="dd-divider"></div>
+<a class="dd-all" href="#services" role="menuitem">
+<span aria-hidden="true" class="dd-all-icon"></span>
+<span data-i18n="menuAllServices">Visi pakalpojumi</span>
+</a>
+</div>
+</div>
+<a class="nav-link" data-i18n="navAbout" href="#about" data-i18n="navAbout">Par mums</a>
+<a class="nav-link" data-i18n="navPricing" href="#pricing" data-i18n="navPricing">Cenas</a>
+<a class="nav-link" data-i18n="navTestimonials" href="#testimonials" data-i18n="navTestimonials">Atsauksmes</a>
+<a class="nav-link" data-i18n="navGallery" href="#gallery" data-i18n="navGallery">Galerija</a>
+<a class="nav-link" data-i18n="navContact" href="#contacts" data-i18n="navContact">Kontakti</a>
 </nav>
 </div>
 <div class="nav-right">
 <div class="lang-switch">
-<button class="lang-btn active" data-lang="lv">
-<span class="flag">🇱🇻<span>LV
-</button>
-<button class="lang-btn" data-lang="en">
-<span class="flag">🇬🇧<span>EN
-</button>
-<button class="lang-btn" data-lang="ru">
-<span class="flag">🇷🇺<span>RU
-</button>
+  <button class="lang-btn" data-lang="lv">
+    <img src="https://hatscripts.github.io/circle-flags/flags/lv.svg" alt="Latviešu">
+  </button>
+
+  <button class="lang-btn" data-lang="en">
+    <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" alt="English">
+  </button>
+
+  <button class="lang-btn" data-lang="ru">
+    <img src="https://hatscripts.github.io/circle-flags/flags/ru.svg" alt="Русский">
+  </button>
 </div>
 <button class="nav-cta" data-i18n="navCta" onclick="scrollToSection('contacts');">
           Sazināties
@@ -2468,83 +3510,121 @@
 </div>
 </div>
 </header>
+<!-- MOBILE DRAWER -->
+<div aria-hidden="true" class="mobile-drawer" id="mobileDrawer">
+<div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+<div aria-label="Izvēlne" aria-modal="true" class="mobile-drawer-panel" role="dialog">
+<div class="mobile-drawer-top">
+<div class="mobile-drawer-title" data-i18n="mobileMenuTitle">Izvēlne</div>
+<button aria-label="Aizvērt" class="mobile-drawer-close" id="mobileDrawerClose" type="button">×</button>
+</div>
+<div class="lang-switch" style="gap:10px;">
+<button aria-label="Latviešu" class="lang-btn active" data-lang="lv">🇱🇻</button>
+<button aria-label="English" class="lang-btn" data-lang="en">🇬🇧</button>
+<button aria-label="Русский" class="lang-btn" data-lang="ru">🇷🇺</button>
+</div>
+<div class="mobile-nav-list">
+<details class="mobile-services">
+<summary>
+          <span data-i18n="navServices">Pakalpojumi</span> <span aria-hidden="true" class="chev"></span>
+</summary>
+<a href="epoxy.html">
+          <span class="micon"><i class="fa-solid fa-fill-drip"></i></span>
+          <span data-i18n="menuEpoxy">Epoksīda grīdas</span>
+          <small data-i18n="menuEpoxySub">Rūpniecībai un privātmājām</small>
+</a>
+<a href="slipesana.html">
+          <span class="micon"><i class="fa-solid fa-gears"></i></span>
+          <span data-i18n="menuGrinding">Dēļu un parketa grīdu slīpēšana</span>
+          <small data-i18n="menuGrindingSub">Slīpēšana, lakotšana un atjaunošana</small>
+</a>
+<a href="standarts.html">
+          <span class="micon"><i class="fa-solid fa-border-all"></i></span>
+          <span data-i18n="menuStandard">Standarta grīdu ieklāšana</span>
+          <small data-i18n="menuStandardSub">Lamināts, vinils, parkets</small>
+</a>
+<a href="#services">
+          <span class="micon"><i class="fa-solid fa-layer-group"></i></span>
+          <span data-i18n="menuAllServices">Visi pakalpojumi</span>
+          <small data-i18n="menuAllServicesSub">Skatīt 3 galvenos virzienus</small>
+</a>
+</details>
+<a class="mobile-nav-link" href="#pricing" data-i18n="navPricing">Cenas</a>
+<a class="mobile-nav-link" href="#about" data-i18n="navAbout">Par mums</a>
+<a class="mobile-nav-link" href="#testimonials" data-i18n="navTestimonials">Atsauksmes</a>
+<a class="mobile-nav-link" href="#gallery" data-i18n="navGallery">Galerija</a>
+<a class="mobile-nav-link" href="#contacts" data-i18n="navContact">Kontakti</a>
+</div>
+<div class="mobile-drawer-cta">
+<a class="mobile-cta-secondary" data-i18n="quickCall" href="tel:+37125607986">Zvanīt</a>
+<a class="mobile-cta-primary" data-i18n="navCta" href="#contacts">Sazināties</a>
+</div>
+</div>
+</div>
 <!-- HERO -->
-<section id="hero" class="hero">
-  <div class="hero-inner">
-    <div class="hero-left reveal">
-      <div class="hero-kicker" data-i18n="heroKicker"></div>
-
-      <h1 class="hero-title" data-i18n="heroTitle"></h1>
-
-      <p class="hero-sub" data-i18n="heroSub"></p>
-
-      <div class="hero-meta-row">
-        <div class="hours-pill">
-          <span class="hours-dot"></span>
-          <span class="hours-status-text" data-i18n="heroOpenHours">Pārbaudām darba laiku...</span>
-        </div>
-
-        <div class="hero-meta-phone">
-          <i class="fa-solid fa-phone"></i>
-          <a href="tel:+37125607986" data-i18n="heroPhone">+371 25607986</a>
-        </div>
-      </div>
-
-      <div class="hero-actions">
-        <button class="btn-primary" onclick="scrollToSection('contacts');" data-i18n="heroPrimary"></button>
-
-        <button class="btn-secondary" onclick="scrollToSection('services');">
-          <i class="fa-solid fa-layer-group"></i>
-          <span data-i18n="heroSecondary"></span>
-        </button>
-      </div>
-
-      <p class="hero-note" data-i18n="heroNote"></p>
-
-      <div class="hero-trust-row">
-        <div class="hero-trust-item">
-          <i class="fa-solid fa-shield-halved"></i>
-          <span data-i18n="heroNote1"></span>
-        </div>
-        <div class="hero-trust-item">
-          <i class="fa-solid fa-file-contract"></i>
-          <span data-i18n="heroNote2"></span>
-        </div>
-        <div class="hero-trust-item">
-          <i class="fa-solid fa-location-dot"></i>
-          <span data-i18n="heroNote3"></span>
-        </div>
-      </div>
-
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hero-stat-value" data-i18n="heroStat1Num"></span>
-          <span class="hero-stat-label" data-i18n="heroStat1Label"></span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-value" data-i18n="heroStat2Num"></span>
-          <span class="hero-stat-label" data-i18n="heroStat2Label"></span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-value" data-i18n="heroStat3Num"></span>
-          <span class="hero-stat-label" data-i18n="heroStat3Label"></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-right reveal">
-      <div class="hero-photo"></div>
-      <div class="hero-overlay"></div>
-
-      <div class="hero-tag">
-        <i class="fa-solid fa-check"></i>
-        <span data-i18n="heroBadge"></span>
-      </div>
-    </div>
-  </div>
+<section class="hero" id="hero">
+<div class="hero-inner">
+<div class="hero-left reveal">
+<div class="hero-kicker" data-i18n="heroKicker">GR Production</div>
+<h1 class="hero-title" data-i18n="heroTitle">Epoksīda grīdas un grīdu risinājumi visā Latvijā</h1>
+<p class="hero-sub" data-i18n="heroSub">Grīdu slīpēšana, epoksīds un standarta segumu ieklāšana — kvalitatīvi, tīri un laikā.</p>
+<div class="hero-meta-row">
+<div class="hours-pill">
+<span class="hours-dot"></span>
+<span class="hours-status-text" data-i18n="heroOpenHours">Pārbaudām darba laiku...</span>
+</div>
+</div>
+<div class="hero-actions">
+<button class="btn-primary" data-i18n="heroPrimary" onclick="scrollToSection('contacts');"></button>
+<button class="btn-secondary" onclick="scrollToSection('services');">
+<svg aria-hidden="true" class="icon"><use href="#icon-layer-group"></use></svg>
+<span data-i18n="heroSecondary"></span>
+</button>
+<a class="hero-call-highlight" href="tel:+37125607986" aria-label="Zvanīt uz +371 25607986">
+<svg aria-hidden="true" class="icon"><use href="#icon-phone"></use></svg>
+<span data-i18n="heroPhone">+371 25607986</span>
+</a>
+</div>
+<p class="hero-note" data-i18n="heroNote"></p>
+<div class="hero-trust-row">
+<div class="hero-trust-item">
+<svg aria-hidden="true" class="icon"><use href="#icon-shield-halved"></use></svg>
+<span data-i18n="heroNote1"></span>
+</div>
+<div class="hero-trust-item">
+<svg aria-hidden="true" class="icon"><use href="#icon-file-contract"></use></svg>
+<span data-i18n="heroNote2"></span>
+</div>
+<div class="hero-trust-item">
+<svg aria-hidden="true" class="icon"><use href="#icon-location-dot"></use></svg>
+<span data-i18n="heroNote3"></span>
+</div>
+</div>
+<div class="hero-stats">
+<div class="hero-stat">
+<span class="hero-stat-value" data-i18n="heroStat1Num"></span>
+<span class="hero-stat-label" data-i18n="heroStat1Label"></span>
+</div>
+<div class="hero-stat">
+<span class="hero-stat-value" data-i18n="heroStat2Num"></span>
+<span class="hero-stat-label" data-i18n="heroStat2Label"></span>
+</div>
+<div class="hero-stat">
+<span class="hero-stat-value" data-i18n="heroStat3Num"></span>
+<span class="hero-stat-label" data-i18n="heroStat3Label"></span>
+</div>
+</div>
+</div>
+<div class="hero-right reveal">
+<div class="hero-photo"></div>
+<div class="hero-overlay"></div>
+<div class="hero-tag">
+<svg aria-hidden="true" class="icon"><use href="#icon-check"></use></svg>
+<span data-i18n="heroBadge"></span>
+</div>
+</div>
+</div>
 </section>
-
-
 <!-- SERVICES STRIP + VEDNIS -->
 <section class="services-strip" id="services">
 <div class="container reveal">
@@ -2584,133 +3664,34 @@
 <div class="wizard-result" id="wizard-result"></div>
 </div>
 <div class="services-grid">
-<a class="service-card" href="#epoxy">
+<a class="service-card" href="epoxy.html">
 <div class="service-card-icon">
-<i class="fa-solid fa-fill-drip"></i>
+<i class="fa-solid fa-fill-drip" aria-hidden="true"></i>
 </div>
 <h3 data-i18n="svcEpoxyTitle">Epoksīda grīdas</h3>
 <p data-i18n="svcEpoxySub">Bezšuvju, izturīgi un viegli kopjami pārklājumi.</p>
+<span class="service-cta">Uzzināt vairāk →</span>
 </a>
-<a class="service-card" href="#grinding">
-<div class="service-card-icon">
-<img loading="lazy" decoding="async" alt="Betonēšana" src="slipmasina.png"/>
+<a class="service-card" href="slipesana.html">
+<div class="service-card-icon icon-image">
+<img alt="Grīdu slīpēšana" decoding="async" loading="lazy" src="slipmasina.png"/>
 </div>
 <h3 data-i18n="svcGrindingTitle">Grīdu slīpēšana</h3>
 <p data-i18n="svcGrindingSub">Dēļu un parketa slīpēšana un lakošana.</p>
+<span class="service-cta">Uzzināt vairāk →</span>
 </a>
-<a class="service-card" href="#standard">
+<a class="service-card" href="standarts.html">
 <div class="service-card-icon">
-<i class="fa-solid fa-border-all"></i>
+<i class="fa-solid fa-border-all" aria-hidden="true"></i>
 </div>
 <h3 data-i18n="svcStandardTitle">Standarta grīdu ieklāšana</h3>
 <p data-i18n="svcStandardSub">Flīzēšana, lamināts, parkets un vinila grīdas</p>
+<span class="service-cta">Uzzināt vairāk →</span>
 </a>
 </div>
 </div>
 </section>
 <!-- SERVICE DETAILS -->
-<section id="epoxy">
-<div class="container reveal">
-<div class="service-label" data-i18n="epoxyLabel">Pakalpojums • Epoksīda grīdas</div>
-<div class="service-detail">
-<div class="service-text">
-<h3 data-i18n="epoxyTitle">Epoksīda grīdu ieklāšana</h3>
-<div class="service-tags">
-<span class="service-tag">Garāžas
-<span class="service-tag">Noliktavas
-<span class="service-tag">Ražošanas telpas
-<span class="service-tag">Komercplatības
-</div>
-<p data-i18n="epoxyText1">
-            Epoksīda pārklājumi ir bezšuvju, viegli kopjami un ļoti izturīgi – ideāli noliktavām, ražošanas telpām, garāžām un privātmāju grīdām.
-          </p>
-<p data-i18n="epoxyText2">
-            Pēc pamatnes sagatavošanas ieklājam grunti un vairākas epoksīda kārtas, pielāgojot sistēmu telpas slodzei, ķīmiskajai iedarbībai un vēlamajam dizainam.
-          </p>
-<ul>
-<li data-i18n="epoxyBullet1">Augsta nodilumizturība un izturība pret ķīmiju un eļļām.</li>
-<li data-i18n="epoxyBullet2">Higiēniska, viegli tīrāma virsma bez spraugām un putekļiem.</li>
-<li data-i18n="epoxyBullet3">Plaša krāsu, marķējumu un pretslīdes risinājumu izvēle.</li>
-</ul>
-<button class="btn-price" onclick="goToPrice('epoxy')">
-<i class="fa-solid fa-euro-sign"></i>
-Uzzināt aptuveno cenu
-</button>
-</div>
-<div class="service-image">
-<img loading="lazy" decoding="async" alt="Epoksīda grīda" src="epoxy.png"/>
-</div>
-</div>
-</div>
-</section>
-<section id="grinding">
-<div class="container reveal">
-<div class="service-detail">
-<div class="service-text">
-<div class="service-label" data-i18n="grindingLabel">Pakalpojums • Grīdu slīpēšana</div>
-<h3 data-i18n="grindingTitle">Dēļu un parketa slīpēšana un lakošana.</h3>
-<div class="service-tags">
-<span class="service-tag">Vecas grīdas
-<span class="service-tag">Pirms epoksīda
-<span class="service-tag">Pirms flīzēm
-<span class="service-tag">Pirms LVT / SPC
-</div>
-<p data-i18n="grindingText1">
-            Slīpējam betona un citu grīdu virsmas pirms jauna seguma – epoksīda, flīzēm, LVT, SPC, lamināta un citiem materiāliem.
-          </p>
-<p data-i18n="grindingText2">
-            Noņemam vecos pārklājumus, līmvielas un nelīdzenumus, izmantojot profesionālas slīpmašīnas ar efektīvu putekļu nosūci.
-          </p>
-<ul>
-<li data-i18n="grindingBullet1">Veco pārklājumu un līmvielu noņemšana.</li>
-<li data-i18n="grindingBullet2">Nelīdzenumu izlīdzināšana pirms jaunā seguma.</li>
-<li data-i18n="grindingBullet3">Mazāk putekļu – industriālā nosūce.</li>
-</ul>
-<button class="btn-price" onclick="goToPrice('grinding')">
-<i class="fa-solid fa-euro-sign"></i>
-Uzzināt aptuveno cenu
-</button>
-</div>
-<div class="service-image">
-<img loading="lazy" decoding="async" alt="Grīdu slīpēšana" src="sanding.png"/>
-</div>
-</div>
-</div>
-</section>
-<section id="standard">
-<div class="container reveal">
-<div class="service-detail">
-<div class="service-image">
-<img loading="lazy" decoding="async" alt="Standarta grīdas" src="standard.png"/>
-</div>
-<div class="service-text">
-<div class="service-label" data-i18n="standardLabel">Pakalpojums • Standarta grīdas</div>
-<h3 data-i18n="standardTitle">LVT, SPC, lamināts un citi standarta segumi</h3>
-<div class="service-tags">
-<span class="service-tag">Dzīvokļi
-<span class="service-tag">Privātmājas
-<span class="service-tag">Biroji
-<span class="service-tag">Komercplatības
-</div>
-<p data-i18n="standardText1">
-            Ieklājam vinila (LVT, SPC), lamināta, parketa un citus grīdas segumus dzīvojamām un biroju telpām.
-          </p>
-<p data-i18n="standardText2">
-            Palīdzam izvēlēties piemērotāko materiālu, sagatavojam pamatni un ieklājam segumu precīzi, estētiski un saskaņā ar ražotāja prasībām.
-          </p>
-<ul>
-<li data-i18n="standardBullet1">Izturīgi un viegli kopjami segumi ikdienai.</li>
-<li data-i18n="standardBullet2">Profesionāla ieklāšana bez spraugām un trokšņiem.</li>
-<li data-i18n="standardBullet3">Līstes, pārejas un noslēguma elementi pilnam rezultātam.</li>
-</ul>
-<button class="btn-price" onclick="goToPrice('standard')">
-<i class="fa-solid fa-euro-sign"></i>
-Uzzināt aptuveno cenu
-</button>
-</div>
-</div>
-</div>
-</section>
 <!-- ABOUT & WHY US -->
 <section class="about-wrap" id="about">
 <div class="container about-inner reveal">
@@ -2726,20 +3707,20 @@ Uzzināt aptuveno cenu
 <div class="about-stat">
 <span class="about-stat-value">5+
 <span class="about-stat-label" data-i18n="aboutStat1Label">gadi pieredze būvniecībā
-</div>
+</span></span></div>
 <div class="about-stat">
 <span class="about-stat-value">50+
 <span class="about-stat-label" data-i18n="aboutStat2Label">pabeigti grīdu projekti
-</div>
+</span></span></div>
 <div class="about-stat">
-<span class="about-stat-value">4
+<span class="about-stat-value">3
 <span class="about-stat-label" data-i18n="aboutStat3Label">pamatvirzieni – viss vienās rokās
-</div>
+</span></span></div>
 </div>
 <!-- GARANTIJA 12 MĒNEŠI -->
 <div class="guarantee-box">
 <div class="guarantee-icon">
-<i class="fa-solid fa-shield-heart"></i>
+<svg aria-hidden="true" class="icon"><use href="#icon-shield-heart"></use></svg>
 </div>
 <div>
 <div class="guarantee-title" data-i18n="aboutWarrantyTitle">6 mēnešu garantija darbiem</div>
@@ -2753,28 +3734,28 @@ Uzzināt aptuveno cenu
 <h3 data-i18n="whyTitle">Kāpēc izvēlēties mūs</h3>
 <div class="why-grid">
 <div class="why-card">
-<div class="why-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+<div class="why-icon"><svg aria-hidden="true" class="icon"><use href="#icon-helmet-safety"></use></svg></div>
 <div class="why-card-title" data-i18n="why1Title">Pieredzējusi komanda</div>
 <div class="why-card-text" data-i18n="why1Text">
               Praktiska pieredze ar industriālām un privātām grīdām dažādos objektos visā Latvijā.
             </div>
 </div>
 <div class="why-card">
-<div class="why-icon"><i class="fa-solid fa-layer-group"></i></div>
+<div class="why-icon"><svg aria-hidden="true" class="icon"><use href="#icon-layer-group"></use></svg></div>
 <div class="why-card-title" data-i18n="why2Title">Pilns risinājums</div>
 <div class="why-card-text" data-i18n="why2Text">
-              No pamatnes sagatavošanas un betonēšanas līdz epoksīdam un standarta segumiem – viss vienās rokās.
+              No pamatnes sagatavošanas līdz epoksīdam un standarta segumiem – viss vienās rokās.
             </div>
 </div>
 <div class="why-card">
-<div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+<div class="why-icon"><svg aria-hidden="true" class="icon"><use href="#icon-shield-halved"></use></svg></div>
 <div class="why-card-title" data-i18n="why3Title">Kvalitāte un garantija</div>
 <div class="why-card-text" data-i18n="why3Text">
               Strādājam ar uzticamiem piegādātājiem un pārbaudītām sistēmām, piedāvājot garantiju paveiktajiem darbiem.
             </div>
 </div>
 <div class="why-card">
-<div class="why-icon"><i class="fa-solid fa-location-dot"></i></div>
+<div class="why-icon"><svg aria-hidden="true" class="icon"><use href="#icon-location-dot"></use></svg></div>
 <div class="why-card-title" data-i18n="why4Title">Darbs visā Latvijā</div>
 <div class="why-card-text" data-i18n="why4Text">
               Izbraucam uz objektiem visos Latvijas reģionos – gan jaunbūvēs, gan renovācijas objektos.
@@ -2794,7 +3775,7 @@ Uzzināt aptuveno cenu
 <div class="warranty-grid">
 <div class="warranty-cards">
 <div class="warranty-card">
-<div class="warranty-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+<div class="warranty-card-icon"><svg aria-hidden="true" class="icon"><use href="#icon-shield-halved"></use></svg></div>
 <div>
 <div class="warranty-card-title" data-i18n="warrantyIncluded">Kas ir iekļauts</div>
 <div class="warranty-card-text" data-i18n="warrantyIncludedText">
@@ -2803,7 +3784,7 @@ Uzzināt aptuveno cenu
 </div>
 </div>
 <div class="warranty-card">
-<div class="warranty-card-icon"><i class="fa-solid fa-file-contract"></i></div>
+<div class="warranty-card-icon"><svg aria-hidden="true" class="icon"><use href="#icon-file-contract"></use></svg></div>
 <div>
 <div class="warranty-card-title" data-i18n="warrantyHow">Kā tas notiek</div>
 <div class="warranty-card-text" data-i18n="warrantyHowText">
@@ -2812,7 +3793,7 @@ Uzzināt aptuveno cenu
 </div>
 </div>
 <div class="warranty-card">
-<div class="warranty-card-icon"><i class="fa-solid fa-circle-check"></i></div>
+<div class="warranty-card-icon"><svg aria-hidden="true" class="icon"><use href="#icon-circle-check"></use></svg></div>
 <div>
 <div class="warranty-card-title" data-i18n="warrantyPrepare">Ko sagatavot</div>
 <div class="warranty-card-text" data-i18n="warrantyPrepareText">
@@ -2832,47 +3813,32 @@ Uzzināt aptuveno cenu
 <div class="warranty-details">
 <div class="warranty-accordion">
 <details open="">
-<summary>
-Garantijas termiņš
-<i class="fa-solid fa-chevron-down"></i>
-</summary>
+<summary data-i18n="warrantyTerm">Garantijas termiņš</summary>
 <div class="warranty-body" data-i18n="warrantyTermText">
               Garantija ir spēkā <strong>6 mēnešus</strong> no darbu nodošanas (vai rēķina/līguma datuma).
             </div>
 </details>
 <details>
-<summary>
-Kas ir garantijas gadījums
-<i class="fa-solid fa-chevron-down"></i>
-</summary>
+<summary data-i18n="warrantyCase">Kas ir garantijas gadījums</summary>
 <div class="warranty-body" data-i18n="warrantyCaseText">
               Gadījumi, kas saistīti ar darbu kvalitāti un tehnoloģiju ievērošanu (pēc apskates un iemesla noteikšanas).
             </div>
 </details>
 <details>
-<summary>
-Kas nav iekļauts
-<i class="fa-solid fa-chevron-down"></i>
-</summary>
+<summary data-i18n="warrantyNot">Kas nav iekļauts</summary>
 <div class="warranty-body" data-i18n="warrantyNotText">
               Mehāniski bojājumi, applūdināšana, ķīmijas/temperatūras iedarbība ārpus paredzētās ekspluatācijas,
               pamatnes konstrukcijas problēmas un nepareiza kopšana.
             </div>
 </details>
 <details>
-<summary>
-Kopšana (lai garantija būtu spēkā)
-<i class="fa-solid fa-chevron-down"></i>
-</summary>
+<summary data-i18n="warrantyCare">Kopšana (lai garantija būtu spēkā)</summary>
 <div class="warranty-body" data-i18n="warrantyCareText">
               Saudzīga uzkopšana, bez abrazīviem līdzekļiem. Mēbelēm aizsargi, smagai tehnikai — slodzes sadale.
             </div>
 </details>
 <details>
-<summary>
-Kā notiek izskatīšana
-<i class="fa-solid fa-chevron-down"></i>
-</summary>
+<summary data-i18n="warrantyReview">Kā notiek izskatīšana</summary>
 <div class="warranty-body" data-i18n="warrantyReviewText">
               Saņemam pieteikumu → vienojamies par apskati → nosakām cēloni → piedāvājam risinājumu (novēršana/remonts).
             </div>
@@ -2894,21 +3860,21 @@ Kā notiek izskatīšana
       </p>
 <div class="process-grid">
 <div class="process-step">
-<div class="process-icon"><i class="fa-solid fa-phone-volume"></i></div>
+<div class="process-icon"><svg aria-hidden="true" class="icon"><use href="#icon-phone-volume"></use></svg></div>
 <h3 data-i18n="process1Title">1. Sazinies ar mums</h3>
 <p data-i18n="process1Text">
             Aizpildi pieteikumu vai piezvani – īsi izstāsti telpas tipu, platību un esošo situāciju.
           </p>
 </div>
 <div class="process-step">
-<div class="process-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+<div class="process-icon"><svg aria-hidden="true" class="icon"><use href="#icon-ruler-combined"></use></svg></div>
 <h3 data-i18n="process2Title">2. Apskatām objektu</h3>
 <p data-i18n="process2Text">
             Vajadzības gadījumā apbraucam objektu, izvērtējam pamatni un iesakām tehniski pareizāko risinājumu.
           </p>
 </div>
 <div class="process-step">
-<div class="process-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+<div class="process-icon"><svg aria-hidden="true" class="icon"><use href="#icon-pen-ruler"></use></svg></div>
 <h3 data-i18n="process3Title">3. Saskaņojam tāmi un termiņus</h3>
 <p data-i18n="process3Text">
             Sagatavojam tāmi, vienojamies par grafiku un veicam darbus – no sagatavošanas līdz pilnīgi gatavai virsmai.
@@ -2945,21 +3911,21 @@ Kā notiek izskatīšana
             Atkarīgs no pamatnes stāvokļa, slodzes un izvēlētās sistēmas (biezums, dizains, pretslīdes risinājumi).
           </p>
 <p class="pricing-example">
-            Piemērs: 40 m² garāža ≈ 1000 € + PVN (bez pamatnes labošanas).
+            Piemērs: 35 m² garāža ≈ 1225 € + PVN (bez pamatnes labošanas).
           </p>
 </div>
 <div class="pricing-card" id="pricing-grinding">
 <h3 data-i18n="pricingGrindingTitle">Grīdu slīpēšana</h3>
 <div class="price-row">
 <span class="price-from" data-i18n="pricingFrom">no</span>
-<span class="price-value">30 €</span>
+<span class="price-value">25 €</span>
 <span class="price-unit">/ m²</span>
 </div>
 <p class="pricing-note" data-i18n="pricingGrindingNote">
             Atkarīgs no vecā pārklājuma, nelīdzenumiem un nepieciešamās apstrādes pakāpes (slīpēšanas reižu skaits).
           </p>
 <p class="pricing-example">
-            Piemērs: 50 m² pamatnes slīpēšana un lakošana ≈ 1500 € + PVN.
+            Piemērs: 45 m² pamatnes slīpēšana un lakošana ≈ 1125 € + PVN.
           </p>
 </div>
 <div class="pricing-card" id="pricing-standard">
@@ -2973,138 +3939,53 @@ Kā notiek izskatīšana
             LVT, SPC, lamināta un citu segumu ieklāšana bez materiāla izmaksām. Cena atkarīga no bāzes sagatavošanas un telpas sarežģītības.
           </p>
 <p class="pricing-example">
-            Piemērs: 50 m² dzīvokļa lamināts ≈ 800 € + PVN (bez materiāla izmaksām).
+            Piemērs: 35 m² dzīvokļa lamināts ≈ 350 € + PVN (bez materiāla izmaksām).
           </p>
 </div>
 </div>
-
 <!-- MINI CENU KALKULATORS -->
 <div class="price-calculator">
-  <div class="price-calculator-title" data-i18n="calcTitle">
+<div class="price-calculator-title" data-i18n="calcTitle">
     Aptuvenās izmaksas tiešsaistē
   </div>
-
-  <div class="calc-row">
-    <div class="calc-field">
-      <label data-i18n="calcType">Seguma veids</label>
-      <select id="calc-service">
-        <option value="" data-i18n-option="chooserSelect">Izvēlies...</option>
-        <option value="epoxy">Epoksīda grīda</option>
-        <option value="grinding">Grīdu slīpēšana</option>
-        <option value="standard">LVT / SPC / lamināts</option>
-      </select>
-    </div>
-
-    <div class="calc-field">
-      <label data-i18n="calcArea">Platība (m²)</label>
-      <input
-        type="number"
-        id="calc-area"
-        min="1"
-        data-i18n-placeholder="calcAreaPh"
-        placeholder="piem., 40"
-      />
-    </div>
-
-    <div class="calc-field">
-      <label data-i18n="calcBase">Pamatnes stāvoklis</label>
-      <div class="calc-base-options">
-        <label>
-          <input type="radio" name="calc-base" value="ok" checked />
-          <span data-i18n="calcBaseOk">Pamatne labā stāvoklī</span>
-        </label>
-        <label>
-          <input type="radio" name="calc-base" value="needs" />
-          <span data-i18n="calcBaseFix">Nepieciešama labošana</span>
-        </label>
-      </div>
-    </div>
-
-    <div class="calc-actions">
-      <button
-        type="button"
-        class="btn-primary"
-        style="padding:10px 18px;font-size:13px;"
-        onclick="calculatePrice()"
-        data-i18n="calcBtn"
-      >
+<div class="calc-row">
+<div class="calc-field">
+<label data-i18n="calcType">Seguma veids</label>
+<select id="calc-service">
+<option data-i18n-option="chooserSelect" value="">Izvēlies...</option>
+<option value="epoxy">Epoksīda grīda</option>
+<option value="grinding">Grīdu slīpēšana</option>
+<option value="standard">LVT / SPC / lamināts</option>
+</select>
+</div>
+<div class="calc-field">
+<label data-i18n="calcArea">Platība (m²)</label>
+<input data-i18n-placeholder="calcAreaPh" id="calc-area" min="1" placeholder="piem., 40" type="number"/>
+</div>
+<div class="calc-field">
+<label data-i18n="calcBase">Pamatnes stāvoklis</label>
+<div class="calc-base-options">
+<label>
+<input checked="" name="calc-base" type="radio" value="ok"/>
+<span data-i18n="calcBaseOk">Pamatne labā stāvoklī</span>
+</label>
+<label>
+<input name="calc-base" type="radio" value="needs"/>
+<span data-i18n="calcBaseFix">Nepieciešama labošana</span>
+</label>
+</div>
+</div>
+<div class="calc-actions">
+<button class="btn-primary" data-i18n="calcBtn" onclick="calculatePrice()" style="padding:10px 18px;font-size:13px;" type="button">
         Aprēķināt
       </button>
-    </div>
-  </div>
-
-  <div class="calc-result" id="calc-result" style="display:none;">
-  </div>
 </div>
-</section>
-
+</div>
+<div class="calc-result" id="calc-result" style="display:none;">
+</div>
+</div>
+</div></section>
 <!-- FAQ (BUJ) -->
-<section id="faq">
-<div class="container reveal">
-<h2 class="section-title" data-i18n="faqTitle">Biežāk uzdotie jautājumi</h2>
-<p class="section-subtitle" data-i18n="faqSubtitle">
-        Atbildes uz populārākajiem jautājumiem par epoksīda, betona un citiem grīdu risinājumiem.
-      </p>
-<div class="faq-list">
-<div class="faq-item">
-<button class="faq-question" type="button">
-<span class="faq-question-text" data-i18n="faqQ1">Cik ilgi kalpo epoksīda grīda?
-<span class="faq-toggle-icon">+
-</button>
-<div class="faq-answer">
-<div class="faq-answer-inner" data-i18n="faqA1">
-              Pie pareizas pamatnes sagatavošanas un ekspluatācijas epoksīda grīda var kalpot 10 un vairāk gadus. Svarīgi ir izvēlēties atbilstošu sistēmu telpas slodzei un nodrošināt regulāru kopšanu.
-            </div>
-</div>
-</div>
-<div class="faq-item">
-<button class="faq-question" type="button">
-<span class="faq-question-text" data-i18n="faqQ2">Vai strādājat visā Latvijā?
-<span class="faq-toggle-icon">+
-</button>
-<div class="faq-answer">
-<div class="faq-answer-inner" data-i18n="faqA2">
-              Jā, izbraucam uz objektiem visos Latvijas reģionos – gan jaunbūvēm, gan renovācijas projektiem. Sazinies, un vienosimies par apskates laiku.
-            </div>
-</div>
-</div>
-<div class="faq-item">
-<button class="faq-question" type="button">
-<span class="faq-question-text" data-i18n="faqQ3">Vai palīdzat izvēlēties piemērotāko grīdas risinājumu?
-<span class="faq-toggle-icon">+
-</button>
-<div class="faq-answer">
-<div class="faq-answer-inner" data-i18n="faqA3">
-              Jā. Balstoties uz telpas tipu, slodzi, budžetu un vēlamo dizainu, iesakām tehniski pareizāko risinājumu – sākot no pamatnes sagatavošanas līdz gatavam pārklājumam.
-            </div>
-</div>
-</div>
-<div class="faq-item">
-<button class="faq-question" type="button">
-<span class="faq-question-text" data-i18n="faqQ4">Kā notiek sadarbība no pirmā kontakta līdz gatavai grīdai?
-<span class="faq-toggle-icon">+
-</button>
-<div class="faq-answer">
-<div class="faq-answer-inner" data-i18n="faqA4">
-              Sākam ar īsu sarunu un informāciju par objektu, vajadzības gadījumā ierodamies objekta apskatē, sagatavojam tāmi un vienojamies par termiņiem. Pēc tam veicam sagatavošanas darbus un ieklājam izvēlēto grīdas risinājumu.
-            </div>
-</div>
-</div>
-<div class="faq-item">
-<button class="faq-question" type="button">
-<span class="faq-question-text" data-i18n="faqQ5">Vai varat strādāt vakaros vai brīvdienās, lai netraucētu biznesu?
-<span class="faq-toggle-icon">+
-</button>
-<div class="faq-answer">
-<div class="faq-answer-inner" data-i18n="faqA5">
-              Jā, komercobjektos varam pielāgoties darbalaikam – plānojam darbus vakaros vai brīvdienās, lai pēc iespējas mazāk ietekmētu ikdienas darbu.
-            </div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
 <!-- BEFORE / AFTER -->
 <section id="before-after">
 <div class="container reveal">
@@ -3115,16 +3996,16 @@ Kā notiek izskatīšana
 <div class="before-after">
 <div class="before-after-inner" id="before-after-inner">
 <div class="after-img">
-<img loading="lazy" decoding="async" alt="Pirms epoksīda grīdas ieklāšanas" src="gallery/epoxy/0.png"/>
+<img alt="Pirms epoksīda grīdas ieklāšanas" decoding="async" loading="lazy" src="gallery/epoxy/0.jpg"/>
 </div>
 <div class="before-img">
-<img loading="lazy" decoding="async" alt="Pēc epoksīda ieklāšanas" src="gallery/epoxy/00.png"/>
+<img alt="Pēc epoksīda ieklāšanas" decoding="async" loading="lazy" src="gallery/epoxy/00.jpeg"/>
 </div>
 <div class="before-after-label before-label" data-i18n="baBefore">Pirms</div>
 <div class="before-after-label after-label" data-i18n="baAfter">Pēc</div>
 </div>
-<input class="before-after-range" id="before-after-range" max="100" min="0" type="range" value="50">
-</input></div>
+<input class="before-after-range" id="before-after-range" max="100" min="0" type="range" value="50"/>
+</div>
 </div>
 </section>
 <section id="testimonials">
@@ -3132,12 +4013,9 @@ Kā notiek izskatīšana
 <div class="testimonials-top">
 <div>
 <h2 class="section-title" data-i18n="testimonialsTitle">Atsauksmes</h2>
-<p class="section-subtitle" data-i18n="testimonialsSub">
-          Ko par sadarbību saka mūsu klienti
-        </p>
 </div>
-<a class="google-reviews-btn" data-i18n="testimonialsGoogleBtn" href="https://www.google.com/maps/place/GR+Production/@56.926886,24.1475506,7239m/data=!3m1!1e3!4m6!3m5!1s0x87d98207f80b9c75:0x7614f9d2bd2f4e33!8m2!3d56.9444862!4d24.1357186!16s%2Fg%2F11zhzw55wx?entry=ttu&amp;g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D" rel="noopener" target="_blank">
-<i class="fa-brands fa-google"></i>
+<a class="google-reviews-btn" data-i18n="testimonialsGoogleBtn" href="https://www.google.com/maps/place/GR+Production/@56.926886,24.1475506,7239m/data=!3m1!1e3!4m6!3m5!1s0x87d98207f80b9c75:0x7614f9d2bd2f4e33!8m2!3d56.9444862!4d24.1357186!16s%2Fg%2F11zhzw55wx?entry=ttu&amp;g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D">
+<svg aria-hidden="true" class="icon"><use href="#icon-google"></use></svg>
         Skatīt Google atsauksmes
       </a>
 </div>
@@ -3147,76 +4025,76 @@ Kā notiek izskatīšana
 <div class="testimonial-left">
 <div class="testimonial-avatar">I</div>
 <span class="testimonial-name">Inguss Jansons
-</div>
+</span></div>
 <span class="stars">★★★★★
-</div>
+</span></div>
 <div class="testimonial-text">
           “Atsaucīgi darbinieki. Darbs tika pabeigts laikā, kā solīts. Paldies!”
         </div>
 <div class="testimonial-meta">
 <span>Google<span>Latvija
-</div>
+</span></span></div>
 </div>
 <div class="testimonial-card">
 <div class="testimonial-header">
 <div class="testimonial-left">
 <div class="testimonial-avatar">J</div>
 <span class="testimonial-name">Jānis Krūmiņš
-</div>
+</span></div>
 <span class="stars">★★★★★
-</div>
+</span></div>
 <div class="testimonial-text">
           “Labi paveikts darbs.”
         </div>
 <div class="testimonial-meta">
 <span>Google<span>Latvija
-</div>
+</span></span></div>
 </div>
 <div class="testimonial-card">
 <div class="testimonial-header">
 <div class="testimonial-left">
 <div class="testimonial-avatar">A</div>
 <span class="testimonial-name">Anete Rožinska
-</div>
+</span></div>
 <span class="stars">★★★★★
-</div>
+</span></div>
 <div class="testimonial-text">
 </div>
 <div class="testimonial-meta">
 <span>Google<span>Latvija
-</div>
+</span></span></div>
 </div>
 <div class="testimonial-card">
 <div class="testimonial-header">
 <div class="testimonial-left">
 <div class="testimonial-avatar">I</div>
 <span class="testimonial-name">Inese Sterķe
-</div>
+</span></div>
 <span class="stars">★★★★★
-</div>
+</span></div>
 <div class="testimonial-text">
           “Pasūtījām grīdas ieklāšanu un viss noritēja bez problēmām. Atbrauca laikā, strādāja kārtīgi, rezultāts labs. Cena atbilda norunātajam. Varu ieteikt.”
         </div>
 <div class="testimonial-meta">
 <span>Google<span>Latvija
-</div>
+</span></span></div>
 </div>
 <div class="testimonial-card">
 <div class="testimonial-header">
 <div class="testimonial-left">
 <div class="testimonial-avatar">A</div>
 <span class="testimonial-name">Adrians
-</div>
+</span></div>
 <span class="stars">★★★★★
-</div>
+</span></div>
 <div class="testimonial-text">
           “Noteikti iesaku šo kompāniju. Darbs tika veikts kvalitatīvi un profesionāli!”
         </div>
 <div class="testimonial-meta">
 <span>Google<span>Latvija
+</span></span></div>
 </div>
-</div>
-</section>
+</div></div></section>
 <!-- GALLERY -->
 <section id="gallery">
 <div class="container reveal">
@@ -3231,6 +4109,30 @@ Kā notiek izskatīšana
 <div class="gallery-item">
 <img alt="Epoksīda grīda – dzīvojamā istaba" src="gallery/epoxy/3.PNG"/>
 <div class="gallery-tag">Epoksīda grīda-noliktava</div>
+</div>
+<div class="gallery-item">
+<img alt="Epoksīda grīda – dzīvojamā istaba" src="gallery/epoxy/1.JPG"/>
+<div class="gallery-tag">Matēta dizaina grīda</div>
+</div>
+<div class="gallery-item">
+<img alt="Epoksīda grīda – dzīvojamā istaba" src="gallery/epoxy/2.PNG"/>
+<div class="gallery-tag">Epoksīda grīda-vannas istaba</div>
+</div>
+<div class="gallery-item">
+<img alt="Epoksīda grīda – dzīvojamā istaba" src="gallery/epoxy/4.PNG"/>
+<div class="gallery-tag">Epoksīda grīda-saimnieciskā telpa</div>
+</div>
+<div class="gallery-item">
+<img alt="Epoksīda grīda – dzīvojamā istaba" src="gallery/epoxy/5.PNG"/>
+<div class="gallery-tag">Epoksīda grīda-virtuve</div>
+</div>
+<div class="gallery-item">
+<img alt="Epoksīda grīda – dzīvojamā istaba" src="gallery/epoxy/6.PNG"/>
+<div class="gallery-tag">Epoksīda grīda-vannas istaba</div>
+</div>
+<div class="gallery-item">
+<img alt="Epoksīda grīda – dzīvojamā istaba" src="gallery/epoxy/7.PNG"/>
+<div class="gallery-tag">Epoksīda grīda-paraugs</div>
 </div>
 </div>
 </div>
@@ -3250,6 +4152,18 @@ Kā notiek izskatīšana
 <img alt="Slīpēšana – projekts 3" src="gallery/grinding/3.PNG"/>
 <div class="gallery-tag">Nolakota grīda</div>
 </div>
+<div class="gallery-item">
+<img alt="Slīpēšana – projekts 3" src="gallery/grinding/4.PNG"/>
+<div class="gallery-tag">Slīpēšana</div>
+</div>
+<div class="gallery-item">
+<img alt="Slīpēšana – projekts 3" src="gallery/grinding/5.PNG"/>
+<div class="gallery-tag">Slīpēšana virtuvē</div>
+</div>
+<div class="gallery-item">
+<img alt="Slīpēšana – projekts 3" src="gallery/grinding/6.PNG"/>
+<div class="gallery-tag">Noslīpēta grīda</div>
+</div>
 </div>
 </div>
 <!-- STANDARTA GRĪDAS -->
@@ -3258,15 +4172,11 @@ Kā notiek izskatīšana
 <div class="gallery-grid">
 <div class="gallery-item">
 <img alt="Lamināta grīda-istaba" src="gallery/standard/1.JPG"/>
-<div class="gallery-tag">LVT – dzīvojamā zona</div>
+<div class="gallery-tag">Lamināts – biroja telpa</div>
 </div>
 <div class="gallery-item">
 <img alt="Lamināts – birojs" src="gallery/standard/2.JPG"/>
-<div class="gallery-tag">Vinila grīda-viesu istaba</div>
-</div>
-<div class="gallery-item">
-<img alt="Standarta grīda – projekts 3" src="gallery/standard/3.JPG"/>
-<div class="gallery-tag">Flīžu grīda</div>
+<div class="gallery-tag">Vinila grīda-virtuve</div>
 </div>
 <div class="gallery-item">
 <img alt="Standarta grīda – projekts 4" src="gallery/standard/4.JPG"/>
@@ -3290,131 +4200,208 @@ Kā notiek izskatīšana
     </p>
 <div class="partners-carousel">
 <div class="partners-track">
-<img loading="lazy" decoding="async" alt="MAPEI" src="partners/mapei.png"/>
-<img loading="lazy" decoding="async" alt="Sika" src="partners/sika.png"/>
-<img loading="lazy" decoding="async" alt="Stonhard" src="partners/stonhard.png"/>
-<img loading="lazy" decoding="async" alt="Tikkurila" src="partners/tikkurila.PNG"/>
-<img loading="lazy" decoding="async" alt="Weber" src="partners/weber.png"/>
-<img loading="lazy" decoding="async" alt="Knauf" src="partners/knauf.png"/>
-<img loading="lazy" decoding="async" alt="Ceresit" src="partners/ceresit.png"/>
-<img loading="lazy" decoding="async" alt="Rilak" src="partners/rilak.png"/>
+<img alt="MAPEI" decoding="async" loading="lazy" src="partners/mapei.png"/>
+<img alt="Sika" decoding="async" loading="lazy" src="partners/sika.png"/>
+<img alt="Stonhard" decoding="async" loading="lazy" src="partners/stonhard.png"/>
+<img alt="Tikkurila" decoding="async" loading="lazy" src="partners/tikkurila.PNG"/>
+<img alt="Weber" decoding="async" loading="lazy" src="partners/weber.png"/>
+<img alt="Knauf" decoding="async" loading="lazy" src="partners/knauf.png"/>
+<img alt="Ceresit" decoding="async" loading="lazy" src="partners/ceresit.png"/>
+<img alt="Rilak" decoding="async" loading="lazy" src="partners/rilak.png"/>
 <!-- Dublikāti nepārtrauktam karuseļa efektam -->
-<img loading="lazy" decoding="async" alt="MAPEI" src="partners/mapei.png"/>
-<img loading="lazy" decoding="async" alt="Sika" src="partners/sika.png"/>
-<img loading="lazy" decoding="async" alt="Stonhard" src="partners/stonhard.png"/>
-<img loading="lazy" decoding="async" alt="Tikkurila" src="partners/tikkurila.png"/>
-<img loading="lazy" decoding="async" alt="Weber" src="partners/weber.png"/>
-<img loading="lazy" decoding="async" alt="Knauf" src="partners/knauf.png"/>
-<img loading="lazy" decoding="async" alt="Ceresit" src="partners/ceresit.png"/>
-<img loading="lazy" decoding="async" alt="Rilak" src="partners/rilak.png"/>
- <!-- Dublikāti nepārtrauktam karuseļa efektam -->
-<img loading="lazy" decoding="async" alt="MAPEI" src="partners/mapei.png"/>
-<img loading="lazy" decoding="async" alt="Sika" src="partners/sika.png"/>
-<img loading="lazy" decoding="async" alt="Stonhard" src="partners/stonhard.png"/>
-<img loading="lazy" decoding="async" alt="Tikkurila" src="partners/tikkurila.png"/>
-<img loading="lazy" decoding="async" alt="Weber" src="partners/weber.png"/>
-<img loading="lazy" decoding="async" alt="Knauf" src="partners/knauf.png"/>
-<img loading="lazy" decoding="async" alt="Ceresit" src="partners/ceresit.png"/>
-<img loading="lazy" decoding="async" alt="Rilak" src="partners/rilak.png"/>
-<img loading="lazy" decoding="async" alt="MAPEI" src="partners/mapei.png"/>
-<img loading="lazy" decoding="async" alt="Sika" src="partners/sika.png"/>
-<img loading="lazy" decoding="async" alt="Stonhard" src="partners/stonhard.png"/>
-<img loading="lazy" decoding="async" alt="Tikkurila" src="partners/tikkurila.png"/>
-<img loading="lazy" decoding="async" alt="Weber" src="partners/weber.png"/>
-<img loading="lazy" decoding="async" alt="Knauf" src="partners/knauf.png"/>
-<img loading="lazy" decoding="async" alt="Ceresit" src="partners/ceresit.png"/>
-<img loading="lazy" decoding="async" alt="Rilak" src="partners/rilak.png"/>
+<img alt="MAPEI" decoding="async" loading="lazy" src="partners/mapei.png"/>
+<img alt="Sika" decoding="async" loading="lazy" src="partners/sika.png"/>
+<img alt="Stonhard" decoding="async" loading="lazy" src="partners/stonhard.png"/>
+<img alt="Tikkurila" decoding="async" loading="lazy" src="partners/tikkurila.png"/>
+<img alt="Weber" decoding="async" loading="lazy" src="partners/weber.png"/>
+<img alt="Knauf" decoding="async" loading="lazy" src="partners/knauf.png"/>
+<img alt="Ceresit" decoding="async" loading="lazy" src="partners/ceresit.png"/>
+<img alt="Rilak" decoding="async" loading="lazy" src="partners/rilak.png"/>
+<!-- Dublikāti nepārtrauktam karuseļa efektam -->
+<img alt="MAPEI" decoding="async" loading="lazy" src="partners/mapei.png"/>
+<img alt="Sika" decoding="async" loading="lazy" src="partners/sika.png"/>
+<img alt="Stonhard" decoding="async" loading="lazy" src="partners/stonhard.png"/>
+<img alt="Tikkurila" decoding="async" loading="lazy" src="partners/tikkurila.png"/>
+<img alt="Weber" decoding="async" loading="lazy" src="partners/weber.png"/>
+<img alt="Knauf" decoding="async" loading="lazy" src="partners/knauf.png"/>
+<img alt="Ceresit" decoding="async" loading="lazy" src="partners/ceresit.png"/>
+<img alt="Rilak" decoding="async" loading="lazy" src="partners/rilak.png"/>
+<img alt="MAPEI" decoding="async" loading="lazy" src="partners/mapei.png"/>
+<img alt="Sika" decoding="async" loading="lazy" src="partners/sika.png"/>
+<img alt="Stonhard" decoding="async" loading="lazy" src="partners/stonhard.png"/>
+<img alt="Tikkurila" decoding="async" loading="lazy" src="partners/tikkurila.png"/>
+<img alt="Weber" decoding="async" loading="lazy" src="partners/weber.png"/>
+<img alt="Knauf" decoding="async" loading="lazy" src="partners/knauf.png"/>
+<img alt="Ceresit" decoding="async" loading="lazy" src="partners/ceresit.png"/>
+<img alt="Rilak" decoding="async" loading="lazy" src="partners/rilak.png"/>
 </div>
 </div>
 </div>
 </section>
 <!-- CONTACT -->
 <section id="contacts">
-<div class="container contact-grid reveal">
-<div class="contact-info">
-<h2 class="section-title" data-i18n="contactTitle">Kontakti</h2>
-<p class="section-subtitle" data-i18n="contactSubtitle">
-          Atsūti projekta informāciju vai piezvani – ieteiksim piemērotāko grīdas risinājumu un sagatavosim aptuvenu tāmi.
-        </p>
-<p><strong data-i18n="contactPhoneLabel">Tālrunis:</strong> +371 25607986</p>
-<p><strong data-i18n="contactEmailLabel">E-pasts:</strong> sia.grproduction@gmail.com</p>
-<p><strong data-i18n="contactLocationLabel">Lokācija:</strong> Rīga, strādājam visā Latvijā</p>
-<p class="business-hours-contact">
-<strong data-i18n="contactHoursLabel">Darba laiks:</strong> <span class="hours-status-text">Pārbaudām darba laiku...
-</p>
-<div class="social-bar">
-Seko mums:
-<a class="social-link" href="https://www.tiktok.com/@grproduction.lv?_r=1&amp;_t=ZN-91iaJgQx0mk" rel="noopener" target="_blank">
-<i class="fa-brands fa-tiktok"></i><span>@grproduction.lv
-</a>
-<a class="social-link" href="https://www.instagram.com/grproduction_lv?igsh=MThsZXd2ajFxYmZmcQ%3D%3D&amp;utm_source=qr" rel="noopener" target="_blank">
-<i class="fa-brands fa-instagram"></i><span>@grproduction_lv
-</a>
-<a class="social-link" href="https://www.facebook.com/p/GR-Production-61572980724663/" rel="noopener" target="_blank">
-<i class="fa-brands fa-facebook"></i><span>GR Production
-</a>
-</div>
-<!-- GOOGLE MAPS EMBED – tava lokācija -->
-<div style="margin-top:20px; border-radius:12px; overflow:hidden;">
-<iframe allowfullscreen="" height="260" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=56.9444862,24.1357186&amp;hl=lv&amp;z=17&amp;output=embed" style="border:0;" width="100%">
-</iframe>
-</div>
-</div>
-<form
-  class="contact-form"
-  action="https://formspree.io/f/xbdlnevv"
-  method="POST"
->
-  <input data-i18n-placeholder="formName" name="name" placeholder="Vārds, Uzvārds" required type="text" />
+  <div class="container contact-grid reveal">
+    <div class="contact-info">
+      <div class="contact-title-wrap">
+        <div class="contact-topline" data-i18n="contactTopline">Kontakti un rekvizīti</div>
+        <h2 class="section-title" data-i18n="contactTitle">Kontakti</h2>
+        <p class="section-subtitle" data-i18n="contactSubtitle">Atsūti projekta informāciju vai piezvani – ieteiksim piemērotāko grīdas risinājumu un sagatavosim aptuvenu tāmi.</p>
+      </div>
 
-  <input data-i18n-placeholder="formEmail" name="email" placeholder="E-pasts" required type="email" />
+      <div class="contact-callout">
+        <p class="contact-callout-text" data-i18n="contactCallText">Vēlies ātrāku atbildi? Zvani mums uzreiz:</p>
+        <a class="contact-phone-highlight" href="tel:+37125607986">
+          <svg aria-hidden="true" class="icon"><use href="#icon-phone"></use></svg>
+          <span>+371 25607986</span>
+        </a>
+      </div>
 
-  <input data-i18n-placeholder="formObjectLocation" name="location" placeholder="Objekta atrašanās vieta" type="text" />
+      <div class="contact-layout">
+        <div class="company-card">
+          <h3 class="company-card-title">GR Production, SIA</h3>
+          <p class="company-card-subtitle" data-i18n="companyCardSubtitle">Uzticams partneris grīdu risinājumiem visā Latvijā.</p>
+          <div class="company-details-list">
+            <div class="company-row">
+              <div class="company-label" data-i18n="companyRegLabel">Reģ. Nr.</div>
+              <div class="company-value">40203578392</div>
+            </div>
+            <div class="company-row">
+              <div class="company-label" data-i18n="companyAddressLabel">Juridiskā adrese</div>
+              <div class="company-value" data-i18n="companyAddressValue">&quot;Zemdegas&quot;, Pūres pagasts, Tukuma novads, LV-3124</div>
+            </div>
+            <div class="company-row">
+              <div class="company-label" data-i18n="companyBankLabel">Banka</div>
+              <div class="company-value">AS &quot;SEB Banka&quot;</div>
+            </div>
+            <div class="company-row">
+              <div class="company-label" data-i18n="companyAccountLabel">Konta numurs</div>
+              <div class="company-value">LV21UNLA0055004672308</div>
+            </div>
+            <div class="company-row">
+              <div class="company-label" data-i18n="companyManagerLabel">Valdes loceklis</div>
+              <div class="company-value">Gvido Rožinskis</div>
+            </div>
+          </div>
+        </div>
 
-  <div class="form-group">
-    <label style="font-size:13px; margin-bottom:2px;">Interesējošais pakalpojums:</label>
-    <div class="service-choice">
-      <label><input name="service" type="checkbox" value="epoxy" /> Epoksīda grīdas</label>
-      <label><input name="service" type="checkbox" value="grinding" /> Grīdu slīpēšana</label>
-      <label><input name="service" type="checkbox" value="standard" /> LVT / SPC / lamināts</label>
+        <div class="contact-side-stack">
+          <div class="contact-mini-card">
+            <h3 class="contact-mini-title" data-i18n="contactInfoCardTitle">Saziņa</h3>
+            <div class="contact-points">
+              <div class="contact-point">
+                <span class="contact-point-label" data-i18n="contactPhoneLabel">Tālrunis</span>
+                <div class="contact-point-value">
+                  <a class="company-phone-link" href="tel:+37125607986">
+                    <svg aria-hidden="true" class="icon"><use href="#icon-phone"></use></svg>
+                    <span>+371 25607986</span>
+                  </a>
+                </div>
+              </div>
+              <div class="contact-point">
+                <span class="contact-point-label" data-i18n="contactEmailLabel">E-pasts</span>
+                <div class="contact-point-value"><a href="mailto:sia.grproduction@gmail.com">sia.grproduction@gmail.com</a></div>
+              </div>
+              <div class="contact-point">
+                <span class="contact-point-label" data-i18n="contactLocationLabel">Lokācija</span>
+                <div class="contact-point-value" data-i18n="contactLocationValue">Rīga, strādājam visā Latvijā</div>
+              </div>
+              <div class="contact-point">
+                <span class="contact-point-label" data-i18n="contactHoursLabel">Darba laiks</span>
+                <p class="business-hours-contact"><span class="hours-status-text">Pārbaudām darba laiku...</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-mini-card">
+            <h3 class="contact-mini-title" data-i18n="contactFollowUs">Seko mums:</h3>
+            <div class="social-bar">
+              <a class="social-link" href="https://www.tiktok.com/@grproduction.lv?_r=1&amp;_t=ZN-91iaJgQx0mk">
+                <svg aria-hidden="true" class="icon"><use href="#icon-tiktok"></use></svg>
+                <span>@grproduction.lv</span>
+              </a>
+              <a class="social-link" href="https://www.instagram.com/grproduction_lv?igsh=MThsZXd2ajFxYmZmcQ%3D%3D&amp;utm_source=qr">
+                <svg aria-hidden="true" class="icon"><use href="#icon-instagram"></use></svg>
+                <span>@grproduction_lv</span>
+              </a>
+              <a class="social-link" href="https://www.facebook.com/p/GR-Production-61572980724663/">
+                <svg aria-hidden="true" class="icon"><use href="#icon-facebook"></use></svg>
+                <span>GR Production</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="contact-form-wrap">
+      <div class="contact-form-intro">
+        <h3 data-i18n="contactFormCardTitle">Piesaki savu projektu</h3>
+        <p data-i18n="contactFormCardText">Atstāj savu kontaktinformāciju un atzīmē interesējošo pakalpojumu — atbildēsim ar piemērotāko risinājumu.</p>
+      </div>
+      <form action="https://formspree.io/f/xbdlnevv" class="contact-form" method="POST">
+        <input type="text" name="name" required placeholder="Vārds, Uzvārds" data-i18n-placeholder="formName">
+        <input type="email" name="email" required placeholder="E-pasts" data-i18n-placeholder="formEmail">
+        <input type="tel" name="phone" required placeholder="Telefona numurs" data-i18n-placeholder="formPhone">
+        <input type="text" name="location" placeholder="Objekta atrašanās vieta" data-i18n-placeholder="formObjectLocation">
+
+        <div class="form-group">
+          <label data-i18n="formServiceLabel">Interesējošais pakalpojums:</label>
+          <div class="service-choice">
+            <label><input type="checkbox" name="service" value="epoxy"> <span data-i18n="formServiceEpoxy">Epoksīda grīdas</span></label>
+            <label><input type="checkbox" name="service" value="grinding"> <span data-i18n="formServiceGrinding">Grīdu slīpēšana</span></label>
+            <label><input type="checkbox" name="service" value="standard"> <span data-i18n="formServiceStandard">LVT / SPC / lamināts</span></label>
+          </div>
+        </div>
+
+        <textarea name="message" rows="4" placeholder="Īss apraksts – telpas veids, kvadratūra, esošais segums" data-i18n-placeholder="formMessage"></textarea>
+        <input type="hidden" name="_subject" value="Jauns pieteikums no grproduction.lv (vārds, tālrunis, e-pasts, ziņa)">
+        <button class="btn-primary" data-i18n="formSend" type="submit">Nosūtīt pieteikumu</button>
+      </form>
+  <div class="contact-map-wrap">
+        <iframe title="GR Production lokācija" src="https://www.google.com/maps?q=56.9444862,24.1357186&amp;hl=lv&amp;z=17&amp;output=embed" loading="lazy" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
   </div>
-
-  <textarea data-i18n-placeholder="formMessage" name="message"
-    placeholder="Īss apraksts – telpas veids, kvadratūra, esošais segums" rows="4"></textarea>
-
-  <!-- (nav obligāti) tēma Formspree inboxam -->
-  <input type="hidden" name="_subject" value="Jauns pieteikums no grproduction.lv" />
-
-  <button class="btn-primary" data-i18n="formSubmit" type="submit">Nosūtīt pieprasījumu</button>
-
-  <div aria-live="polite" class="form-status" id="form-status"></div>
-</form>
-</div>
-</div>
 </section>
 <!-- FOOTER -->
 <footer>
-<div class="footer-inner">
-<div>© <span id="year"> GR Production. Visas tiesības aizsargātas.</div>
-<div data-i18n="footerDev">Izstrāde: Tavs web partneris</div>
-      <div class="footer-links">
-        <a href="privacy.html" target="_blank" rel="noopener">
-  Privātuma politika
-</a>
-        <span style="opacity:.5;">•
-        <a href="#" class="footer-link" onclick="openCookieSettings();return false;" data-i18n="cookieLink">Sīkdatnes</a>
-      </div>
-</div>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> GR Production. <span data-i18n="footerRights">Visas tiesības aizsargātas.</span></div>
+    <div data-i18n="footerDev">Izstrāde: GR Production</div>
+    <div class="footer-links">
+      <a class="footer-link" data-i18n="privacyLink" href="privacy.html">Privātuma politika</a>
+      <span style="opacity:.5;">•</span>
+      <a class="footer-link" data-i18n="cookiePolicyLink" href="sikdatnes.html">Sīkdatņu politika</a>
+      <span style="opacity:.5;">•</span>
+      <a class="footer-link" data-i18n="cookieSettings" href="#" onclick="openCookieSettings();return false;">Sīkdatņu iestatījumi</a>
+    </div>
+  </div>
 </footer>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner" aria-hidden="true">
+  <div class="cookie-inner">
+    <div>
+      <div class="cookie-title" data-i18n="cookieTitle">Sīkdatnes</div>
+      <div class="cookie-desc">
+        <span data-i18n="cookieText">Mēs izmantojam sīkdatnes, lai uzlabotu lapas darbību un analizētu apmeklējumu. Turpinot lietot vietni, Tu piekrīti sīkdatņu izmantošanai.</span>
+        <a class="footer-link" data-i18n="cookieReadMore" href="sikdatnes.html" style="color:#2f4a10;text-decoration:underline;">Lasīt vairāk</a>
+      </div>
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-btn cookie-decline" id="declineCookies" type="button" data-i18n="cookieDecline">Nepiekrītu</button>
+      <button class="cookie-btn btn-primary" id="acceptCookies" type="button" data-i18n="cookieAccept">Piekrītu</button>
+    </div>
+  </div>
 </div>
 <!-- MOBILĀ QUICK BAR -->
 <div class="mobile-quick-bar">
 <button onclick="window.location.href='tel:+37125607986';" type="button">
-<i class="fa-solid fa-phone"></i>Zvanīt
+<svg aria-hidden="true" class="icon"><use href="#icon-phone"></use></svg>Zvanīt
 </button>
 <button onclick="goToContactWithService();" type="button">
-<i class="fa-solid fa-envelope"></i>Pieteikums
+<svg aria-hidden="true" class="icon"><use href="#icon-envelope"></use></svg>Pieteikums
 </button>
 </div>
 <!-- CALL POPUP -->
@@ -3425,24 +4412,71 @@ Seko mums:
     Pastāsti īsi par telpu un kvadratūru – ieteiksim piemērotāko risinājumu un aptuvenu cenu.
   </div>
 <a class="call-popup-btn" href="tel:+37125607986">
-<i class="fa-solid fa-phone"></i>Zvanīt +371 25607986
+<svg aria-hidden="true" class="icon"><use href="#icon-phone"></use></svg>Zvanīt +371 25607986
 </a>
 </div>
-
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox" aria-hidden="true">
-  <button class="lightbox-close" type="button" aria-label="Aizvērt">×</button>
-
-  <img class="lightbox-content" id="lightbox-img" alt=""/>
-
-  <div class="lightbox-nav">
-    <button class="lightbox-arrow" id="lightbox-prev" type="button">‹</button>
-    <button class="lightbox-arrow" id="lightbox-next" type="button">›</button>
-  </div>
+<div aria-hidden="true" class="lightbox" id="lightbox">
+<button aria-label="Aizvērt" class="lightbox-close" type="button">×</button>
+<img alt="" class="lightbox-content" id="lightbox-img"/>
+<div class="lightbox-nav">
+<button class="lightbox-arrow" id="lightbox-prev" type="button">‹</button>
+<button class="lightbox-arrow" id="lightbox-next" type="button">›</button>
 </div>
-
+</div>
 <!-- ===== SCRIPTS ===== -->
 <script>
+
+// automātiskais gads
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// cookie banner
+const cookieBanner = document.getElementById("cookieBanner");
+const acceptBtn = document.getElementById("acceptCookies");
+const declineBtn = document.getElementById("declineCookies");
+
+function hideCookieBanner(){
+  if(!cookieBanner) return;
+  cookieBanner.classList.remove("show");
+  cookieBanner.setAttribute("aria-hidden","true");
+}
+
+function showCookieBanner(){
+  if(!cookieBanner) return;
+  cookieBanner.classList.add("show");
+  cookieBanner.setAttribute("aria-hidden","false");
+}
+
+function initCookieBanner(){
+  let consent = null;
+  try { consent = localStorage.getItem("cookieConsent"); } catch(e) {}
+  if(consent === "accepted" || consent === "declined") {
+    hideCookieBanner();
+  } else {
+    showCookieBanner();
+  }
+}
+
+if (acceptBtn) {
+  acceptBtn.addEventListener("click", () => {
+    try { localStorage.setItem("cookieConsent","accepted"); } catch(e) {}
+    hideCookieBanner();
+  });
+}
+
+if (declineBtn) {
+  declineBtn.addEventListener("click", () => {
+    try { localStorage.setItem("cookieConsent","declined"); } catch(e) {}
+    hideCookieBanner();
+  });
+}
+
+function openCookieSettings(){
+  try { localStorage.removeItem("cookieConsent"); } catch(e) {}
+  showCookieBanner();
+}
+
+initCookieBanner();
 
  function scrollToSection(id){
   const el = document.getElementById(id);
@@ -3511,7 +4545,7 @@ function goToWarrantyClaim(){
     const msg = document.querySelector('textarea[name="message"]');
     if (msg) {
       const preset =
-        "Garantijas pieteikums (12 mēn.)\n" +
+        "Garantijas pieteikums (6 mēn.)\n" +
         "Objekta adrese: \n" +
         "Darbu datums / rēķins: \n" +
         "Defekta apraksts: \n" +
@@ -3565,7 +4599,6 @@ if (backToTopBtn) {
     });
   });
 }
-
 
   /* ===== MINI VEDNIS ===== */
   function suggestService() {
@@ -3634,6 +4667,10 @@ metaTitle: "GR Production – Grīdu risinājumi",
     cookieDecline: "Noraidīt",
     privacyLink: "Privātuma politika",
     cookieLink: "Sīkdatnes",
+    cookiePolicyLink: "Sīkdatņu politika",
+    cookieSettings: "Sīkdatņu iestatījumi",
+    cookieReadMore: "Lasīt vairāk",
+    footerRights: "Visas tiesības aizsargātas.",
     privacyTitle: "Privātuma politika",
     privacyP1: "Mēs apstrādājam tikai tos personas datus, ko Tu brīvprātīgi iesniedz, sazinoties ar mums (piemēram, vārds, e‑pasts, tālrunis, ziņas saturs).",
     privacyP2: "Dati tiek izmantoti, lai sazinātos par Tavu pieprasījumu, sagatavotu piedāvājumu un nodrošinātu pakalpojumu. Dati netiek pārdoti trešajām personām.",
@@ -3663,8 +4700,18 @@ metaTitle: "GR Production – Grīdu risinājumi",
     navTestimonials: "Atsauksmes",
     navGallery: "Galerija",
     navContact: "Kontakti",
-    navCta: "Sazināties",
+    navCta: "Pieteikums",
     navFaq: "Jautājumi",
+
+    mobileMenuTitle: "Izvēlne",
+    menuEpoxy: "Epoksīda grīdas",
+    menuEpoxySub: "Rūpniecībai un privātmājām",
+    menuGrinding: "Dēļu un parketa grīdu slīpēšana",
+    menuGrindingSub: "Slīpēšana, lakotšana un atjaunošana",
+    menuStandard: "Standarta grīdu ieklāšana",
+    menuStandardSub: "Lamināts, vinils, parkets",
+    menuAllServices: "Visi pakalpojumi",
+    menuAllServicesSub: "Skatīt 3 galvenos virzienus",
 
     // Hero
     heroKicker: "Ātri·Tīri·Kvalitatīvi",
@@ -3777,7 +4824,7 @@ metaTitle: "GR Production – Grīdu risinājumi",
     why1Title: "Pieredzējusi komanda",
     why1Text: "Praktiska pieredze ar industriālām un privātām grīdām dažādos objektos visā Latvijā.",
     why2Title: "Pilns risinājums",
-    why2Text: "No pamatnes sagatavošanas un betonēšanas līdz epoksīdam un standarta segumiem – viss vienās rokās.",
+    why2Text: "No pamatnes sagatavošanas līdz epoksīdam un standarta segumiem – viss vienās rokās.",
     why3Title: "Kvalitāte un garantija",
     why3Text: "Strādājam ar uzticamiem piegādātājiem un pārbaudītām sistēmām, piedāvājot garantiju paveiktajiem darbiem.",
     why4Title: "Darbs visā Latvijā",
@@ -3808,7 +4855,7 @@ metaTitle: "GR Production – Grīdu risinājumi",
     process1Title: "1. Sazinies ar mums",
     process1Text: "Aizpildi pieteikumu vai piezvani – īsi izstāsti telpas tipu, platību un esošo situāciju.",
     process2Title: "2. Apskatām objektu",
-    process2Text: "Vajadzības gadījumā apbraucam objektu, izvērtējam pamatni un iesakām tehniski pareizāko risinājumu.",
+    process2Text: "Apskatām objektu, izvērtējam pamatni un iesakām tehniski pareizāko risinājumu.",
     process3Title: "3. Saskaņojam tāmi un termiņus",
     process3Text: "Sagatavojam tāmi, vienojamies par grafiku un veicam darbus – no sagatavošanas līdz pilnīgi gatavai virsmai.",
 
@@ -3822,19 +4869,19 @@ metaTitle: "GR Production – Grīdu risinājumi",
 
     pricingEpoxyTitle: "Epoksīda grīdas",
     pricingEpoxyNote: "Atkarīgs no pamatnes stāvokļa, slodzes un izvēlētās sistēmas (biezums, dizains, pretslīdes risinājumi).",
-    pricingEpoxyExample: "Piemērs: 40 m² garāža ≈ 1000 € + PVN (bez pamatnes labošanas).",
+    pricingEpoxyExample: "Piemērs: 35 m² garāža ≈ 1225 € + PVN (bez pamatnes labošanas).",
 
     pricingConcreteTitle: "Betona grīdas",
     pricingConcreteNote: "Iekļauj pamatnes sagatavošanu, armēšanu un betonēšanu. Cena atkarīga no biezuma, piekļuves un objekta sarežģītības.",
-    pricingConcreteExample: "Piemērs: 60 m² angāra grīda ≈ 1500 € + PVN (atkarībā no biezuma un armēšanas).",
+    pricingConcreteExample: "Piemērs: 60 m² angāra grīda ≈ 1125 € + PVN (atkarībā no biezuma un armēšanas).",
 
     pricingGrindingTitle: "Grīdu slīpēšana",
     pricingGrindingNote: "Atkarīgs no vecā pārklājuma, nelīdzenumiem un nepieciešamās apstrādes pakāpes (slīpēšanas reižu skaits).",
-    pricingGrindingExample: "Piemērs: 50 m² pamatnes slīpēšana ar eļļošanu ≈ 1500 € + PVN.",
+    pricingGrindingExample: "Piemērs: 45 m² pamatnes slīpēšana ar eļļošanu ≈ 1125 € + PVN.",
 
     pricingStandardTitle: "Standarta grīdas",
     pricingStandardNote: "LVT, SPC, lamināta un citu segumu ieklāšana bez materiāla izmaksām. Cena atkarīga no bāzes sagatavošanas un telpas sarežģītības.",
-    pricingStandardExample: "Piemērs: 50 m² dzīvokļa lamināts ≈ 800 € + PVN (bez materiāla izmaksām).",
+    pricingStandardExample: "Piemērs: 35 m² dzīvokļa lamināts ≈ 350 € + PVN (bez materiāla izmaksām).",
 
     // Online calculator
     calcTitle: "Aptuvenās izmaksas tiešsaistē",
@@ -3871,8 +4918,20 @@ metaTitle: "GR Production – Grīdu risinājumi",
     materialsText: "Mūsu darbos izmantojam pārbaudītus un nozarē plaši atzītus materiālus un sistēmas ražotāju risinājumus, nodrošinot ilgmūžīgu un kvalitatīvu rezultātu.",
 
     // Contact
+    contactTopline: "Kontakti un rekvizīti",
     contactTitle: "Kontakti",
     contactSubtitle: "Atsūti projekta informāciju vai piezvani – ieteiksim piemērotāko grīdas risinājumu un sagatavosim aptuvenu tāmi.",
+    companyCardSubtitle: "Uzticams partneris grīdu risinājumiem visā Latvijā.",
+    companyRegLabel: "Reģ. Nr.",
+    companyAddressLabel: "Juridiskā adrese",
+    companyAddressValue: "&quot;Zemdegas&quot;, Pūres pagasts, Tukuma novads, LV-3124",
+    companyBankLabel: "Banka",
+    companyAccountLabel: "Konta numurs",
+    companyManagerLabel: "Valdes loceklis",
+    contactInfoCardTitle: "Saziņa",
+    contactFormCardTitle: "Piesaki savu projektu",
+    contactFormCardText: "Atstāj savu kontaktinformāciju un atzīmē interesējošo pakalpojumu — atbildēsim ar piemērotāko risinājumu.",
+    contactCallText: "Vēlies ātrāku atbildi? Zvani mums uzreiz:",
     contactPhoneLabel: "Tālrunis:",
     contactEmailLabel: "E-pasts:",
     contactLocationLabel: "Lokācija:",
@@ -3884,6 +4943,7 @@ metaTitle: "GR Production – Grīdu risinājumi",
     // Form
     formName: "Vārds, Uzvārds",
     formEmail: "E-pasts",
+    formPhone: "Telefona numurs",
     formObjectLocation: "Objekta atrašanās vieta",
     formServiceLabel: "Interesējošais pakalpojums:",
     formService1: "Epoksīda grīdas",
@@ -3891,11 +4951,16 @@ metaTitle: "GR Production – Grīdu risinājumi",
     formService3: "Grīdu slīpēšana",
     formService4: "LVT / SPC / lamināts",
     formMessage: "Īss apraksts – telpas veids, kvadratūra, esošais segums",
+    formServiceLabel: "Interesējošais pakalpojums:",
+    formServiceEpoxy: "Epoksīda grīdas",
+    formServiceGrinding: "Grīdu slīpēšana",
+    formServiceStandard: "LVT / SPC / lamināts",
+    contactFollowUs: "Seko mums:",
     formSubmit: "Nosūtīt pieprasījumu",
 
     // Footer
     footerRights: "Visas tiesības aizsargātas.",
-    footerDev: "Izstrāde: Tavs web partneris"
+    footerDev: "Izstrāde: GR Production"
   },
 
   en: {
@@ -3923,6 +4988,10 @@ metaTitle: "GR Production – Grīdu risinājumi",
   cookieDecline: "Decline",
   privacyLink: "Privacy policy",
   cookieLink: "Cookies",
+    cookiePolicyLink: "Cookie policy",
+    cookieSettings: "Cookie settings",
+    cookieReadMore: "Read more",
+    footerRights: "All rights reserved.",
 
   privacyTitle: "Privacy policy",
   privacyP1:
@@ -3958,6 +5027,16 @@ metaTitle: "GR Production – Grīdu risinājumi",
   navAbout: "About",
   navPricing: "Pricing",
   navFaq: "FAQ",
+    mobileMenuTitle: "Menu",
+    menuEpoxy: "Epoxy floors",
+    menuEpoxySub: "Industrial & residential",
+    menuGrinding: "Hardwood and parquet floor sanding",
+    menuGrindingSub: "Sanding, varnishing and restoration",
+    menuStandard: "Standard floor installation",
+    menuStandardSub: "Laminate, vinyl, parquet",
+    menuAllServices: "All services",
+    menuAllServicesSub: "See main directions",
+
   navTestimonials: "Reviews",
   navGallery: "Gallery",
   navContact: "Contact",
@@ -4091,7 +5170,7 @@ metaTitle: "GR Production – Grīdu risinājumi",
   warrantySubmitText: "We typically respond within 24 hours on business days.",
   warrantyTerm: "Warranty period",
   warrantyTermText:
-    "The warranty is valid for 12 months from handover (or invoice/contract date).",
+    "The warranty is valid for 6 months from handover (or invoice/contract date).",
   warrantyCase: "What is considered a warranty case",
   warrantyCaseText:
     "Cases related to workmanship quality and compliance with the technology (after inspection and determining the cause).",
@@ -4184,9 +5263,22 @@ metaTitle: "GR Production – Grīdu risinājumi",
   materialsText:
     "We use proven, widely recognized manufacturers’ materials and systems to ensure a durable, high-quality result.",
 
+  contactTopline: "Contacts and company details",
   contactTitle: "Contact",
   contactSubtitle:
     "Send project details or call us — we’ll recommend a solution and prepare an approximate estimate.",
+  companyCardSubtitle: "A reliable partner for flooring solutions across Latvia.",
+  companyRegLabel: "Registration No.",
+  companyAddressLabel: "Legal address",
+  companyAddressValue: "&quot;Zemdegas&quot;, Pūre parish, Tukums municipality, LV-3124",
+  companyBankLabel: "Bank",
+  companyAccountLabel: "Account number",
+  companyManagerLabel: "Board member",
+  contactInfoCardTitle: "Contacts",
+  contactFormCardTitle: "Request your project",
+  contactFormCardText: "Leave your contact details and mark the service you need — we will reply with the most suitable solution.",
+  contactCallText: "Want a faster reply? Call us right away:",
+  contactHoursLabel: "Business hours:",
   contactPhoneLabel: "Phone:",
   contactEmailLabel: "Email:",
   contactLocationLabel: "Location:",
@@ -4195,8 +5287,14 @@ metaTitle: "GR Production – Grīdu risinājumi",
 
   formName: "Full name",
   formEmail: "Email",
+  formPhone: "Phone number",
   formObjectLocation: "Project address",
   formMessage: "Briefly — space type, area, current covering",
+  formServiceLabel: "Service you are interested in:",
+  formServiceEpoxy: "Epoxy floors",
+  formServiceGrinding: "Floor grinding",
+  formServiceStandard: "LVT / SPC / laminate",
+  contactFollowUs: "Follow us:",
   formSubmit: "Send request",
 
   footerRights: "All rights reserved.",
@@ -4230,6 +5328,10 @@ metaTitle: "GR Production – Напольные решения",
     cookieDecline: "Отклонить",
     privacyLink: "Политика конфиденциальности",
     cookieLink: "Cookie",
+    cookiePolicyLink: "Политика cookie",
+    cookieSettings: "Настройки cookie",
+    cookieReadMore: "Подробнее",
+    footerRights: "Все права защищены.",
     privacyTitle: "Политика конфиденциальности",
     privacyP1: "Мы обрабатываем только те персональные данные, которые вы добровольно предоставляете при обращении к нам (например, имя, e‑mail, телефон, содержание сообщения).",
     privacyP2: "Данные используются для ответа на ваш запрос, подготовки предложения и оказания услуги. Мы не продаём данные третьим лицам.",
@@ -4256,6 +5358,16 @@ metaTitle: "GR Production – Напольные решения",
     navAbout: "О нас",
     navPricing: "Цены",
     navFaq: "Вопросы",
+    mobileMenuTitle: "Меню",
+    menuEpoxy: "Эпоксидные полы",
+    menuEpoxySub: "Для бизнеса и дома",
+    menuGrinding: "Шлифовка пола",
+    menuGrindingSub: "Подготовка, восстановление",
+    menuStandard: "Укладка стандартных полов",
+    menuStandardSub: "Ламинат, винил, паркет",
+    menuAllServices: "Все услуги",
+    menuAllServicesSub: "Смотреть направления",
+
     navTestimonials: "Отзывы",
     navGallery: "Галерея",
     navContact: "Контакты",
@@ -4343,8 +5455,8 @@ metaTitle: "GR Production – Напольные решения",
     why3Text: "Используем надёжных поставщиков и проверенные системы, предоставляя гарантию на работы.",
     why4Title: "Работа по всей Латвии",
     why4Text: "Выезжаем на объекты во всех регионах Латвии — новостройки и реновации.",
-    warrantyTitle: "Гарантия — 12 месяцев",
-    warrantyIntro: "Даем гарантию 12 месяцев на выполненные работы. Ниже — как она работает, что входит и как подать обращение.",
+    warrantyTitle: "Гарантия — 6 месяцев",
+    warrantyIntro: "Даем гарантию 6 месяцев на выполненные работы. Ниже — как она работает, что входит и как подать обращение.",
     warrantyIncluded: "Что входит",
     warrantyIncludedText: "Качество выполнения работ и соответствие согласованной технологии/смете.",
     warrantyHow: "Как это происходит",
@@ -4354,7 +5466,7 @@ metaTitle: "GR Production – Напольные решения",
     warrantySubmit: "Подать гарантийное обращение",
     warrantySubmitText: "Обычно отвечаем в течение 24 часов в рабочие дни.",
     warrantyTerm: "Срок гарантии",
-    warrantyTermText: "Гарантия действует 12 месяцев с момента сдачи работ (или даты счета/договора).",
+    warrantyTermText: "Гарантия действует 6 месяцев с момента сдачи работ (или даты счета/договора).",
     warrantyCase: "Что считается гарантийным случаем",
     warrantyCaseText: "Случаи, связанные с качеством работ и соблюдением технологии (после осмотра и определения причины).",
     warrantyNot: "Что не входит",
@@ -4415,8 +5527,21 @@ metaTitle: "GR Production – Напольные решения",
     gallerySubtitle: "Небольшой обзор наших работ — эпоксидные, бетонные, шлифовка и стандартные покрытия.",
     materialsTitle: "Материалы, с которыми работаем",
     materialsText: "В работе используем проверенные и широко признанные материалы и системы производителей, обеспечивая долговечный и качественный результат.",
+    contactTopline: "Контакты и реквизиты",
     contactTitle: "Контакты",
     contactSubtitle: "Отправьте информацию о проекте или позвоните — подберем решение и подготовим ориентировочную смету.",
+    companyCardSubtitle: "Надежный партнер по напольным решениям по всей Латвии.",
+    companyRegLabel: "Рег. №",
+    companyAddressLabel: "Юридический адрес",
+    companyAddressValue: "&quot;Zemdegas&quot;, волость Пуре, Тукумский край, LV-3124",
+    companyBankLabel: "Банк",
+    companyAccountLabel: "Номер счета",
+    companyManagerLabel: "Член правления",
+    contactInfoCardTitle: "Связь",
+    contactFormCardTitle: "Оставьте заявку",
+    contactFormCardText: "Оставьте свои контакты и отметьте нужную услугу — мы ответим с подходящим решением.",
+    contactCallText: "Хотите быстрее? Позвоните нам сразу:",
+    contactHoursLabel: "Время работы:",
     contactPhoneLabel: "Телефон:",
     contactEmailLabel: "E-mail:",
     contactLocationLabel: "Локация:",
@@ -4424,8 +5549,14 @@ metaTitle: "GR Production – Напольные решения",
     socialTitle: "Подписывайтесь:",
     formName: "Имя, Фамилия",
     formEmail: "E-mail",
+    formPhone: "Номер телефона",
     formObjectLocation: "Адрес объекта",
     formMessage: "Кратко — тип помещения, площадь, текущее покрытие",
+    formServiceLabel: "Интересующая услуга:",
+    formServiceEpoxy: "Эпоксидные полы",
+    formServiceGrinding: "Шлифовка полов",
+    formServiceStandard: "LVT / SPC / ламинат",
+    contactFollowUs: "Следите за нами:",
     formSubmit: "Отправить запрос",
     footerRights: "Все права защищены.",
     footerDev: "Разработка: Ваш веб-партнер",
@@ -4525,7 +5656,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initCookieBanner();
 });
 
-
   /* ===== LIGHTBOX + BULTIŅAS ===== */
   const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
@@ -4612,8 +5742,7 @@ document.addEventListener("keydown", (e)=>{
     toggleBtn.innerHTML =
   '<span class="label">' +
   (((translations[currentLang]||translations.lv).showMore) || 'Rādīt vairāk') +
-  '</span><i class="fa-solid fa-chevron-down"></i>';
-
+  '</span>';
 
     let expanded = false;
 
@@ -4629,8 +5758,8 @@ document.addEventListener("keydown", (e)=>{
       const icon = toggleBtn.querySelector("i");
       if (label) label.textContent = expanded ? ((translations[currentLang]||translations.lv).showLess||'Rādīt mazāk') : ((translations[currentLang]||translations.lv).showMore||'Rādīt vairāk');
       if (icon) {
-        icon.classList.toggle("fa-chevron-down", !expanded);
-        icon.classList.toggle("fa-chevron-up", expanded);
+        icon.classList.toggle("chevron-down", !expanded);
+        icon.classList.toggle("chevron-up", expanded);
       }
     });
 
@@ -4830,32 +5959,15 @@ document.addEventListener("keydown", (e)=>{
     statusEl.classList.add("error", "visible");
   }
 }
-
   /* ===== Cookies + Privacy ===== */
-  function initCookieBanner(){
-    const banner = document.getElementById("cookie-banner");
-    if(!banner) return;
-    let consent = null;
-    try{ consent = localStorage.getItem("cookieConsent"); }catch(e){}
-    if(consent === "accepted" || consent === "declined"){
-      banner.classList.remove("show");
-      banner.setAttribute("aria-hidden","true");
-      return;
-    }
-    banner.classList.add("show");
-    banner.setAttribute("aria-hidden","false");
-  }
-
   function acceptCookies(){
     try{ localStorage.setItem("cookieConsent","accepted"); }catch(e){}
-    const banner = document.getElementById("cookie-banner");
-    if(banner){ banner.classList.remove("show"); banner.setAttribute("aria-hidden","true"); }
+    hideCookieBanner();
   }
 
   function declineCookies(){
     try{ localStorage.setItem("cookieConsent","declined"); }catch(e){}
-    const banner = document.getElementById("cookie-banner");
-    if(banner){ banner.classList.remove("show"); banner.setAttribute("aria-hidden","true"); }
+    hideCookieBanner();
   }
 
   function openPrivacyModal(){
@@ -4875,9 +5987,8 @@ document.addEventListener("keydown", (e)=>{
   }
 
   function openCookieSettings(){
-    // simple: re-open banner
     try{ localStorage.removeItem("cookieConsent"); }catch(e){}
-    initCookieBanner();
+    showCookieBanner();
   }
 
   /* ===== "PIEZVANĪT 30 SEK." POPUP ===== */
@@ -4902,8 +6013,8 @@ document.addEventListener("keydown", (e)=>{
   })();
 
 </script>
+<script>try{
 
-<script>
 /* ===== i18n PATCH v3 — make EN/RU 100% (including previously hardcoded text) ===== */
 (function(){
   if (typeof translations !== "object") return;
@@ -4925,10 +6036,10 @@ document.addEventListener("keydown", (e)=>{
     guaranteeTitle: "6 mēnešu garantija darbiem",
     guaranteeText: "Uz visiem paveiktajiem darbiem nodrošinām 6 mēnešu garantiju, strādājot tikai ar uzticamu ražotāju sistēmām un ievērojot tehnoloģiju prasības.",
 
-    pricingEpoxyExample: "Piemērs: 40 m² garāža ≈ 1000 € + PVN (bez pamatnes labošanas).",
+    pricingEpoxyExample: "Piemērs: 35 m² garāža ≈ 1225 € + PVN (bez pamatnes labošanas).",
     pricingConcreteExample: "Piemērs: 60 m² angāra grīda ≈ 1500 € + PVN (atkarībā no biezuma un armēšanas).",
-    pricingGrindingExample: "Piemērs: 50 m² pamatnes slīpēšana un lakošana ≈ 1500 € + PVN.",
-    pricingStandardExample: "Piemērs: 50 m² dzīvokļa lamināts ≈ 800 € + PVN (bez materiāla izmaksām).",
+    pricingGrindingExample: "Piemērs: 45 m² pamatnes slīpēšana un lakošana ≈ 1125 € + PVN.",
+    pricingStandardExample: "Piemērs: 35 m² dzīvokļa lamināts ≈ 350 € + PVN (bez materiāla izmaksām).",
 
     testimonialsTitle: "Atsauksmes",
     testimonialsSub: "Ko par sadarbību saka mūsu klienti",
@@ -4939,7 +6050,7 @@ document.addEventListener("keydown", (e)=>{
     process1Title: "1. Sazinies ar mums",
     process1Text: "Aizpildi pieteikumu vai piezvani – īsi izstāsti telpas tipu, platību un esošo situāciju.",
     process2Title: "2. Apskatām objektu",
-    process2Text: "Vajadzības gadījumā apbraucam objektu, izvērtējam pamatni un iesakām tehniski pareizāko risinājumu.",
+    process2Text: "Apskatam objektu, izvērtējam pamatni un iesakām tehniski pareizāko risinājumu.",
     process3Title: "3. Saskaņojam tāmi un termiņus",
     process3Text: "Sagatavojam tāmi, vienojamies par grafiku un veicam darbus – no sagatavošanas līdz pilnīgi gatavai virsmai.",
 
@@ -4993,10 +6104,10 @@ document.addEventListener("keydown", (e)=>{
     guaranteeTitle: "6-month workmanship warranty",
     guaranteeText: "We provide a 6-month warranty for all completed works, using only trusted manufacturers’ systems and strictly following technological requirements.",
 
-    pricingEpoxyExample: "Example: 40 m² garage ≈ €1000 + VAT (excluding base repair).",
+    pricingEpoxyExample: "Example: 35 m² garage ≈ €1225 + VAT (excluding base repair).",
     pricingConcreteExample: "Example: 60 m² hangar floor ≈ €1500 + VAT (depending on thickness and reinforcement).",
-    pricingGrindingExample: "Example: 50 m² grinding before epoxy ≈ €1500 + VAT.",
-    pricingStandardExample: "Example: 50 m² apartment laminate ≈ €800 + VAT (excluding materials).",
+    pricingGrindingExample: "Example: 45 m² grinding before epoxy ≈ €11250 + VAT.",
+    pricingStandardExample: "Example: 35 m² apartment laminate ≈ €350 + VAT (excluding materials).",
 
     testimonialsTitle: "Reviews",
     testimonialsSub: "What our clients say about working with us",
@@ -5056,15 +6167,15 @@ document.addEventListener("keydown", (e)=>{
 
     aboutStat1Label: "лет опыта в строительстве",
     aboutStat2Label: "завершённых проектов полов",
-    aboutStat3Label: "4 направления — всё в одних руках",
+    aboutStat3Label: "направления — всё в одних руках",
 
-    guaranteeTitle: "12 месяцев гарантии на работы",
-    guaranteeText: "На все выполненные работы мы предоставляем гарантию 12 месяцев, используя только надёжные системы производителей и соблюдая технологические требования.",
+    guaranteeTitle: "6 месяцев гарантии на работы",
+    guaranteeText: "На все выполненные работы мы предоставляем гарантию 6 месяцев, используя только надёжные системы производителей и соблюдая технологические требования.",
 
-    pricingEpoxyExample: "Пример: гараж 40 м² ≈ 1000 € + НДС (без ремонта основания).",
+    pricingEpoxyExample: "Пример: гараж 35 м² ≈ 1225 € + НДС (без ремонта основания).",
     pricingConcreteExample: "Пример: пол в ангаре 60 м² ≈ 1500 € + НДС (в зависимости от толщины и армирования).",
-    pricingGrindingExample: "Пример: шлифовка 50 м² перед эпоксидным покрытием ≈ 1500 € + НДС.",
-    pricingStandardExample: "Пример: ламинат в квартире 50 м² ≈ 800 € + НДС (без стоимости материалов).",
+    pricingGrindingExample: "Пример: шлифовка 45 м² перед эпоксидным покрытием ≈ 1125 € + НДС.",
+    pricingStandardExample: "Пример: ламинат в квартире 35 м² ≈ 350 € + НДС (без стоимости материалов).",
 
     testimonialsTitle: "Отзывы",
     testimonialsSub: "Что говорят наши клиенты о сотрудничестве",
@@ -5139,6 +6250,9 @@ document.addEventListener("keydown", (e)=>{
       if (translations[lang] && translations[lang][key] !== undefined) opt.textContent = translations[lang][key];
     });
 
+    const desktopServicesMenu = document.querySelector(".nav-dropdown-menu[role='menu']");
+    if (desktopServicesMenu) desktopServicesMenu.setAttribute("aria-label", t("navServices") || "Pakalpojumi");
+
     // "Uzzināt cenu"
     document.querySelectorAll(".btn-price span").forEach(sp=>{ sp.textContent = t("learnPrice") || sp.textContent; });
 
@@ -5172,7 +6286,7 @@ document.addEventListener("keydown", (e)=>{
     const googleBtn = document.querySelector("#testimonials .google-reviews-btn");
     if (testTitle) testTitle.textContent = t("testimonialsTitle");
     if (testSub)   testSub.textContent   = t("testimonialsSub");
-    if (googleBtn) googleBtn.innerHTML = '<i class="fa-brands fa-google"></i> ' + t("googleReviewsBtn");
+    if (googleBtn) googleBtn.innerHTML = '<svg class="icon" aria-hidden="true"><use href="#icon-google"></use></svg> ' + t("googleReviewsBtn");
 
     // Process
     const pSec = document.getElementById("process");
@@ -5296,7 +6410,7 @@ document.addEventListener("keydown", (e)=>{
       const label = btn.querySelector(".label");
       const icon  = btn.querySelector("i");
       if (!label) return;
-      const expanded = icon && icon.classList.contains("fa-chevron-up");
+      const expanded = icon && icon.classList.contains("chevron-up");
       label.textContent = expanded ? t("showLess") : t("showMore");
     });
   };
@@ -5458,6 +6572,111 @@ document.addEventListener("keydown", (e)=>{
   const active = document.querySelector(".lang-btn.active");
   const lang = active ? active.getAttribute("data-lang") : "lv";
   window.applyTranslations(lang);
+})();
+
+}catch(e){console.warn('i18n patch error',e);}
+</script>
+<script>
+(function(){
+  const dd = document.getElementById('servicesDropdown');
+  if(!dd) return;
+  const btn = dd.querySelector('.nav-dropdown-btn');
+  const menu = dd.querySelector('.nav-dropdown-menu');
+
+  function close(){
+    dd.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  }
+  function toggle(e){
+    e.preventDefault();
+    e.stopPropagation();
+    const isOpen = dd.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+  }
+
+  btn.addEventListener('click', toggle);
+  menu.addEventListener('click', (e)=> e.stopPropagation());
+  document.addEventListener('click', close);
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') close(); });
+})();
+</script>
+<script>
+(function(){
+  function initMobileDrawer(){
+    var hamburgerBtn = document.getElementById('hamburgerBtn');
+    var drawer = document.getElementById('mobileDrawer');
+    var backdrop = document.getElementById('mobileDrawerBackdrop');
+    var closeBtn = document.getElementById('mobileDrawerClose');
+    var mbServices = document.getElementById('mbServices');
+
+    if(!drawer) return;
+
+    function lockScroll(lock){
+      // iOS-safe scroll lock
+      document.documentElement.style.overflow = lock ? 'hidden' : '';
+      document.body.style.overflow = lock ? 'hidden' : '';
+      document.body.style.touchAction = lock ? 'none' : '';
+    }
+
+    function openDrawer(){
+      drawer.classList.add('show');
+      drawer.setAttribute('aria-hidden','false');
+      lockScroll(true);
+    }
+
+    function closeDrawer(){
+      drawer.classList.remove('show');
+      drawer.setAttribute('aria-hidden','true');
+      lockScroll(false);
+    }
+
+    function onActivate(handler){
+      return function(el){
+        if(!el) return;
+        // cover iOS oddities: click + pointer + touch
+        el.addEventListener('click', handler, {passive:false});
+        el.addEventListener('pointerup', handler, {passive:false});
+        el.addEventListener('touchend', handler, {passive:false});
+      }
+    }
+
+    var bind = onActivate(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      openDrawer();
+    });
+
+    bind(hamburgerBtn);
+    bind(mbServices);
+
+    var bindClose = onActivate(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      closeDrawer();
+    });
+
+    bindClose(backdrop);
+    bindClose(closeBtn);
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeDrawer();
+    });
+
+    drawer.addEventListener('click', function(e){
+      // close when clicking an in-page hash link
+      var target = e.target;
+      var a = (target && target.closest) ? target.closest('a') : null;
+      if(!a) return;
+      var href = a.getAttribute('href') || '';
+      if(href.indexOf('#') === 0) closeDrawer();
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initMobileDrawer);
+  } else {
+    initMobileDrawer();
+  }
 })();
 </script>
 

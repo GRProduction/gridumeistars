@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sīkdatņu politika – GR Production</title>
+  <meta name="description" content="GR Production sīkdatņu politika un informācija par vietnē izmantotajiem tehniskajiem risinājumiem." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --green:#7BB62F;
+      --green-dark:#5F9620;
+      --dark:#222222;
+      --dark-soft:#333333;
+      --light:#F6F6F6;
+      --white:#FFFFFF;
+      --border-light:#E4E4E4;
+      --text-muted:#777777;
+      --max-width:1200px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{scroll-behavior:smooth}
+    body{
+      font-family:"Poppins",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:#e9eaec;
+      color:#222;
+      line-height:1.6;
+    }
+
+    a{text-decoration:none;color:inherit}
+    .page{
+      max-width:1400px;
+      margin:0 auto;
+      min-height:100vh;
+      background:var(--white);
+      box-shadow:0 0 35px rgba(0,0,0,0.08);
+      overflow:hidden;
+    }
+
+    .container{
+      max-width:980px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+
+    header{
+      background:rgba(255,255,255,0.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border-light);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .nav{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      padding:10px 0;
+    }
+
+    .nav-left{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:700;
+      color:var(--dark);
+    }
+
+    .logo-wrap img{
+      height:40px;
+      width:auto;
+    }
+
+    .nav-right{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .lang-switch{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .lang-btn{
+      width:36px;
+      height:36px;
+      padding:0;
+      border-radius:50%;
+      border:1px solid transparent;
+      background:transparent;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+    }
+
+    .lang-btn img{
+      width:20px;
+      height:20px;
+      border-radius:50%;
+      display:block;
+      object-fit:cover;
+    }
+
+    .lang-btn.active{
+      border-color:var(--green);
+      background:rgba(123,182,47,0.12);
+    }
+
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:var(--green);
+      color:#fff;
+      font-size:13px;
+      font-weight:500;
+      box-shadow:0 7px 16px rgba(123,182,47,.35);
+      transition:background .2s ease, transform .15s ease;
+    }
+
+    .back-link:hover{
+      background:var(--green-dark);
+      transform:translateY(-1px);
+    }
+
+    .hero{
+      background:linear-gradient(135deg,var(--dark),var(--dark-soft));
+      color:#fff;
+      padding:56px 0 42px;
+    }
+
+    .hero-kicker{
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:#cfcfcf;
+      margin-bottom:10px;
+    }
+
+    .hero h1{
+      font-size:42px;
+      line-height:1.1;
+      margin-bottom:14px;
+    }
+
+    .hero p{
+      max-width:780px;
+      color:#dddddd;
+      font-size:15px;
+    }
+
+    main{
+      padding:38px 0 60px;
+      background:#fafafa;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.07);
+      border-radius:22px;
+      padding:26px;
+      box-shadow:0 10px 24px rgba(0,0,0,.05);
+      margin-bottom:18px;
+    }
+
+    h2{
+      font-size:24px;
+      margin-bottom:12px;
+      color:#1f1f1f;
+    }
+
+    h3{
+      font-size:18px;
+      margin:18px 0 8px;
+      color:#1f1f1f;
+    }
+
+    p{
+      font-size:14px;
+      color:#444;
+      margin-bottom:10px;
+    }
+
+    ul{
+      padding-left:20px;
+      margin:10px 0 14px;
+    }
+
+    li{
+      margin-bottom:8px;
+      color:#444;
+      font-size:14px;
+    }
+
+    .notice{
+      margin-top:10px;
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(123,182,47,.10);
+      border:1px solid rgba(123,182,47,.25);
+      color:#2f4a10;
+      font-size:13px;
+    }
+
+    .table-wrap{
+      overflow:auto;
+      margin-top:14px;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:720px;
+      background:#fff;
+      border:1px solid #e7e7e7;
+      border-radius:14px;
+      overflow:hidden;
+    }
+
+    th,td{
+      text-align:left;
+      vertical-align:top;
+      padding:14px 12px;
+      border-bottom:1px solid #ececec;
+      font-size:13px;
+    }
+
+    th{
+      background:#f5f7f1;
+      color:#1f1f1f;
+      font-weight:600;
+    }
+
+    tr:last-child td{border-bottom:none}
+
+    .muted{
+      color:#777;
+      font-size:12px;
+    }
+
+    footer{
+      background:var(--dark);
+      color:#cccccc;
+      padding:24px 0;
+      font-size:12px;
+    }
+
+    .footer-inner{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:0 32px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .footer-links a{color:#e8e8e8}
+
+    @media (max-width:768px){
+      .container{padding:0 18px}
+      .hero h1{font-size:32px}
+      .card{padding:20px}
+      .footer-inner{padding:0 18px}
+      .nav{justify-content:center}
+      .nav-left,.nav-right{justify-content:center}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <div class="container nav">
+        <div class="nav-left">
+          <a class="logo-wrap" href="index.html">
+            <img src="favicon.png" alt="GR Production logo" />
+            <span>GR Production</span>
+          </a>
+        </div>
+
+        <div class="nav-right">
+          <div class="lang-switch">
+            <button class="lang-btn" data-lang="lv" aria-label="Latviešu">
+              <img src="https://hatscripts.github.io/circle-flags/flags/lv.svg" alt="LV" />
+            </button>
+            <button class="lang-btn" data-lang="en" aria-label="English">
+              <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" alt="EN" />
+            </button>
+            <button class="lang-btn" data-lang="ru" aria-label="Русский">
+              <img src="https://hatscripts.github.io/circle-flags/flags/ru.svg" alt="RU" />
+            </button>
+          </div>
+
+          <a class="back-link" href="index.html" data-i18n="backHome">← Atpakaļ uz sākumlapu</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-kicker">GR Production</div>
+        <h1 data-i18n="heroTitle">Sīkdatņu politika</h1>
+        <p data-i18n="heroText">
+          Šajā sīkdatņu politikā ir paskaidrots, kādus sīkfailus un līdzīgus tehniskos risinājumus izmanto
+          GR Production mājaslapa, kādam nolūkam tie nepieciešami un kā Tu vari tos pārvaldīt.
+        </p>
+      </div>
+    </section>
+
+    <main>
+      <div class="container">
+
+        <section class="card">
+          <h2 data-i18n="s1Title">1. Vispārīga informācija</h2>
+          <p data-i18n="s1Text1">
+            Šī sīkdatņu politika attiecas uz GR Production mājaslapu. Mēs izmantojam tikai tādus sīkfailus
+            un līdzīgus tehniskos risinājumus, kas ir nepieciešami vietnes darbībai, lietotāja izvēļu
+            saglabāšanai un atsevišķu funkciju nodrošināšanai.
+          </p>
+          <p data-i18n="s1Text2">
+            Vietnē netiek izmantotas reklāmas, profilēšanas vai mārketinga sīkdatnes.
+          </p>
+          <div class="notice" data-i18n="s1Notice">
+            Vietne ir veidota ar mērķi izmantot minimāli nepieciešamos tehniskos risinājumus.
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 data-i18n="s2Title">2. Kas ir sīkdatnes?</h2>
+          <p data-i18n="s2Text1">
+            Sīkdatnes ir nelieli teksta faili, ko pārlūkprogramma saglabā Tavā ierīcē, kad apmeklē mājaslapu.
+            Tās palīdz vietnei atcerēties noteiktu informāciju, piemēram, iepriekš izvēlētos iestatījumus.
+          </p>
+          <p data-i18n="s2Text2">
+            Papildus klasiskajām sīkdatnēm vietne var izmantot arī līdzīgus pārlūkprogrammas glabāšanas risinājumus,
+            piemēram, localStorage vai sessionStorage.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2 data-i18n="s3Title">3. Kādi tehniskie risinājumi tiek izmantoti?</h2>
+          <p data-i18n="s3Text1">
+            GR Production vietnē tiek izmantoti tikai nepieciešamie vai funkcionālie tehniskie risinājumi.
+          </p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th data-i18n="tableH1">Nosaukums</th>
+                  <th data-i18n="tableH2">Veids</th>
+                  <th data-i18n="tableH3">Nolūks</th>
+                  <th data-i18n="tableH4">Glabāšanas ilgums</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>cookieConsent</strong></td>
+                  <td>localStorage</td>
+                  <td data-i18n="row1Purpose">Saglabā Tavu izvēli par sīkdatņu paziņojumu (pieņemts vai noraidīts).</td>
+                  <td data-i18n="rowStorageLong">Līdz brīdim, kamēr tiek iztīrīti pārlūkprogrammas dati</td>
+                </tr>
+                <tr>
+                  <td><strong>preferredLang</strong></td>
+                  <td>localStorage</td>
+                  <td data-i18n="row2Purpose">Saglabā izvēlēto lapas valodu, lai tā nebūtu jāizvēlas atkārtoti katrā apmeklējumā.</td>
+                  <td data-i18n="rowStorageLong">Līdz brīdim, kamēr tiek iztīrīti pārlūkprogrammas dati</td>
+                </tr>
+                <tr>
+                  <td><strong>callPopupShown</strong></td>
+                  <td>sessionStorage</td>
+                  <td data-i18n="row3Purpose">Nodrošina, ka konkrētais informatīvais uznirstošais logs vienas sesijas laikā netiek rādīts atkārtoti.</td>
+                  <td data-i18n="rowSession">Līdz pārlūkprogrammas cilnes vai sesijas aizvēršanai</td>
+                </tr>
+                <tr>
+                  <td data-i18n="row4Name"><strong>Servera žurnāldati</strong></td>
+                  <td data-i18n="row4Type">tehniskie dati</td>
+                  <td data-i18n="row4Purpose">Var tikt apstrādāti drošības, pieejamības un tehniskās uzturēšanas nolūkos, piemēram, IP adrese, ierīces tips, pieprasījuma laiks.</td>
+                  <td data-i18n="row4Storage">Saskaņā ar hostinga pakalpojuma sniedzēja noteikumiem</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="muted" data-i18n="s3Muted">
+            Vietnē netiek izmantota analītikas vai reklāmas sīkdatņu sistēma, ciktāl tas izriet no pašreizējās vietnes konfigurācijas.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2 data-i18n="s4Title">4. Trešo pušu pakalpojumi</h2>
+          <p data-i18n="s4Text1">
+            Atsevišķās vietnes sadaļās var tikt izmantoti trešo pušu risinājumi, kas ir nepieciešami funkcionalitātei.
+          </p>
+
+          <h3>Google Maps</h3>
+          <p data-i18n="s4Maps">
+            Vietnē ir iegulta Google Maps karte. Atverot šo karti, Google var apstrādāt noteiktu tehnisko informāciju
+            saskaņā ar saviem noteikumiem un privātuma politiku.
+          </p>
+
+          <h3>Formspree</h3>
+          <p data-i18n="s4Formspree">
+            Kontaktformas nosūtīšanai tiek izmantots Formspree pakalpojums. Iesniedzot formu, Tavi ievadītie dati
+            tiek nosūtīti šī pakalpojuma apstrādei, lai GR Production varētu saņemt un apstrādāt Tavu pieteikumu.
+          </p>
+
+          <div class="notice" data-i18n="s4Notice">
+            Šie risinājumi netiek izmantoti reklāmas vai profilēšanas nolūkos, bet tikai saziņas un kartes funkcionalitātei.
+          </div>
+        </section>
+
+        <section class="card">
+          <h2 data-i18n="s5Title">5. Kā Tu vari pārvaldīt sīkdatnes?</h2>
+          <p data-i18n="s5Text1">
+            Tu vari pārvaldīt vai dzēst sīkdatnes un citus lokāli saglabātos datus savas pārlūkprogrammas iestatījumos.
+          </p>
+          <ul>
+            <li data-i18n="s5li1">vari dzēst saglabātos vietnes datus savā pārlūkprogrammā;</li>
+            <li data-i18n="s5li2">vari bloķēt sīkdatņu vai vietnes datu saglabāšanu pārlūkprogrammas iestatījumos;</li>
+            <li data-i18n="s5li3">vari atkārtoti atvērt sīkdatņu izvēli, nospiežot saiti “Sīkdatnes” vietnes kājenē.</li>
+          </ul>
+          <p data-i18n="s5Text2">
+            Ņem vērā, ka, bloķējot nepieciešamos tehniskos risinājumus, atsevišķas vietnes funkcijas var nedarboties korekti.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2 data-i18n="s6Title">6. Tiesiskais pamats</h2>
+          <p data-i18n="s6Text1">
+            Nepieciešamie sīkfaili un līdzīgie tehniskie risinājumi tiek izmantoti, lai nodrošinātu vietnes darbību,
+            atcerētos lietotāja izvēles un nodrošinātu pieprasītās funkcijas.
+          </p>
+          <p data-i18n="s6Text2">
+            Ja vietnē nākotnē tiks ieviesti papildu analītikas vai mārketinga rīki, šī politika tiks attiecīgi atjaunināta.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2 data-i18n="s7Title">7. Izmaiņas politikā</h2>
+          <p data-i18n="s7Text1">
+            GR Production patur tiesības nepieciešamības gadījumā atjaunināt šo sīkdatņu politiku. Aktuālā versija vienmēr
+            ir pieejama šajā lapā.
+          </p>
+        </section>
+
+        <section class="card">
+          <h2 data-i18n="s8Title">8. Kontakti</h2>
+          <p data-i18n="s8Text1">
+            Ja Tev ir jautājumi par šo sīkdatņu politiku vai personas datu apstrādi, sazinies ar GR Production,
+            izmantojot kontaktinformāciju, kas norādīta mājaslapā.
+          </p>
+        </section>
+
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>© <span id="year"></span></div>
+        <div data-i18n="footerDev">Izstrāde: GR Production</div>
+        <div class="footer-links">
+          <a href="privacy.html" data-i18n="footerPrivacy">Privātuma politika</a>
+          <span style="opacity:.5;">•</span>
+          <a class="footer-link" href="sikdatnes.html" data-i18n="footerCookies">Sīkdatnes</a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    const translations = {
+      lv: {
+        backHome: "← Atpakaļ uz sākumlapu",
+        heroTitle: "Sīkdatņu politika",
+        heroText: "Šajā sīkdatņu politikā ir paskaidrots, kādus sīkfailus un līdzīgus tehniskos risinājumus izmanto GR Production mājaslapa, kādam nolūkam tie nepieciešami un kā Tu vari tos pārvaldīt.",
+        s1Title: "1. Vispārīga informācija",
+        s1Text1: "Šī sīkdatņu politika attiecas uz GR Production mājaslapu. Mēs izmantojam tikai tādus sīkfailus un līdzīgus tehniskos risinājumus, kas ir nepieciešami vietnes darbībai, lietotāja izvēļu saglabāšanai un atsevišķu funkciju nodrošināšanai.",
+        s1Text2: "Vietnē netiek izmantotas reklāmas, profilēšanas vai mārketinga sīkdatnes.",
+        s1Notice: "Vietne ir veidota ar mērķi izmantot minimāli nepieciešamos tehniskos risinājumus.",
+        s2Title: "2. Kas ir sīkdatnes?",
+        s2Text1: "Sīkdatnes ir nelieli teksta faili, ko pārlūkprogramma saglabā Tavā ierīcē, kad apmeklē mājaslapu. Tās palīdz vietnei atcerēties noteiktu informāciju, piemēram, iepriekš izvēlētos iestatījumus.",
+        s2Text2: "Papildus klasiskajām sīkdatnēm vietne var izmantot arī līdzīgus pārlūkprogrammas glabāšanas risinājumus, piemēram, localStorage vai sessionStorage.",
+        s3Title: "3. Kādi tehniskie risinājumi tiek izmantoti?",
+        s3Text1: "GR Production vietnē tiek izmantoti tikai nepieciešamie vai funkcionālie tehniskie risinājumi.",
+        tableH1: "Nosaukums",
+        tableH2: "Veids",
+        tableH3: "Nolūks",
+        tableH4: "Glabāšanas ilgums",
+        row1Purpose: "Saglabā Tavu izvēli par sīkdatņu paziņojumu (pieņemts vai noraidīts).",
+        row2Purpose: "Saglabā izvēlēto lapas valodu, lai tā nebūtu jāizvēlas atkārtoti katrā apmeklējumā.",
+        row3Purpose: "Nodrošina, ka konkrētais informatīvais uznirstošais logs vienas sesijas laikā netiek rādīts atkārtoti.",
+        rowStorageLong: "Līdz brīdim, kamēr tiek iztīrīti pārlūkprogrammas dati",
+        rowSession: "Līdz pārlūkprogrammas cilnes vai sesijas aizvēršanai",
+        row4Name: "Servera žurnāldati",
+        row4Type: "tehniskie dati",
+        row4Purpose: "Var tikt apstrādāti drošības, pieejamības un tehniskās uzturēšanas nolūkos, piemēram, IP adrese, ierīces tips, pieprasījuma laiks.",
+        row4Storage: "Saskaņā ar hostinga pakalpojuma sniedzēja noteikumiem",
+        s3Muted: "Vietnē netiek izmantota analītikas vai reklāmas sīkdatņu sistēma, ciktāl tas izriet no pašreizējās vietnes konfigurācijas.",
+        s4Title: "4. Trešo pušu pakalpojumi",
+        s4Text1: "Atsevišķās vietnes sadaļās var tikt izmantoti trešo pušu risinājumi, kas ir nepieciešami funkcionalitātei.",
+        s4Maps: "Vietnē ir iegulta Google Maps karte. Atverot šo karti, Google var apstrādāt noteiktu tehnisko informāciju saskaņā ar saviem noteikumiem un privātuma politiku.",
+        s4Formspree: "Kontaktformas nosūtīšanai tiek izmantots Formspree pakalpojums. Iesniedzot formu, Tavi ievadītie dati tiek nosūtīti šī pakalpojuma apstrādei, lai GR Production varētu saņemt un apstrādāt Tavu pieteikumu.",
+        s4Notice: "Šie risinājumi netiek izmantoti reklāmas vai profilēšanas nolūkos, bet tikai saziņas un kartes funkcionalitātei.",
+        s5Title: "5. Kā Tu vari pārvaldīt sīkdatnes?",
+        s5Text1: "Tu vari pārvaldīt vai dzēst sīkdatnes un citus lokāli saglabātos datus savas pārlūkprogrammas iestatījumos.",
+        s5li1: "vari dzēst saglabātos vietnes datus savā pārlūkprogrammā;",
+        s5li2: "vari bloķēt sīkdatņu vai vietnes datu saglabāšanu pārlūkprogrammas iestatījumos;",
+        s5li3: "vari atkārtoti atvērt sīkdatņu izvēli, nospiežot saiti “Sīkdatnes” vietnes kājenē.",
+        s5Text2: "Ņem vērā, ka, bloķējot nepieciešamos tehniskos risinājumus, atsevišķas vietnes funkcijas var nedarboties korekti.",
+        s6Title: "6. Tiesiskais pamats",
+        s6Text1: "Nepieciešamie sīkfaili un līdzīgie tehniskie risinājumi tiek izmantoti, lai nodrošinātu vietnes darbību, atcerētos lietotāja izvēles un nodrošinātu pieprasītās funkcijas.",
+        s6Text2: "Ja vietnē nākotnē tiks ieviesti papildu analītikas vai mārketinga rīki, šī politika tiks attiecīgi atjaunināta.",
+        s7Title: "7. Izmaiņas politikā",
+        s7Text1: "GR Production patur tiesības nepieciešamības gadījumā atjaunināt šo sīkdatņu politiku. Aktuālā versija vienmēr ir pieejama šajā lapā.",
+        s8Title: "8. Kontakti",
+        s8Text1: "Ja Tev ir jautājumi par šo sīkdatņu politiku vai personas datu apstrādi, sazinies ar GR Production, izmantojot kontaktinformāciju, kas norādīta mājaslapā.",
+        footerDev: "Izstrāde: GR Production",
+        footerPrivacy: "Privātuma politika",
+        footerCookies: "Sīkdatnes",
+        footerYear: "GR Production. Visas tiesības aizsargātas."
+      },
+      en: {
+        backHome: "← Back to homepage",
+        heroTitle: "Cookie Policy",
+        heroText: "This cookie policy explains what cookies and similar technical solutions are used by the GR Production website, why they are necessary, and how you can manage them.",
+        s1Title: "1. General information",
+        s1Text1: "This cookie policy applies to the GR Production website. We use only such cookies and similar technical solutions that are necessary for the operation of the website, saving user preferences, and ensuring certain functions.",
+        s1Text2: "The website does not use advertising, profiling, or marketing cookies.",
+        s1Notice: "The website is designed to use only minimally necessary technical solutions.",
+        s2Title: "2. What are cookies?",
+        s2Text1: "Cookies are small text files that the browser stores on your device when you visit a website. They help the website remember certain information, such as previously selected settings.",
+        s2Text2: "In addition to classic cookies, the website may also use similar browser storage solutions such as localStorage or sessionStorage.",
+        s3Title: "3. What technical solutions are used?",
+        s3Text1: "The GR Production website uses only necessary or functional technical solutions.",
+        tableH1: "Name",
+        tableH2: "Type",
+        tableH3: "Purpose",
+        tableH4: "Storage period",
+        row1Purpose: "Stores your choice regarding the cookie notice (accepted or declined).",
+        row2Purpose: "Stores the selected website language so it does not need to be chosen again during each visit.",
+        row3Purpose: "Ensures that a specific informational popup is not shown repeatedly during one session.",
+        rowStorageLong: "Until browser data is cleared",
+        rowSession: "Until the browser tab or session is closed",
+        row4Name: "Server log data",
+        row4Type: "technical data",
+        row4Purpose: "May be processed for security, availability, and technical maintenance purposes, for example IP address, device type, request time.",
+        row4Storage: "According to the hosting provider’s rules",
+        s3Muted: "The website does not use analytics or advertising cookie systems insofar as this follows from the current website configuration.",
+        s4Title: "4. Third-party services",
+        s4Text1: "Certain sections of the website may use third-party solutions that are necessary for functionality.",
+        s4Maps: "A Google Maps map is embedded on the website. When opening this map, Google may process certain technical information in accordance with its own terms and privacy policy.",
+        s4Formspree: "The Formspree service is used to send contact forms. When submitting a form, the data you enter is sent for processing by this service so that GR Production can receive and process your request.",
+        s4Notice: "These solutions are not used for advertising or profiling purposes, but only for communication and map functionality.",
+        s5Title: "5. How can you manage cookies?",
+        s5Text1: "You can manage or delete cookies and other locally stored data in your browser settings.",
+        s5li1: "you can delete stored website data in your browser;",
+        s5li2: "you can block the storage of cookies or website data in browser settings;",
+        s5li3: "you can reopen the cookie choice by clicking the “Cookies” link in the website footer.",
+        s5Text2: "Please note that if you block necessary technical solutions, some website functions may not work correctly.",
+        s6Title: "6. Legal basis",
+        s6Text1: "Necessary cookies and similar technical solutions are used to ensure website functionality, remember user preferences, and provide requested functions.",
+        s6Text2: "If additional analytics or marketing tools are introduced on the website in the future, this policy will be updated accordingly.",
+        s7Title: "7. Changes to the policy",
+        s7Text1: "GR Production reserves the right to update this cookie policy if necessary. The current version is always available on this page.",
+        s8Title: "8. Contacts",
+        s8Text1: "If you have questions about this cookie policy or the processing of personal data, please contact GR Production using the contact information provided on the website.",
+        footerDev: "Development: GR Production",
+        footerPrivacy: "Privacy Policy",
+        footerCookies: "Cookies",
+        footerYear: "GR Production. All rights reserved."
+      },
+      ru: {
+        backHome: "← Назад на главную",
+        heroTitle: "Политика cookie",
+        heroText: "В этой политике cookie объясняется, какие файлы cookie и аналогичные технические решения используются на сайте GR Production, зачем они необходимы и как Вы можете ими управлять.",
+        s1Title: "1. Общая информация",
+        s1Text1: "Настоящая политика cookie относится к сайту GR Production. Мы используем только те cookie и аналогичные технические решения, которые необходимы для работы сайта, сохранения пользовательских настроек и обеспечения отдельных функций.",
+        s1Text2: "На сайте не используются рекламные, профилирующие или маркетинговые cookie.",
+        s1Notice: "Сайт создан с целью использования только минимально необходимых технических решений.",
+        s2Title: "2. Что такое cookie?",
+        s2Text1: "Cookie — это небольшие текстовые файлы, которые браузер сохраняет на Вашем устройстве при посещении сайта. Они помогают сайту запоминать определённую информацию, например ранее выбранные настройки.",
+        s2Text2: "Помимо классических cookie сайт может использовать и аналогичные решения браузерного хранения, например localStorage или sessionStorage.",
+        s3Title: "3. Какие технические решения используются?",
+        s3Text1: "На сайте GR Production используются только необходимые или функциональные технические решения.",
+        tableH1: "Название",
+        tableH2: "Тип",
+        tableH3: "Цель",
+        tableH4: "Срок хранения",
+        row1Purpose: "Сохраняет Ваш выбор по уведомлению о cookie (принято или отклонено).",
+        row2Purpose: "Сохраняет выбранный язык сайта, чтобы его не нужно было выбирать заново при каждом посещении.",
+        row3Purpose: "Обеспечивает, чтобы конкретное информационное всплывающее окно не показывалось повторно в течение одной сессии.",
+        rowStorageLong: "До очистки данных браузера",
+        rowSession: "До закрытия вкладки браузера или завершения сессии",
+        row4Name: "Данные серверных журналов",
+        row4Type: "технические данные",
+        row4Purpose: "Могут обрабатываться в целях безопасности, доступности и технического обслуживания, например IP-адрес, тип устройства, время запроса.",
+        row4Storage: "Согласно правилам хостинг-провайдера",
+        s3Muted: "На сайте не используются системы аналитических или рекламных cookie, насколько это следует из текущей конфигурации сайта.",
+        s4Title: "4. Сервисы третьих лиц",
+        s4Text1: "В отдельных разделах сайта могут использоваться решения третьих лиц, необходимые для функциональности.",
+        s4Maps: "На сайте встроена карта Google Maps. При открытии этой карты Google может обрабатывать определённую техническую информацию в соответствии со своими правилами и политикой конфиденциальности.",
+        s4Formspree: "Для отправки контактной формы используется сервис Formspree. При отправке формы введённые Вами данные передаются этому сервису для обработки, чтобы GR Production могла получить и обработать Ваш запрос.",
+        s4Notice: "Эти решения используются не в рекламных или профилирующих целях, а только для связи и функциональности карты.",
+        s5Title: "5. Как Вы можете управлять cookie?",
+        s5Text1: "Вы можете управлять или удалять cookie и другие локально сохранённые данные в настройках своего браузера.",
+        s5li1: "Вы можете удалить сохранённые данные сайта в своём браузере;",
+        s5li2: "Вы можете заблокировать сохранение cookie или данных сайта в настройках браузера;",
+        s5li3: "Вы можете повторно открыть выбор cookie, нажав ссылку «Cookie» в подвале сайта.",
+        s5Text2: "Обратите внимание, что при блокировке необходимых технических решений некоторые функции сайта могут работать некорректно.",
+        s6Title: "6. Правовое основание",
+        s6Text1: "Необходимые cookie и аналогичные технические решения используются для обеспечения работы сайта, запоминания пользовательских настроек и предоставления запрошенных функций.",
+        s6Text2: "Если в будущем на сайте будут внедрены дополнительные аналитические или маркетинговые инструменты, данная политика будет соответственно обновлена.",
+        s7Title: "7. Изменения политики",
+        s7Text1: "GR Production оставляет за собой право при необходимости обновлять настоящую политику cookie. Актуальная версия всегда доступна на этой странице.",
+        s8Title: "8. Контакты",
+        s8Text1: "Если у Вас есть вопросы по этой политике cookie или обработке персональных данных, свяжитесь с GR Production, используя контактную информацию, указанную на сайте.",
+        footerDev: "Разработка: GR Production",
+        footerPrivacy: "Политика конфиденциальности",
+        footerCookies: "Cookie",
+        footerYear: "GR Production. Все права защищены."
+      }
+    };
+
+    function applyTranslations(lang){
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      const year = document.getElementById("year");
+      if (year) year.textContent = new Date().getFullYear() + " " + translations[lang].footerYear;
+
+      document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+
+      try {
+        localStorage.setItem("preferredLang", lang);
+      } catch(e) {}
+    }
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+      btn.addEventListener("click", () => applyTranslations(btn.dataset.lang));
+    });
+
+    const savedLang = (() => {
+      try { return localStorage.getItem("preferredLang") || "lv"; }
+      catch(e){ return "lv"; }
+    })();
+
+    applyTranslations(savedLang);
+  </script>
+</body>
+</html>

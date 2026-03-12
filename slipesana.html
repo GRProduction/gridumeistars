@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8" />
+  <title>GR Production – Dēļu un parketa grīdu slīpēšana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="GR Production – dēļu un parketa grīdu slīpēšana: darba gaita, apdares varianti, reāli darbu piemēri un konsultācija visā Latvijā." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet">
+  <style>
+  
+:root {
+  --green:#7BB62F;
+  --green-dark:#5F9620;
+  --dark:#222222;
+  --dark-soft:#333333;
+  --light:#F6F6F6;
+  --white:#FFFFFF;
+  --border-light:#E4E4E4;
+  --text-muted:#777777;
+  --max-width:1200px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{scroll-behavior:smooth;}
+body{
+  font-family:"Poppins",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#e9eaec;
+  color:#222;
+  line-height:1.5;
+}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+
+.page{
+  padding-top:74px;
+  max-width:1400px;
+  margin:0 auto;
+  min-height:100vh;
+  background:var(--white);
+  box-shadow:0 0 35px rgba(0,0,0,0.08);
+  overflow:hidden;
+  position:relative;
+}
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 32px;
+}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:9999;
+  background:rgba(255,255,255,0.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border-light);
+}
+.nav{
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+.logo-wrap{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+.logo-wrap img{height:40px;}
+.nav-center{flex:1;display:flex;justify-content:center;}
+.nav-links{display:flex;gap:22px;font-size:14px;color:#444;}
+.nav-links a{position:relative;font-weight:500;}
+.nav-links a::after{
+  content:"";
+  position:absolute;left:0;bottom:-6px;
+  width:0;height:2px;background:var(--green);
+  transition:width .25s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after{width:100%;}
+.nav-right{display:flex;align-items:center;gap:16px;}
+.lang-switch{display:flex;align-items:center;gap:6px;font-size:12px;}
+.lang-btn{
+  display:flex;align-items:center;gap:4px;
+  padding:4px 8px;border-radius:999px;
+  border:1px solid transparent;background:transparent;
+  font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+  color:#555;cursor:pointer;
+}
+.lang-btn .flag{font-size:15px;}
+.lang-btn.active{border-color:var(--green);background:rgba(123,182,47,0.12);color:#222;}
+
+.lang-btn{
+  width:36px;
+  height:36px;
+  padding:0;
+  border-radius:50%;
+  border:1px solid transparent;
+  background:transparent;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+.lang-btn img{
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  display:block;
+  object-fit:cover;
+}
+
+.lang-btn.active{
+  border-color:var(--green);
+  background:rgba(123,182,47,0.12);
+}
+
+.nav-cta{
+  padding:8px 16px;border-radius:999px;
+  background:var(--green);color:#fff;border:none;
+  font-size:13px;font-weight:600;
+  box-shadow:0 7px 16px rgba(123,182,47,0.35);
+  cursor:pointer;
+}
+.nav-cta:hover{background:var(--green-dark);}
+
+/* Sections */
+section{padding:60px 0;}
+.section-title{font-size:26px;font-weight:700;margin-bottom:10px;}
+.section-subtitle{font-size:14px;color:var(--text-muted);margin-bottom:24px;max-width:680px;}
+
+/* Buttons */
+.btn-primary{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 22px;border-radius:10px;border:none;
+  background:var(--green);color:#fff;font-weight:600;font-size:14px;
+  cursor:pointer;
+  box-shadow:0 14px 30px rgba(123,182,47,.45);
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn-primary:hover{background:var(--green-dark);transform:translateY(-1px);box-shadow:0 18px 40px rgba(123,182,47,.55);}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 18px;border-radius:10px;
+  border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#f1f1f1;font-size:13px;cursor:pointer;
+}
+
+/* HERO (consistent style) */
+.epoxy-hero{
+  background:
+    radial-gradient(900px 600px at 15% 25%, rgba(123,182,47,.22), transparent 55%),
+    linear-gradient(135deg, #1f1f1f, #2c2c2c);
+  color:#fff;
+}
+.epoxy-hero-inner{
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:26px;
+  align-items:center;
+}
+.epoxy-kicker{
+  font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+  color:#cfcfcf;margin-bottom:10px;
+}
+.epoxy-title{
+  font-size:42px;line-height:1.1;font-weight:700;margin-bottom:14px;
+}
+.epoxy-sub{font-size:15px;color:#dddddd;max-width:520px;margin-bottom:16px;line-height:1.6;}
+.epoxy-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px;}
+.epoxy-hero-card{
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(0,0,0,.28);
+  overflow:hidden;
+  box-shadow:0 18px 40px rgba(0,0,0,.25);
+}
+.epoxy-hero-img{
+  height:320px;
+  background:#111;
+  display:flex;align-items:center;justify-content:center;
+  color:#cfcfcf;font-size:13px;
+  background-image:linear-gradient(120deg, rgba(0,0,0,.55), transparent 55%);
+}
+.epoxy-hero-img small{opacity:.9;}
+.epoxy-hero-badges{
+  display:flex;flex-wrap:wrap;gap:10px;
+  padding:14px 14px 16px;
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:7px 12px;border-radius:999px;
+  background:rgba(0,0,0,.45);
+  border:1px solid rgba(255,255,255,.12);
+  font-size:12px;color:#f4f4f4;
+}
+.badge i{color:var(--green);}
+
+/* Content cards */
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:14px;}
+.card{
+  background:#ffffff;
+  border:1px solid rgba(0,0,0,0.08);
+  border-radius:18px;
+  padding:16px;
+  box-shadow:0 14px 34px rgba(0,0,0,0.06);
+}
+.card-title{font-size:16px;font-weight:700;margin-bottom:6px;color:#1f1f1f;}
+.card-text{font-size:13px;color:#555;line-height:1.6;}
+.card-list{margin-top:10px;padding-left:18px;font-size:13px;color:#555;line-height:1.6;}
+.card-list li{margin-bottom:4px;}
+.image-placeholder{
+  margin-top:12px;
+  border-radius:14px;
+  border:1px dashed rgba(0,0,0,0.22);
+  background:#f7f7f7;
+  min-height:150px;
+  display:flex;align-items:center;justify-content:center;
+  color:#777;font-size:12px;
+}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:14px;}
+.step{
+  background:#fbfcfa;
+  border:1px solid #eef1e8;
+  border-radius:16px;
+  padding:14px;
+  box-shadow:0 10px 26px rgba(0,0,0,0.04);
+}
+.step-top{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.step-num{
+  width:30px;height:30px;border-radius:999px;
+  background:rgba(123,182,47,0.14);
+  border:1px solid rgba(123,182,47,0.25);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--green-dark);font-weight:700;font-size:12px;
+}
+.step-title{font-weight:700;font-size:13px;}
+.step-text{font-size:12px;color:#555;line-height:1.55;}
+
+/* FAQ */
+.faq-wrap{
+  border-radius:18px;
+  border:1px solid #e6eadf;
+  background:#ffffff;
+  box-shadow:0 10px 26px rgba(0,0,0,0.05);
+  overflow:hidden;
+}
+.faq-wrap details{border-top:1px solid #eef1e8;background:#fbfcfa;}
+.faq-wrap details:first-child{border-top:none;}
+.faq-wrap summary{
+  list-style:none;cursor:pointer;
+  padding:14px 14px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  font-weight:600;font-size:13px;color:#2b2b2b;
+}
+.faq-wrap summary::-webkit-details-marker{display:none;}
+.faq-wrap summary i{transition:transform .18s ease;color:#60714a;}
+.faq-wrap details[open] summary i{transform:rotate(180deg);}
+.faq-body{padding:0 14px 14px;font-size:13px;color:#555;line-height:1.6;}
+
+/* CTA box */
+.cta-box{
+  margin-top:18px;
+  padding:16px;
+  border-radius:18px;
+  background:rgba(123,182,47,0.10);
+  border:1px solid rgba(123,182,47,0.22);
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+.cta-title{font-weight:800;font-size:16px;color:#2a2a2a;}
+.cta-note{font-size:13px;color:#4c5a33;max-width:680px;}
+
+/* Footer */
+footer{
+  background:var(--dark);
+  color:#cccccc;
+  padding:24px 0;
+  font-size:12px;
+}
+.footer-inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 32px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.footer-inner a{color:#e8e8e8;}
+.footer-links{display:flex;gap:10px;align-items:center;}
+.footer-link{color:#e8e8e8;opacity:.9;}
+.footer-link:hover{opacity:1;text-decoration:underline;}
+
+/* Responsive */
+@media(max-width:1024px){
+  .epoxy-hero-inner{grid-template-columns:1fr;}
+  .grid-3{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:768px){
+  .nav-center{display:none;}
+  .container{padding:0 18px;}
+  .footer-inner{padding:0 18px;}
+  .grid-3{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr;}
+  .epoxy-title{font-size:32px;}
+}
+
+  
+
+/* ===== INDEX HEADER / DROPDOWN / MOBILE DRAWER ===== */
+.logo-wrap img{height:40px;}
+.nav-link{position:relative;font-weight:500;}
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:var(--green);
+  transition:width .25s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after{width:100%;}
+
+.nav-dropdown{ position: relative; display:inline-flex; align-items:center; }
+
+/* pill button */
+.nav-dropdown-btn{
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:0;                 /* like other nav links */
+  border-radius:0;
+  color:#444;
+  font: inherit;
+  font-weight:500;
+  line-height:1;
+  position:relative;
+}
+
+/* chevron (CSS triangle) */
+.nav-dropdown-btn::after{
+  content:"";
+  width:0;height:0;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:6px solid #555;
+  opacity:.85;
+  transform: translateY(1px);
+  transition: transform .2s ease;
+  margin-left:6px;
+}
+.nav-dropdown.open .nav-dropdown-btn::after{
+  content:"";
+  width:0;height:0;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:6px solid #555;
+  opacity:.85;
+  transform: translateY(1px);
+  transition: transform .2s ease;
+  margin-left:6px;
+}
+
+.nav-dropdown-btn:hover::after{
+  width:100%;
+}
+
+.nav-dropdown-btn::after{content:none !important;}
+.nav-dropdown-caret{
+  width:0;
+  height:0;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:6px solid #555;
+  opacity:.85;
+  transform:translateY(1px);
+  margin-left:6px;
+  display:inline-block;
+  flex:0 0 auto;
+}
+
+.nav-dropdown-menu{
+  position:absolute;
+  top:calc(100% + 12px);
+  left:0;
+  width:320px;
+  max-width:min(86vw, 360px);
+  background:#fff;
+  border:1px solid rgba(0,0,0,0.08);
+  border-radius:18px;
+  box-shadow:0 18px 45px rgba(0,0,0,0.18);
+  padding:10px;
+  display:none;
+  z-index:100000;
+}
+.nav-dropdown.open .nav-dropdown-menu{ display:block; }
+.dd-item{
+  display:block;
+  padding:12px;
+  border-radius:14px;
+  transition:background .15s ease, transform .1s ease;
+}
+.dd-item:hover{ background:rgba(0,0,0,0.04); transform:translateY(-1px); }
+.dd-title{ font-size:15px; font-weight:700; color:#1f1f1f; margin-bottom:3px; }
+.dd-sub{ font-size:13px; color:#6b6b6b; line-height:1.25; }
+.dd-divider{ height:1px; background:rgba(0,0,0,0.10); margin:10px 8px; }
+.dd-all{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px;
+  border-radius:14px;
+  font-weight:700;
+  font-size:15px;
+  color:#1f1f1f;
+  transition:background .15s ease;
+}
+.dd-all:hover{ background:rgba(0,0,0,0.04); }
+.dd-all-icon{
+  width:18px;
+  height:18px;
+  position:relative;
+  display:inline-block;
+}
+.dd-all-icon::before,
+.dd-all-icon::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  margin:auto;
+  width:18px;
+  height:10px;
+  border-radius:4px;
+  background:var(--green);
+  transform:skewX(-12deg);
+}
+.dd-all-icon::before{ top:6px; opacity:.85; }
+.dd-all-icon::after{ top:0; opacity:1; }
+
+.hamburger{
+  display:none;
+  width:42px; height:42px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,0.10);
+  background:#fff;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 10px 24px rgba(0,0,0,0.06);
+}
+.hamburger span{ width:18px; height:2px; background:#222; display:block; position:relative; }
+.hamburger span::before,
+.hamburger span::after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:18px;
+  height:2px;
+  background:#222;
+}
+.hamburger span::before{ top:-6px; }
+.hamburger span::after{ top:6px; }
+
+.mobile-header{
+  display:none;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  height:64px;
+}
+.mobile-brand{ display:flex; align-items:center; justify-content:center; flex:1; }
+.mobile-logo{ height:34px; width:auto; display:block; }
+.mobile-actions{ display:flex; align-items:center; gap:10px; }
+.mobile-icon-btn{
+  width:42px; height:42px;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,0.10);
+  background:#fff;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 10px 24px rgba(0,0,0,0.06);
+}
+.mobile-icon-btn i{ font-size:16px; color:#222; }
+.mobile-icon-btn[href*="wa.me"] i{ color:#25D366; }
+
+.mobile-drawer{ position:fixed; inset:0; z-index:100001; display:none; }
+.mobile-drawer.show{ display:block; }
+.mobile-drawer-backdrop{
+  position:absolute; inset:0;
+  background:rgba(0,0,0,0.55);
+  backdrop-filter:blur(2px);
+}
+.mobile-drawer-panel{
+  position:absolute; top:0; right:0; height:100%;
+  width:min(92vw, 360px);
+  background:#fff;
+  padding:14px;
+  box-shadow:-20px 0 50px rgba(0,0,0,0.25);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.mobile-drawer-top{ display:flex; align-items:center; justify-content:space-between; }
+.mobile-drawer-title{ font-weight:700; font-size:14px; }
+.mobile-drawer-close{
+  width:42px; height:42px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,0.10);
+  background:#fff;
+  cursor:pointer;
+  font-size:20px;
+  line-height:1;
+}
+.mobile-nav-list{ display:flex; flex-direction:column; gap:8px; }
+.mobile-nav-link{
+  padding:12px;
+  border-radius:14px;
+  border:1px solid rgba(0,0,0,0.08);
+  background:#fbfbfb;
+  font-weight:600;
+  color:#222;
+}
+.mobile-services{
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,0.08);
+  overflow:hidden;
+  background:#fff;
+}
+.mobile-services summary{
+  list-style:none;
+  cursor:pointer;
+  padding:12px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  font-weight:700;
+}
+.mobile-services summary::-webkit-details-marker{ display:none; }
+.mobile-services summary .chev{
+  width:0; height:0;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-top:6px solid #555;
+  transition:transform .2s ease;
+}
+.mobile-services[open] summary .chev{ transform:rotate(180deg); }
+.mobile-services a{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:12px;
+  border-top:1px solid rgba(0,0,0,0.06);
+  color:#222;
+  flex-wrap:wrap;
+}
+.mobile-services .micon{
+  width:28px;
+  height:28px;
+  border-radius:10px;
+  background:#f2f2f2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  margin-top:2px;
+}
+.mobile-services .micon i{ font-size:14px; color:#222; }
+.mobile-services a > span:not(.micon){ flex:1; min-width:0; font-weight:600; }
+.mobile-services small{ display:block; width:100%; color:#6b6b6b; font-weight:500; margin-left:38px; margin-top:-4px; }
+.mobile-drawer-cta{ margin-top:auto; display:flex; gap:10px; }
+.mobile-drawer-cta a{ flex:1; text-align:center; padding:12px 14px; border-radius:999px; font-weight:700; }
+.mobile-cta-primary{ background:var(--green); color:#fff; }
+.mobile-cta-secondary{ border:1px solid rgba(0,0,0,0.12); background:#fff; color:#222; }
+
+@media (max-width:1024px){
+  .hamburger{ display:flex; }
+  .nav-center{ display:none; }
+}
+@media (max-width:768px){
+  header{ background:#fff; backdrop-filter:none; }
+  .nav{ height:auto; padding:10px 0; }
+  .mobile-header{ display:flex; }
+  .nav-center{ display:none !important; }
+  .nav-right{ display:none !important; }
+  .logo-wrap{ display:none; }
+  .page{ padding-top:74px; }
+  body{ padding-bottom:0; }
+}
+@media (max-width:768px){
+  .nav-dropdown{ display:none; }
+}
+
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+<div class="container nav">
+<!-- MOBILE HEADER (like index) -->
+<div aria-label="Mobilā galvene" class="mobile-header">
+<button aria-label="Atvērt izvēlni" class="hamburger" id="hamburgerBtn" type="button"><span></span></button>
+<a aria-label="Uz sākumu" class="mobile-brand" href="index.html#hero">
+<img alt="GR Production" class="mobile-logo" src="manslogo.png"/>
+</a>
+<div aria-label="Ātrās darbības" class="mobile-actions">
+<a aria-label="Zvanīt" class="mobile-icon-btn" href="tel:+37125607986"><i class="fa-solid fa-phone"></i></a>
+<a aria-label="WhatsApp" class="mobile-icon-btn" href="https://wa.me/37125607986?text=Labdien!%20V%C4%93los%20sazin%C4%81ties%20par%20gr%C4%ABdu%20risin%C4%81jumu."><i class="fa-brands fa-whatsapp"></i></a>
+</div>
+</div>
+<div class="logo-wrap">
+<a href="index.html#hero">
+<img alt="GR Production" class="logo" decoding="async" src="manslogo.png"/>
+</a>
+</div>
+<div class="nav-center">
+<nav class="nav-links">
+<a class="nav-link" data-i18n="navHome" href="index.html#hero">Sākums</a>
+<div class="nav-dropdown" id="servicesDropdown">
+<button aria-expanded="false" aria-haspopup="true" class="nav-link nav-dropdown-btn" type="button"><span class="nav-dropdown-label" data-i18n="navServices">Pakalpojumi</span><span aria-hidden="true" class="nav-dropdown-caret"></span></button>
+<div aria-label="Pakalpojumi" class="nav-dropdown-menu" role="menu">
+<a class="dd-item" href="epoxy.html" role="menuitem">
+<div class="dd-title" data-i18n="menuEpoxy">Epoksīda grīdas</div>
+<div class="dd-sub" data-i18n="menuEpoxySub">Rūpniecībai un privātmājām</div>
+</a>
+<a class="dd-item" href="slipesana.html" role="menuitem">
+<div class="dd-title" data-i18n="menuGrinding">Dēļu un parketa grīdu slīpēšana</div>
+<div class="dd-sub" data-i18n="menuGrindingSub">Slīpēšana, lakotšana un atjaunošana</div>
+</a>
+<a class="dd-item" href="standarts.html" role="menuitem">
+<div class="dd-title" data-i18n="menuStandard">Standarta grīdu ieklāšana</div>
+<div class="dd-sub" data-i18n="menuStandardSub">Lamināts, vinils, parkets</div>
+</a>
+<div class="dd-divider"></div>
+<a class="dd-all" href="index.html#services" role="menuitem">
+<span aria-hidden="true" class="dd-all-icon"></span>
+<span data-i18n="menuAllServices">Visi pakalpojumi</span>
+</a>
+</div>
+</div>
+<a class="nav-link" data-i18n="navAbout" href="index.html#about">Par mums</a>
+<a class="nav-link" data-i18n="navPricing" href="index.html#pricing">Cenas</a>
+<a class="nav-link" data-i18n="navTestimonials" href="index.html#testimonials">Atsauksmes</a>
+<a class="nav-link" data-i18n="navGallery" href="index.html#gallery">Galerija</a>
+<a class="nav-link" data-i18n="navContact" href="index.html#contacts">Kontakti</a>
+</nav>
+</div>
+<div class="nav-right"><div class="lang-switch">
+  <button class="lang-btn" data-lang="lv">
+    <img src="https://hatscripts.github.io/circle-flags/flags/lv.svg" alt="Latviešu">
+  </button>
+
+  <button class="lang-btn" data-lang="en">
+    <img src="https://hatscripts.github.io/circle-flags/flags/gb.svg" alt="English">
+  </button>
+
+  <button class="lang-btn" data-lang="ru">
+    <img src="https://hatscripts.github.io/circle-flags/flags/ru.svg" alt="Русский">
+  </button>
+</div>
+<a class="nav-cta" data-i18n="navCta" href="index.html#contacts">Sazināties</a>
+</div>
+</div>
+</header>
+
+<div aria-hidden="true" class="mobile-drawer" id="mobileDrawer">
+<div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
+<div aria-label="Izvēlne" aria-modal="true" class="mobile-drawer-panel" role="dialog">
+<div class="mobile-drawer-top">
+<div class="mobile-drawer-title" data-i18n="mobileMenuTitle">Izvēlne</div>
+<button aria-label="Aizvērt" class="mobile-drawer-close" id="mobileDrawerClose" type="button">×</button>
+</div>
+<div class="lang-switch" style="gap:10px;">
+<button aria-label="Latviešu" class="lang-btn active" data-lang="lv">🇱🇻</button>
+<button aria-label="English" class="lang-btn" data-lang="en">🇬🇧</button>
+<button aria-label="Русский" class="lang-btn" data-lang="ru">🇷🇺</button>
+</div>
+<div class="mobile-nav-list">
+<details class="mobile-services">
+<summary><span data-i18n="navServices">Pakalpojumi</span><span aria-hidden="true" class="chev"></span></summary>
+<a href="epoxy.html"><span class="micon"><i class="fa-solid fa-fill-drip"></i></span><span data-i18n="menuEpoxy">Epoksīda grīdas</span><small data-i18n="menuEpoxySub">Rūpniecībai un privātmājām</small></a>
+<a href="slipesana.html"><span class="micon"><i class="fa-solid fa-gears"></i></span><span data-i18n="menuGrinding">Dēļu un parketa grīdu slīpēšana</span><small data-i18n="menuGrindingSub">Slīpēšana, lakotšana un atjaunošana</small></a>
+<a href="standarts.html"><span class="micon"><i class="fa-solid fa-border-all"></i></span><span data-i18n="menuStandard">Standarta grīdu ieklāšana</span><small data-i18n="menuStandardSub">Lamināts, vinils, parkets</small></a>
+<a href="index.html#services"><span class="micon"><i class="fa-solid fa-layer-group"></i></span><span data-i18n="menuAllServices">Visi pakalpojumi</span><small data-i18n="menuAllServicesSub">Skatīt 3 galvenos virzienus</small></a>
+</details>
+<a class="mobile-nav-link" data-i18n="navPricing" href="index.html#pricing">Cenas</a>
+<a class="mobile-nav-link" data-i18n="navAbout" href="index.html#about">Par mums</a>
+<a class="mobile-nav-link" data-i18n="navTestimonials" href="index.html#testimonials">Atsauksmes</a>
+<a class="mobile-nav-link" data-i18n="navGallery" href="index.html#gallery">Galerija</a>
+<a class="mobile-nav-link" data-i18n="navContact" href="index.html#contacts">Kontakti</a>
+</div>
+<div class="mobile-drawer-cta">
+<a class="mobile-cta-secondary" data-i18n="quickCall" href="tel:+37125607986">Zvanīt</a>
+<a class="mobile-cta-primary" data-i18n="navCta" href="index.html#contacts">Sazināties</a>
+</div>
+</div>
+</div>
+    
+<section class="epoxy-hero" id="top">
+  <div class="container">
+    <div class="epoxy-hero-inner">
+      <div>
+        <div class="epoxy-kicker" data-i18n="heroKicker">GR Production • Koka grīdu atjaunošana</div>
+        <h1 class="epoxy-title" data-i18n="heroTitle">Dēļu un parketa grīdu slīpēšana</h1>
+        <p class="epoxy-sub" data-i18n="heroSub">
+          Atjaunojam koka grīdas: noņemam veco laku/krāsu, izlīdzinām virsmu, špaktelējam un uzklājam jaunu apdari
+          (laka vai eļļa). Strādājam ar putekļu savākšanu, lai telpa būtu tīrāka.
+        </p>
+        <div class="epoxy-hero-actions">
+          <a class="btn-primary" href="index.html#contacts"><i class="fa-solid fa-phone"></i> <span data-i18n="heroPrimary">Saņemt tāmi / konsultāciju</span></a>
+          <a class="btn-primary" style="background:#222; box-shadow:0 14px 30px rgba(0,0,0,.25);" href="index.html#services">
+            <i class="fa-solid fa-arrow-left"></i> <span data-i18n="heroSecondary">Atpakaļ uz pakalpojumiem</span>
+          </a>
+        </div>
+
+        <div class="epoxy-hero-actions" style="margin-top:12px;">
+          <span class="badge"><i class="fa-solid fa-broom"></i> <span data-i18n="heroBadge1">Putekļu savākšana</span></span>
+          <span class="badge"><i class="fa-solid fa-wand-magic-sparkles"></i> <span data-i18n="heroBadge2">Pirms / Pēc</span></span>
+          <span class="badge"><i class="fa-solid fa-droplet"></i> <span data-i18n="heroBadge3">Laka vai eļļa</span></span>
+        </div>
+      </div>
+
+      <div class="epoxy-hero-card">
+        <div class="epoxy-hero-img">
+          <img src="gallery/grinding/grida.PNG"/>
+        </div>
+        <div class="epoxy-hero-badges">
+          <span class="badge"><i class="fa-solid fa-house"></i> <span data-i18n="heroCardBadge1">Dzīvokļi / Mājas</span></span>
+          <span class="badge"><i class="fa-solid fa-building"></i> <span data-i18n="heroCardBadge2">Biroji</span></span>
+          <span class="badge"><i class="fa-solid fa-store"></i> <span data-i18n="heroCardBadge3">Komerctelpas</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="types">
+  <div class="container">
+    <h2 class="section-title" data-i18n="typesTitle">Ko tieši darām</h2>
+    <p class="section-subtitle" data-i18n="typesSub">
+      Pakalpojums ir “no A līdz Z”: sagatavošana, slīpēšana, spraugu remonts un apdares uzklāšana.
+      Zemāk — galvenie virzieni īsi un saprotami.
+    </p>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title" data-i18n="card1Title">Parketa slīpēšana</div>
+        <div class="card-text" data-i18n="card1Text">
+          Atjaunojam parketu, noņemot veco laku un skrāpējumus, izlīdzinām virsmu un sagatavojam apdarei.
+        </div>
+        <ul class="card-list">
+          <li data-i18n="card1Li1">Vienmērīga virsma vairākos graudos</li>
+          <li data-i18n="card1Li2">Špaktelēšana (pēc vajadzības)</li>
+          <li data-i18n="card1Li3">Lakošana / eļļošana</li>
+        </ul>
+        <img src="gallery/grinding/parkets.PNG"/>
+      </div>
+
+      <div class="card">
+        <div class="card-title" data-i18n="card2Title">Dēļu grīdu slīpēšana</div>
+        <div class="card-text" data-i18n="card2Text">
+          Dēļu grīdas bieži ļauj dziļāku atjaunošanu. Noņemam krāsu/laku, izlīdzinām un atjaunojam izskatu.
+        </div>
+        <ul class="card-list">
+          <li data-i18n="card2Li1">Vecā slāņa noņemšana (arī krāsa)</li>
+          <li data-i18n="card2Li2">Spraugu aizpildīšana un remonts</li>
+          <li data-i18n="card2Li3">Tonējums (pēc vienošanās)</li>
+        </ul>
+        <img src="gallery/grinding/deli.PNG"/>
+      </div>
+
+      <div class="card">
+        <div class="card-title" data-i18n="card3Title">Apdare: laka vai eļļa</div>
+        <div class="card-text" data-i18n="card3Text">
+          Izvēlamies apdari pēc slodzes un vēlamā izskata. Laka ir ļoti praktiska, bet eļļa ir dabīgāka pēc izskata.
+        </div>
+        <ul class="card-list">
+          <li data-i18n="card3Li1">Matēta / satīna / spīdīga laka</li>
+          <li data-i18n="card3Li2">Eļļa – izceļ koka faktūru</li>
+          <li data-i18n="card3Li3">Apdares sistēma pēc telpas</li>
+        </ul>
+        <img src="gallery/grinding/laka.PNG"/>
+      </div>
+    </div>
+
+    <div class="cta-box">
+      <div>
+        <div class="cta-title" data-i18n="cta1Title">Gribi cenu piedāvājumu?</div>
+        <div class="cta-note" data-i18n="cta1Note">Atsūtiet telpas platību (m²), pilsētu un īsu aprakstu — mēs ar jums sazināsimies un sagatavosim piedāvājumu.</div>
+      </div>
+      <a class="btn-primary" href="index.html#contacts"><i class="fa-solid fa-message"></i> <span data-i18n="cta1Btn">Uzdot jautājumu</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="system" style="background:#f7f8f4;">
+  <div class="container">
+    <h2 class="section-title" data-i18n="stepsTitle">Darba gaita</h2>
+    <p class="section-subtitle" data-i18n="stepsSub">
+      Kvalitatīvs rezultāts rodas no pareizas secības un apdares sistēmas. Tipiska darbu gaita:
+    </p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-top">
+          <div class="step-num">1</div>
+          <div class="step-title" data-i18n="step1Title">Sagatavošana</div>
+        </div>
+        <div class="step-text" data-i18n="step1Text">Telpas aizsardzība, stiprinājumu (naglu/skrūvju) pārbaude, defektu izvērtēšana.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-top">
+          <div class="step-num">2</div>
+          <div class="step-title" data-i18n="step2Title">Slīpēšana</div>
+        </div>
+        <div class="step-text" data-i18n="step2Text">Vecā slāņa noņemšana un virsmas izlīdzināšana vairākos graudos.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-top">
+          <div class="step-num">3</div>
+          <div class="step-title" data-i18n="step3Title">Špaktelēšana</div>
+        </div>
+        <div class="step-text" data-i18n="step3Text">Spraugu un mikrodefektu aizpildīšana (ja nepieciešams), sagatavošana apdarei.</div>
+      </div>
+
+      <div class="step">
+        <div class="step-top">
+          <div class="step-num">4</div>
+          <div class="step-title" data-i18n="step4Title">Apdare</div>
+        </div>
+        <div class="step-text" data-i18n="step4Text">Laka vai eļļa (slāņu skaits pēc sistēmas). Žūšanas laiki un telpas nodošana.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;" class="card">
+      <img src="gallery/grinding/process.PNG"/>
+    </div>
+  </div>
+</section>
+
+<section id="use-cases">
+  <div class="container">
+    <h2 class="section-title" data-i18n="casesTitle">Reāli darbu piemēri</h2>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-title" data-i18n="case1Title">Dēļu grīda + spīdīga laka</div>
+        <div class="card-text" data-i18n="case1Text">Pūre • ~15 m² — noņemta vecā laka, izlīdzināta virsma, 3 slāņi spīdīgas lakas.</div>
+        <img src="gallery/grinding/grida2.PNG"/>
+      </div>
+      <div class="card">
+        <div class="card-title" data-i18n="case2Title">Dēļu grīda slīpēšana</div>
+        <div class="card-text" data-i18n="case2Text">Jaunpiebalga • ~20 m² — vecā vaska noņemšana no dēļu grīdas.</div>
+        <img src="gallery/grinding/grida1.PNG"/>
+      </div>
+      <div class="card">
+        <div class="card-title" data-i18n="case3Title">Perketa slīpēšana + lakošana</div>
+        <div class="card-text" data-i18n="case3Text">Rīga • ~25 m² — vecās lakas noslīpēšana, jaunās lakas uzklāšana.</div>
+        <img src="gallery/grinding/grida3.PNG"/>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:#ffffff;">
+  <div class="container">
+    <h2 class="section-title" data-i18n="faqTitle">Biežākie jautājumi</h2>
+    <p class="section-subtitle" data-i18n="faqSub">Ātras atbildes, lai vieglāk saprast darbu gaitu un termiņus.</p>
+
+    <div class="faq-wrap">
+      <details>
+        <summary>
+          <span data-i18n="faq1Q">Cik ilgi žūst laka?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <div class="faq-body">
+          Tas atkarīgs no lakas sistēmas, temperatūras un ventilācijas. Parasti staigāt var pēc ~24h,
+          bet pilna slodze — pēc vairākām dienām.
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          Vai var slīpēt, ja grīdā ir dziļi bojājumi?
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <div class="faq-body">
+          Bieži var, bet jāizvērtē bojājumu dziļums un parketa virskārta (ja tas ir daudzslāņu).
+          Piedāvājam drošāko risinājumu pēc apskates vai foto.
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          Laka vai eļļa — ko izvēlēties?
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <div class="faq-body">
+          Laka ir ļoti praktiska un izturīga ikdienā. Eļļa izskatās dabīgāk un izceļ koka faktūru,
+          bet prasa regulārāku kopšanu. Ieteikšu pēc telpas slodzes.
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          Vai strādājat visā Latvijā?
+          <i class="fa-solid fa-chevron-down"></i>
+        </summary>
+        <div class="faq-body">
+          Jā — izbraucam uz objektiem visā Latvijā. Atsūti atrašanās vietu un m², sagatavosim piedāvājumu.
+        </div>
+      </details>
+    </div>
+
+    <div class="cta-box">
+      <div>
+        <div class="cta-title">Gatavs atjaunot grīdu?</div>
+        <div class="cta-note">Atsūtiet telpas platību (m²), pilsētu un īsu aprakstu — mēs ar jums sazināsimies un sagatavosim piedāvājumu.</div>
+      </div>
+      <a class="btn-primary" href="index.html#contacts"><i class="fa-solid fa-paper-plane"></i> Sazināties</a>
+    </div>
+  </div>
+</section>
+
+    <footer>
+<div class="footer-inner">
+<div>© <span id="year"> GR Production. Visas tiesības aizsargātas.</div>
+<div data-i18n="footerDev">Izstrāde: GR Production</div>
+      <div class="footer-links">
+        <a href="privacy.html" target="_blank" rel="noopener">
+  Privātuma politika
+</a>
+        <span style="opacity:.5;">•
+        <a href="#" class="footer-link" onclick="openCookieSettings();return false;" data-i18n="cookieLink">Sīkdatnes</a>
+      </div>
+</div>
+</footer>
+  </div>
+
+  <script>
+    // Footer year (same as epoxy)
+    (function() {
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <script>
+    (function(){
+      const dd = document.getElementById('servicesDropdown');
+      if(dd){
+        const btn = dd.querySelector('.nav-dropdown-btn');
+        const menu = dd.querySelector('.nav-dropdown-menu');
+        function close(){
+          dd.classList.remove('open');
+          btn.setAttribute('aria-expanded','false');
+        }
+        function toggle(e){
+          e.preventDefault();
+          e.stopPropagation();
+          const isOpen = dd.classList.toggle('open');
+          btn.setAttribute('aria-expanded', String(isOpen));
+        }
+        btn.addEventListener('click', toggle);
+        menu.addEventListener('click', function(e){ e.stopPropagation(); });
+        document.addEventListener('click', close);
+        document.addEventListener('keydown', function(e){ if(e.key === 'Escape') close(); });
+      }
+    })();
+  </script>
+  <script>
+    (function(){
+      function initMobileDrawer(){
+        var hamburgerBtn = document.getElementById('hamburgerBtn');
+        var drawer = document.getElementById('mobileDrawer');
+        var backdrop = document.getElementById('mobileDrawerBackdrop');
+        var closeBtn = document.getElementById('mobileDrawerClose');
+        if(!drawer || !hamburgerBtn) return;
+
+        function lockScroll(lock){
+          document.documentElement.style.overflow = lock ? 'hidden' : '';
+          document.body.style.overflow = lock ? 'hidden' : '';
+          document.body.style.touchAction = lock ? 'none' : '';
+        }
+        function openDrawer(){
+          drawer.classList.add('show');
+          drawer.setAttribute('aria-hidden','false');
+          lockScroll(true);
+        }
+        function closeDrawer(){
+          drawer.classList.remove('show');
+          drawer.setAttribute('aria-hidden','true');
+          lockScroll(false);
+        }
+        function bind(el, handler){
+          if(!el) return;
+          ['click','pointerup','touchend'].forEach(function(evt){
+            el.addEventListener(evt, function(e){
+              e.preventDefault();
+              e.stopPropagation();
+              handler();
+            }, {passive:false});
+          });
+        }
+        bind(hamburgerBtn, openDrawer);
+        bind(backdrop, closeDrawer);
+        bind(closeBtn, closeDrawer);
+        document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeDrawer(); });
+        drawer.addEventListener('click', function(e){
+          var a = e.target && e.target.closest ? e.target.closest('a') : null;
+          if(a) closeDrawer();
+        });
+      }
+      if(document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', initMobileDrawer);
+      } else {
+        initMobileDrawer();
+      }
+    })();
+  </script>
+
+
+  <script>
+    (function(){
+      const translations = {
+        lv: {
+          pageTitle: 'GR Production – Dēļu un parketa grīdu slīpēšana',
+          pageDescription: 'GR Production – dēļu un parketa grīdu slīpēšana: darba gaita, apdares varianti, reāli darbu piemēri un konsultācija visā Latvijā.',
+          navHome:'Sākums',
+          navServices:'Pakalpojumi',
+          menuEpoxy:'Epoksīda grīdas',
+          menuEpoxySub:'Rūpniecībai un privātmājām',
+          menuGrinding:'Dēļu un parketa grīdu slīpēšana',
+          menuGrindingSub:'Slīpēšana, lakotšana un atjaunošana',
+          menuStandard:'Standarta grīdu ieklāšana',
+          menuStandardSub:'Lamināts, vinils, parkets',
+          menuAllServices:'Visi pakalpojumi',
+          menuAllServicesSub:'Skatīt 3 galvenos virzienus',
+          navAbout:'Par mums',
+          navPricing:'Cenas',
+          navTestimonials:'Atsauksmes',
+          navGallery:'Galerija',
+          navContact:'Kontakti',
+          navCta:'Pieteikums',
+          mobileMenuTitle:'Izvēlne',
+          quickCall:'Zvanīt',
+          heroKicker:'GR Production • Koka grīdu atjaunošana',
+          heroTitle:'Dēļu un parketa grīdu slīpēšana',
+          heroSub:'Atjaunojam koka grīdas: noņemam veco laku/krāsu, izlīdzinām virsmu, špaktelējam un uzklājam jaunu apdari (laka vai eļļa). Strādājam ar putekļu savākšanu, lai telpa būtu tīrāka.',
+          heroPrimary:'Saņemt tāmi / konsultāciju',
+          heroSecondary:'Atpakaļ uz pakalpojumiem',
+          heroBadge1:'Putekļu savākšana',
+          heroBadge2:'Pirms / Pēc',
+          heroBadge3:'Laka vai eļļa',
+          heroCardBadge1:'Dzīvokļi / Mājas',
+          heroCardBadge2:'Biroji',
+          heroCardBadge3:'Komerctelpas',
+          typesTitle:'Ko tieši darām',
+          typesSub:'Pakalpojums ir “no A līdz Z”: sagatavošana, slīpēšana, spraugu remonts un apdares uzklāšana. Zemāk — galvenie virzieni īsi un saprotami.',
+          card1Title:'Parketa slīpēšana',
+          card1Text:'Atjaunojam parketu, noņemot veco laku un skrāpējumus, izlīdzinām virsmu un sagatavojam apdarei.',
+          card1Li1:'Vienmērīga virsma vairākos graudos',
+          card1Li2:'Špaktelēšana (pēc vajadzības)',
+          card1Li3:'Lakošana / eļļošana',
+          card2Title:'Dēļu grīdu slīpēšana',
+          card2Text:'Dēļu grīdas bieži ļauj dziļāku atjaunošanu. Noņemam krāsu/laku, izlīdzinām un atjaunojam izskatu.',
+          card2Li1:'Vecā slāņa noņemšana (arī krāsa)',
+          card2Li2:'Spraugu aizpildīšana un remonts',
+          card2Li3:'Tonējums (pēc vienošanās)',
+          card3Title:'Apdare: laka vai eļļa',
+          card3Text:'Izvēlamies apdari pēc slodzes un vēlamā izskata. Laka ir ļoti praktiska, bet eļļa ir dabīgāka pēc izskata.',
+          card3Li1:'Matēta / satīna / spīdīga laka',
+          card3Li2:'Eļļa – izceļ koka faktūru',
+          card3Li3:'Apdares sistēma pēc telpas',
+          cta1Title:'Gribi cenu piedāvājumu?',
+          cta1Note:'Atsūtiet telpas platību (m²), pilsētu un īsu aprakstu — mēs ar jums sazināsimies un sagatavosim piedāvājumu.',
+          cta1Btn:'Uzdot jautājumu',
+          stepsTitle:'Darba gaita',
+          stepsSub:'Kvalitatīvs rezultāts rodas no pareizas secības un apdares sistēmas. Tipiska darbu gaita:',
+          step1Title:'Sagatavošana',
+          step1Text:'Telpas aizsardzība, stiprinājumu (naglu/skrūvju) pārbaude, defektu izvērtēšana.',
+          step2Title:'Slīpēšana',
+          step2Text:'Vecā slāņa noņemšana un virsmas izlīdzināšana vairākos graudos.',
+          step3Title:'Špaktelēšana',
+          step3Text:'Spraugu un mikrodefektu aizpildīšana (ja nepieciešams), sagatavošana apdarei.',
+          step4Title:'Apdare',
+          step4Text:'Laka vai eļļa (slāņu skaits pēc sistēmas). Žūšanas laiki un telpas nodošana.',
+          casesTitle:'Reāli darbu piemēri',
+          case1Title:'Dēļu grīda + spīdīga laka',
+          case1Text:'Pūre • ~15 m² — noņemta vecā laka, izlīdzināta virsma, 3 slāņi spīdīgas lakas.',
+          case2Title:'Dēļu grīda slīpēšana',
+          case2Text:'Jaunpiebalga • ~20 m² — vecā vaska noņemšana no dēļu grīdas.',
+          case3Title:'Parketa slīpēšana + lakošana',
+          case3Text:'Rīga • ~25 m² — vecās lakas noslīpēšana, jaunās lakas uzklāšana.',
+          faqTitle:'Biežākie jautājumi',
+          faqSub:'Ātras atbildes, lai vieglāk saprast darbu gaitu un termiņus.',
+          faq1Q:'Cik ilgi žūst laka?',
+          faq1A:'Tas atkarīgs no lakas sistēmas, temperatūras un ventilācijas. Parasti staigāt var pēc ~24h, bet pilna slodze — pēc vairākām dienām.',
+          faq2Q:'Vai var slīpēt, ja grīdā ir dziļi bojājumi?',
+          faq2A:'Bieži var, bet jāizvērtē bojājumu dziļums un parketa virskārta (ja tas ir daudzslāņu). Piedāvājam drošāko risinājumu pēc apskates vai foto.',
+          faq3Q:'Laka vai eļļa — ko izvēlēties?',
+          faq3A:'Laka ir ļoti praktiska un izturīga ikdienā. Eļļa izskatās dabīgāk un izceļ koka faktūru, bet prasa regulārāku kopšanu. Ieteikšu pēc telpas slodzes.',
+          faq4Q:'Vai strādājat visā Latvijā?',
+          faq4A:'Jā — izbraucam uz objektiem visā Latvijā. Atsūti atrašanās vietu un m², sagatavosim piedāvājumu.',
+          cta2Title:'Gatavs atjaunot grīdu?',
+          cta2Note:'Atsūtiet telpas platību (m²), pilsētu un īsu aprakstu — mēs ar jums sazināsimies un sagatavosim piedāvājumu.',
+          cta2Btn:'Sazināties',
+          footerDev:'Izstrāde: GR Production',
+          cookieLink:'Sīkdatnes'
+        },
+        en: {
+          pageTitle: 'GR Production – Hardwood and parquet floor sanding',
+          pageDescription: 'GR Production – Hardwood and parquet floor sanding: workflow, finishing options, real project examples, and consultation across Latvia.',
+          navHome:'Home',
+          navServices:'Services',
+          menuEpoxy:'Epoxy floors',
+          menuEpoxySub:'For industry and private homes',
+          menuGrinding:'Hardwood and parquet floor sanding',
+          menuGrindingSub:'Sanding, varnishing and restoration',
+          menuStandard:'Standard floor installation',
+          menuStandardSub:'Laminate, vinyl, parquet',
+          menuAllServices:'All services',
+          menuAllServicesSub:'See all 3 main directions',
+          navAbout:'About us',
+          navPricing:'Prices',
+          navTestimonials:'Reviews',
+          navGallery:'Gallery',
+          navContact:'Contacts',
+          navCta:'Contact us',
+          mobileMenuTitle:'Menu',
+          quickCall:'Call',
+          heroKicker:'GR Production • Wooden floor restoration',
+          heroTitle:'Hardwood and parquet floor sanding',
+          heroSub:'We restore wooden floors: remove old lacquer/paint, level the surface, fill gaps, and apply a new finish (lacquer or oil). We work with dust extraction to keep the space cleaner.',
+          heroPrimary:'Get a quote / consultation',
+          heroSecondary:'Back to services',
+          heroBadge1:'Dust extraction',
+          heroBadge2:'Before / After',
+          heroBadge3:'Lacquer or oil',
+          heroCardBadge1:'Apartments / Homes',
+          heroCardBadge2:'Offices',
+          heroCardBadge3:'Commercial spaces',
+          typesTitle:'What exactly we do',
+          typesSub:'This service is “A to Z”: preparation, sanding, gap repair, and application of the finish. Below are the main directions in a short and clear way.',
+          card1Title:'Parquet sanding',
+          card1Text:'We restore parquet by removing old lacquer and scratches, leveling the surface and preparing it for finishing.',
+          card1Li1:'Even surface in several grits',
+          card1Li2:'Filling (if needed)',
+          card1Li3:'Lacquering / oiling',
+          card2Title:'Hardwood floor sanding',
+          card2Text:'Hardwood floors often allow deeper restoration. We remove paint/lacquer, level the surface and restore the look.',
+          card2Li1:'Removal of old coating (including paint)',
+          card2Li2:'Gap filling and repairs',
+          card2Li3:'Tinting (by agreement)',
+          card3Title:'Finish: lacquer or oil',
+          card3Text:'We choose the finish based on traffic and the look you want. Lacquer is very practical, while oil gives a more natural appearance.',
+          card3Li1:'Matte / satin / gloss lacquer',
+          card3Li2:'Oil highlights wood texture',
+          card3Li3:'Finish system by room type',
+          cta1Title:'Want a price offer?',
+          cta1Note:'Send us the area (m²), city, and a short description — we will contact you and prepare an offer.',
+          cta1Btn:'Ask a question',
+          stepsTitle:'Workflow',
+          stepsSub:'A quality result comes from the right sequence and finishing system. Typical workflow:',
+          step1Title:'Preparation',
+          step1Text:'Room protection, checking fasteners (nails/screws), evaluation of defects.',
+          step2Title:'Sanding',
+          step2Text:'Removal of the old layer and leveling the surface in several grits.',
+          step3Title:'Filling',
+          step3Text:'Filling gaps and micro-defects (if needed), preparing for finishing.',
+          step4Title:'Finishing',
+          step4Text:'Lacquer or oil (number of coats depends on the system). Drying times and handover.',
+          casesTitle:'Real project examples',
+          case1Title:'Hardwood floor + glossy lacquer',
+          case1Text:'Pūre • ~15 m² — old lacquer removed, surface leveled, 3 coats of glossy lacquer.',
+          case2Title:'Hardwood floor sanding',
+          case2Text:'Jaunpiebalga • ~20 m² — old wax removed from a hardwood floor.',
+          case3Title:'Parquet sanding + lacquering',
+          case3Text:'Riga • ~25 m² — old lacquer sanded off, new lacquer applied.',
+          faqTitle:'Frequently asked questions',
+          faqSub:'Quick answers to better understand the workflow and timelines.',
+          faq1Q:'How long does lacquer take to dry?',
+          faq1A:'It depends on the lacquer system, temperature and ventilation. Usually you can walk on it after ~24h, but full load only after several days.',
+          faq2Q:'Can sanding be done if the floor has deep damage?',
+          faq2A:'Often yes, but the depth of the damage and parquet top layer (if it is multilayer) must be evaluated. We offer the safest solution after inspection or photos.',
+          faq3Q:'Lacquer or oil — what to choose?',
+          faq3A:'Lacquer is very practical and durable for everyday use. Oil looks more natural and highlights the wood texture, but requires more regular maintenance. I will recommend based on room traffic.',
+          faq4Q:'Do you work throughout Latvia?',
+          faq4A:'Yes — we travel to projects across Latvia. Send your location and m², and we will prepare an offer.',
+          cta2Title:'Ready to restore your floor?',
+          cta2Note:'Send us the area (m²), city, and a short description — we will contact you and prepare an offer.',
+          cta2Btn:'Contact us',
+          footerDev:'Development: Your web partner',
+          cookieLink:'Cookies'
+        },
+        ru: {
+          pageTitle: 'GR Production – Шлифовка дощатых и паркетных полов',
+          pageDescription: 'GR Production – шлифовка дощатых и паркетных полов: этапы работ, варианты отделки, реальные примеры и консультации по всей Латвии.',
+          navHome:'Главная',
+          navServices:'Услуги',
+          menuEpoxy:'Эпоксидные полы',
+          menuEpoxySub:'Для промышленности и частных домов',
+          menuGrinding:'Шлифовка дощатых и паркетных полов',
+          menuGrindingSub:'Шлифовка, лакировка и восстановление',
+          menuStandard:'Укладка стандартных полов',
+          menuStandardSub:'Ламинат, винил, паркет',
+          menuAllServices:'Все услуги',
+          menuAllServicesSub:'Посмотреть 3 основных направления',
+          navAbout:'О нас',
+          navPricing:'Цены',
+          navTestimonials:'Отзывы',
+          navGallery:'Галерея',
+          navContact:'Контакты',
+          navCta:'Связаться',
+          mobileMenuTitle:'Меню',
+          quickCall:'Позвонить',
+          heroKicker:'GR Production • Восстановление деревянных полов',
+          heroTitle:'Шлифовка дощатых и паркетных полов',
+          heroSub:'Мы восстанавливаем деревянные полы: снимаем старый лак/краску, выравниваем поверхность, шпаклюем и наносим новое покрытие (лак или масло). Работаем с пылесбором, чтобы в помещении было чище.',
+          heroPrimary:'Получить смету / консультацию',
+          heroSecondary:'Назад к услугам',
+          heroBadge1:'Сбор пыли',
+          heroBadge2:'До / После',
+          heroBadge3:'Лак или масло',
+          heroCardBadge1:'Квартиры / Дома',
+          heroCardBadge2:'Офисы',
+          heroCardBadge3:'Коммерческие помещения',
+          typesTitle:'Что именно мы делаем',
+          typesSub:'Услуга “под ключ”: подготовка, шлифовка, ремонт щелей и нанесение финишного покрытия. Ниже — основные направления кратко и понятно.',
+          card1Title:'Шлифовка паркета',
+          card1Text:'Восстанавливаем паркет: снимаем старый лак и царапины, выравниваем поверхность и подготавливаем к финишу.',
+          card1Li1:'Ровная поверхность в несколько проходов',
+          card1Li2:'Шпаклевание (при необходимости)',
+          card1Li3:'Лакировка / масло',
+          card2Title:'Шлифовка дощатого пола',
+          card2Text:'Дощатые полы часто позволяют более глубокое восстановление. Снимаем краску/лак, выравниваем и возвращаем внешний вид.',
+          card2Li1:'Удаление старого слоя (в том числе краски)',
+          card2Li2:'Заполнение щелей и ремонт',
+          card2Li3:'Тонировка (по согласованию)',
+          card3Title:'Финиш: лак или масло',
+          card3Text:'Подбираем покрытие по нагрузке и желаемому виду. Лак очень практичен, а масло выглядит более натурально.',
+          card3Li1:'Матовый / сатиновый / глянцевый лак',
+          card3Li2:'Масло подчеркивает текстуру дерева',
+          card3Li3:'Система покрытия по типу помещения',
+          cta1Title:'Нужен расчет цены?',
+          cta1Note:'тправьте площадь (м²), город и краткое описание — подготовим для вас предложение.',
+          cta1Btn:'Задать вопрос',
+          stepsTitle:'Этапы работ',
+          stepsSub:'Качественный результат зависит от правильной последовательности и системы отделки. Типичный процесс:',
+          step1Title:'Подготовка',
+          step1Text:'Защита помещения, проверка крепежа (гвоздей/шурупов), оценка дефектов.',
+          step2Title:'Шлифовка',
+          step2Text:'Снятие старого слоя и выравнивание поверхности в несколько проходов.',
+          step3Title:'Шпаклевание',
+          step3Text:'Заполнение щелей и мелких дефектов (при необходимости), подготовка к финишу.',
+          step4Title:'Финиш',
+          step4Text:'Лак или масло (количество слоев зависит от системы). Время высыхания и сдача помещения.',
+          casesTitle:'Реальные примеры работ',
+          case1Title:'Дощатый пол + глянцевый лак',
+          case1Text:'Пуре • ~15 м² — снят старый лак, выровнена поверхность, нанесено 3 слоя глянцевого лака.',
+          case2Title:'Шлифовка дощатого пола',
+          case2Text:'Яунпиебалга • ~20 м² — удаление старого воска с дощатого пола.',
+          case3Title:'Шлифовка паркета + лакировка',
+          case3Text:'Рига • ~25 м² — снят старый лак, нанесен новый.',
+          faqTitle:'Частые вопросы',
+          faqSub:'Короткие ответы, чтобы легче понять процесс и сроки.',
+          faq1Q:'Сколько сохнет лак?',
+          faq1A:'Это зависит от системы лака, температуры и вентиляции. Обычно ходить можно примерно через 24 часа, а полная нагрузка допускается через несколько дней.',
+          faq2Q:'Можно ли шлифовать, если пол сильно поврежден?',
+          faq2A:'Часто можно, но нужно оценить глубину повреждений и верхний слой паркета (если он многослойный). После осмотра или фото предложим самый безопасный вариант.',
+          faq3Q:'Лак или масло — что выбрать?',
+          faq3A:'Лак очень практичен и износостоек в повседневной эксплуатации. Масло выглядит натуральнее и подчеркивает текстуру дерева, но требует более регулярного ухода. Подскажу по нагрузке помещения.',
+          faq4Q:'Работаете ли вы по всей Латвии?',
+          faq4A:'Да — выезжаем на объекты по всей Латвии. Пришлите местоположение и м², и мы подготовим предложение.',
+          cta2Title:'Готовы обновить пол?',
+          cta2Note:'тправьте площадь (м²), город и краткое описание — подготовим для вас предложение.',
+          cta2Btn:'Связаться',
+          footerDev:'Разработка: Ваш веб-партнер',
+          cookieLink:'Файлы cookie'
+        }
+      };
+
+      function setText(selector, value){
+        const el = document.querySelector(selector);
+        if(el && typeof value === 'string') el.textContent = value;
+      }
+
+      function applyTranslations(lang){
+        const t = translations[lang] || translations.lv;
+        document.documentElement.lang = lang === 'lv' ? 'lv' : lang;
+        document.title = t.pageTitle;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if(metaDesc) metaDesc.setAttribute('content', t.pageDescription);
+
+        document.querySelectorAll('[data-i18n]').forEach(function(el){
+          const key = el.getAttribute('data-i18n');
+          if(t[key]) el.textContent = t[key];
+        });
+
+        setText('#faq details:nth-of-type(1) .faq-body', t.faq1A);
+        setText('#faq details:nth-of-type(2) summary span', t.faq2Q);
+        setText('#faq details:nth-of-type(2) .faq-body', t.faq2A);
+        setText('#faq details:nth-of-type(3) summary', '');
+        // rebuild FAQ summaries with icon preserved
+        const faqMap = [
+          [1, t.faq1Q, t.faq1A],
+          [2, t.faq2Q, t.faq2A],
+          [3, t.faq3Q, t.faq3A],
+          [4, t.faq4Q, t.faq4A]
+        ];
+        faqMap.forEach(function(item){
+          const details = document.querySelector('#faq details:nth-of-type(' + item[0] + ')');
+          if(!details) return;
+          const summary = details.querySelector('summary');
+          const icon = summary ? summary.querySelector('i') : null;
+          if(summary){
+            summary.innerHTML = item[1] + '\n          ';
+            if(icon) summary.appendChild(icon);
+            else summary.insertAdjacentHTML('beforeend','<i class="fa-solid fa-chevron-down"></i>');
+          }
+          const body = details.querySelector('.faq-body');
+          if(body) body.textContent = item[2];
+        });
+
+        const ctaBoxes = document.querySelectorAll('.cta-box');
+        if(ctaBoxes[1]){
+          const title = ctaBoxes[1].querySelector('.cta-title');
+          const note = ctaBoxes[1].querySelector('.cta-note');
+          const btnSpan = ctaBoxes[1].querySelector('[data-i18n="cta2Btn"]');
+          if(title) title.textContent = t.cta2Title;
+          if(note) note.textContent = t.cta2Note;
+          if(btnSpan) btnSpan.textContent = t.cta2Btn;
+          else {
+            const btn = ctaBoxes[1].querySelector('.btn-primary');
+            if(btn){
+              const icon = btn.querySelector('i');
+              btn.innerHTML = '';
+              if(icon) btn.appendChild(icon);
+              btn.insertAdjacentHTML('beforeend', ' <span data-i18n="cta2Btn">'+t.cta2Btn+'</span>');
+            }
+          }
+        }
+
+        const footerDev = document.querySelector('[data-i18n="footerDev"]');
+        if(footerDev) footerDev.textContent = t.footerDev;
+
+        document.querySelectorAll('.lang-btn').forEach(function(btn){
+          btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+        });
+
+        try { localStorage.setItem('gr_lang_slipesana', lang); } catch(e) {}
+      }
+
+      function initLanguageSwitcher(){
+        const buttons = document.querySelectorAll('.lang-btn[data-lang]');
+        buttons.forEach(function(btn){
+          btn.addEventListener('click', function(){
+            applyTranslations(btn.getAttribute('data-lang'));
+          });
+        });
+        let initial = 'lv';
+        try {
+          initial = localStorage.getItem('gr_lang_slipesana') || localStorage.getItem('gr_lang') || 'lv';
+        } catch(e){}
+        applyTranslations(initial);
+      }
+
+      if(document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
+      } else {
+        initLanguageSwitcher();
+      }
+    })();
+  </script>
+
+</body>
+</html>
