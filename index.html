@@ -829,7 +829,7 @@ summary{
       document.querySelectorAll('select[name="service"]').forEach(select => select.value = link.dataset.serviceLink || '');
     }));
 
-    // Contact form via Formspree. Keeps UTM/GCLID attribution and 10 MB client-side file validation.
+    // Contact form via Formspree. Keeps UTM/GCLID attribution.
     document.querySelectorAll('form.contact-form-element').forEach(form => {
       form.addEventListener('submit', async e => {
         e.preventDefault();
@@ -854,7 +854,6 @@ summary{
         const original = submit?.innerHTML || '';
         if (submit) { submit.disabled = true; submit.textContent = 'Nosūtām…'; }
         try {
-          // Backend must accept multipart/form-data; browser sets the boundary automatically.
           const response = await fetch(form.action, {method:'POST', body:fd, headers:{'Accept':'application/json'}});
           if (!response.ok) throw new Error(`HTTP ${response.status}`);
           const service = String(fd.get('service') || 'nav_noradits');
@@ -914,7 +913,7 @@ summary{
 <div class="hero-actions"><a class="button button-primary" href="#contact">Saņemt piedāvājumu <span>↗</span></a><a class="button button-ghost" href="#projects">Apskatīt projektus <span>↓</span></a></div></div>
 <a class="scroll-note" href="#intro">Ritināt <span>↓</span></a></section>
 <main id="main">
-<section class="section" id="intro"><div class="wrap intro-grid reveal"><div class="section-index">01 · GR Production</div><div><p class="intro-copy">GR Production nodrošina grīdu un betona virsmu risinājumus no pamatnes līdz gatavam pārklājumam.</p><p class="intro-note">Strādājam ar industriāliem un komerciāliem objektiem, fokusējoties uz tehniski pamatotu izpildi.</p></div></div></section>
+<section class="section" id="intro"><div class="wrap intro-grid reveal"><div class="section-index">01 · GR Production</div><div><p class="intro-copy">GR Production nodrošina profesionālus betonēšanas, pamatņu sagatavošanas un industriālo pārklājumu risinājumus dažāda veida objektiem</p><p class="intro-note">Strādājam ar industriāliem un komerciāliem objektiem, fokusējoties uz tehniski pamatotu izpildi.</p></div></div></section>
 <section class="section section-alt" id="services"><div class="wrap"><div class="section-head reveal"><div class="section-index">02 · Darbības virzieni</div><div><h2 class="serif">Trīs darba virzieni. Viens izpildes standarts.</h2></div></div>
 <div class="direction-grid"><a class="direction-card reveal" href="betonesana.html"><div class="direction-top"><span>01</span><span>Betonēšana</span></div><h3>Betonēšana</h3><p>Betona grīdu, pamatņu un konstrukciju izbūve.</p><span class="direction-more">Uzzināt vairāk</span><i class="direction-arrow">↗</i></a><a class="direction-card reveal" href="epoksida-parklajumi.html"><div class="direction-top"><span>02</span><span>Grīdu sistēmas</span></div><h3>Epoksīda pārklājumi</h3><p>Epoksīda, kvarca un pārslu sistēmas dažādām ekspluatācijas slodzēm.</p><span class="direction-more">Uzzināt vairāk</span><i class="direction-arrow">↗</i></a><a class="direction-card reveal" href="betona-virsmas.html"><div class="direction-top"><span>03</span><span>Virsmas</span></div><h3>Betona virsmas</h3><p>Slīpēšana, remonts un virsmas sagatavošana turpmākai apdarei.</p><span class="direction-more">Uzzināt vairāk</span><i class="direction-arrow">↗</i></a></div></div></section>
 <section class="section" id="projects"><div class="wrap"><div class="section-head reveal"><div class="section-index">03 · Projekti</div><div><h2 class="serif">Realizētie darbi</h2></div></div><div class="featured-grid"><!-- PROJECT 01 — DUPLICATE THIS WHOLE ARTICLE FOR THE NEXT PROJECT (09, 10, 11...). -->
@@ -994,10 +993,9 @@ summary{
 <section class="contact" id="contact"><div class="wrap"><div class="contact-shell reveal">
 <div class="contact-copy"><div class="section-index">07 · Kontakti</div><h2>Sazinies ar mums.</h2><p>Atstāj kontaktus vai piezvani, izrunāsim objekta apjomu, pamatnes stāvokli un nepieciešamo grīdas sistēmu.</p>
 <div class="contact-direct"><a href="tel:+37125607986"><span>Tālrunis</span><strong>+371 25 607 986</strong><i>↗</i></a><a href="mailto:info@grproduction.lv"><span>E-pasts</span><strong>info@grproduction.lv</strong><i>↗</i></a></div>
-<div class="contact-company contact-requisites"><div class="company-head"><strong>GR Production,<br>SIA</strong></div><div class="req-item"><span class="req-label">Reģ. Nr.</span><span class="req-value">40203578392</span></div><div class="req-item"><span class="req-label">Juridiskā adrese</span><span class="req-value">“Zemdegas”, Pūres pagasts, Tukuma novads, LV-3124</span></div><div class="req-item"><span class="req-label">Banka</span><span class="req-value">AS “SEB Banka”</span></div><div class="req-item"><span class="req-label">Konta numurs</span><span class="req-value">LV21UNLA0055004672308</span></div></div></div>
+<div class="contact-company contact-requisites"><div class="company-head"><strong>GR Production,<br>SIA</strong></div><div class="req-item"><span class="req-label">Reģ. Nr. / PVN Nr.</span><span class="req-value">40203578392 · LV40203578392</span></div><div class="req-item"><span class="req-label">Juridiskā adrese</span><span class="req-value">“Zemdegas”, Pūres pagasts, Tukuma novads, LV-3124</span></div><div class="req-item"><span class="req-label">Banka</span><span class="req-value">AS “SEB Banka”</span></div><div class="req-item"><span class="req-label">Konta numurs</span><span class="req-value">LV21UNLA0055004672308</span></div></div></div>
 <div class="contact-form"><div class="contact-form-head"><h3>Saņemt piedāvājumu</h3><p>Atstāj kontaktus izrunāsim objekta apjomu un piemērotāko tehnisko risinājumu.</p></div>
-<!-- FORMSPREE: connected to the existing GR Production endpoint.
-     File type and max-size validation remains duplicated client-side; Formspree/server must enforce its own limits. -->
+<!-- FORMSPREE: connected to the GR Production endpoint. -->
 <form action="https://formspree.io/f/xbdlnevv" class="contact-form-element" data-endpoint-provider="formspree" enctype="multipart/form-data" id="contact-form" method="post" novalidate="">
 <input name="_subject" type="hidden" value="Jauns pieteikums no grproduction.lv"/><input aria-hidden="true" autocomplete="off" name="_gotcha" style="position:absolute;left:-9999px;opacity:0;pointer-events:none" tabindex="-1" type="text"/>
 <input name="utm_source" type="hidden"/><input name="utm_medium" type="hidden"/><input name="utm_campaign" type="hidden"/><input name="utm_term" type="hidden"/><input name="utm_content" type="hidden"/><input name="gclid" type="hidden"/><input name="gbraid" type="hidden"/><input name="wbraid" type="hidden"/><input name="landing_page" type="hidden"/><input name="referrer" type="hidden"/>
@@ -1009,8 +1007,8 @@ summary{
 <div class="field"><label for="location">Objekta vieta</label><input id="location" name="location"/></div>
 <div class="field"><label for="area">Aptuvenā platība m²</label><input id="area" inputmode="decimal" name="area_m2"/></div>
 <div class="field full"><label for="service">Pakalpojums</label><select id="service" name="service"><option value="">Izvēlies pakalpojumu</option><option>Betonēšana</option><option>Epoksīda pārklājumi</option><option>Betona virsmas</option><option>Apakšuzņēmēja sadarbība</option><option>Nezinu — vajag konsultāciju</option></select></div>
-<div class="field full"><label for="message">Ziņa</label><textarea id="message" name="message"></textarea></div>
-<div class="field full file-field"><label for="project-file">Pievienot projekta failu / foto</label><input accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" data-max-size="10485760" id="project-file" name="project_file" type="file"/><span class="file-note">PDF, JPG, JPEG vai PNG · Maks. 10 MB.</span><!-- TODO: BACKEND MUST VALIDATE FILE TYPE AND MAX 10 MB SIZE --></div>
+<div class="field full"><label for="message">Ziņa</label><textarea id="message" name="message" placeholder="Rakstiet ziņu šeit..."></textarea></div>
+
 </div>
 <button class="button button-primary form-submit" type="submit">Saņemt piedāvājumu <span>↗</span></button><div class="form-status error" role="alert"></div><div class="form-status success" role="status"></div>
 </form></div></div>
